@@ -6,6 +6,11 @@ import "./App.css";
 import { gsap } from "gsap";
 
 
+
+//preloader
+import convert from "./components/covertDivsToSpans"
+
+
 export default function App() {
   //for gradient headings
   // var el = document.getElementById('elem');
@@ -49,7 +54,7 @@ export default function App() {
         </div>
       </div> */}
 
-      {/* <div className="page" asscroll-container>
+      <div className="page" asscroll-container>
         <div className="page-wrapper" asscroll>
           
           <section className="hero">
@@ -210,7 +215,7 @@ export default function App() {
           </section>
         </div>
       </div>
-       */}
+      
     </>
     
 
@@ -226,7 +231,10 @@ function Model({ url, ...props }) {
   scene.rotateX(-0.0872665);
   scene.position.set(0,-2,0);
 
-
+  const actions = useAnimations(animations)
+  useEffect(()=>{
+    console.log(actions);
+  })
 
   let mixer = new THREE.AnimationMixer(scene);
   animations.forEach((clip) => {
@@ -251,31 +259,30 @@ function Model({ url, ...props }) {
     var rotation =
         ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
     lerp.target = rotation * 0.05;
-    console.log(rotation);
-    console.log(lerp.target);
+
   });
   
-  
-  function animate(){
+  useFrame( () => {
     lerp.current = gsap.utils.interpolate(
       lerp.current,
       lerp.target,
       lerp.ease
     );
-    console.log(lerp.current);
+
   
     scene.rotation.y= lerp.current;
-    requestAnimationFrame(animate);
-    // mixer.update(clock.getDelta());
-    //         // mixer.setTime(scrollPoint);
-  
-  
-  
-  }
-  
-  animate();
 
-  // const controls = new THREE.OrbitControls(camera);
+  })
+ 
+  // function animate(){
+    
+  //   requestAnimationFrame(animate);
+  //   // mixer.update(clock.getDelta());
+  //   // mixer.setTime(scrollPoint);
+  // }
+  
+  // animate();
+
 
   return <primitive object={scene} {...props} />;
 }
