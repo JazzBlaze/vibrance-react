@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import "./App.css";
 import { gsap } from "gsap";
-
+import Experience from "./components/Experience";
 import Model from "./components/Model"
 
 
@@ -12,6 +12,7 @@ import Model from "./components/Model"
 
 
 export default function App() {
+  const experience = new Experience(document.getElementById("can"));
   //for gradient headings
   // var el = document.getElementById('elem');
   // const children = el.children;
