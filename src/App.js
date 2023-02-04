@@ -9,8 +9,6 @@ import Model from "./components/Model"
 
 
 
-//preloader
-import convert from "./components/covertDivsToSpans"
 
 
 export default function App() {
@@ -48,7 +46,7 @@ export default function App() {
       </div>
 
 
-      {/* <div id="pre" className="preloader">
+      <div id="pre" className="preloader">
         <div className="preloader-wrapper">
           <div className="loading">
             <div className="circle"></div>
@@ -56,7 +54,7 @@ export default function App() {
             <div className="circle"></div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="page" asscroll-container>
         <div className="page-wrapper" asscroll>
