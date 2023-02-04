@@ -45,7 +45,7 @@ export default function App() {
         </Canvas>
       </div>
 
-
+{/* 
       <div id="pre" className="preloader">
         <div className="preloader-wrapper">
           <div className="loading">
@@ -54,7 +54,7 @@ export default function App() {
             <div className="circle"></div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="page" asscroll-container>
         <div className="page-wrapper" asscroll>
