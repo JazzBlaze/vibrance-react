@@ -5,6 +5,8 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import "./App.css";
 import { gsap } from "gsap";
 
+import Model from "./components/Model"
+
 
 
 //preloader
@@ -26,6 +28,7 @@ export default function App() {
 
 
   return (
+    
     <>
       <div className="experience">
         <Canvas  id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }}>
@@ -33,6 +36,7 @@ export default function App() {
           <directionalLight position={[-10, 10, 5]} intensity={1} />
           <directionalLight position={[-10, 20, 0]} intensity={1.5} />
           <directionalLight position={[0, -10, 0]} intensity={0.25} />
+          
           <Model url="stage.glb" />
           <OrbitControls 
             minAzimuthAngle={-Math.PI / 25}
@@ -223,67 +227,5 @@ export default function App() {
   );
 }
 
-function Model({ url, ...props }) {
-  const { scene, animations } = useGLTF(url);
-  const can=document.getElementById('can')
-  can.style.background = "#EABFFF";
-  scene.scale.set(0.4,0.4,0.4);
-  scene.rotateX(-0.0872665);
-  scene.position.set(0,-2,0);
 
-  const actions = useAnimations(animations)
-  useEffect(()=>{
-    console.log(actions);
-  })
-
-  let mixer = new THREE.AnimationMixer(scene);
-  animations.forEach((clip) => {
-    const action = mixer.clipAction(clip);
-    action.play();
-  });
-
-  console.log(animations);
-
-  mixer.timeScale = 0.5;
-  useFrame((state, delta) => {
-    mixer.update(delta);
-    mixer.setTime(99.9);
-  });
-
-  var lerp = {
-    current: 0,
-    target: 0,
-    ease: 0.1,
-  };
-  window.addEventListener("mousemove", (e) => {
-    var rotation =
-        ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
-    lerp.target = rotation * 0.05;
-
-  });
-  
-  useFrame( () => {
-    lerp.current = gsap.utils.interpolate(
-      lerp.current,
-      lerp.target,
-      lerp.ease
-    );
-
-  
-    scene.rotation.y= lerp.current;
-
-  })
- 
-  // function animate(){
-    
-  //   requestAnimationFrame(animate);
-  //   // mixer.update(clock.getDelta());
-  //   // mixer.setTime(scrollPoint);
-  // }
-  
-  // animate();
-
-
-  return <primitive object={scene} {...props} />;
-}
 

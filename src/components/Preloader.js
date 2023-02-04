@@ -1,8 +1,7 @@
 import { EventEmitter } from "events";
-
+import Experience from "./Experience.js";
 import GSAP from "gsap";
 import convert from "./covertDivsToSpans";
-import sizes from "./Sizes"
 
 export default class Preloader extends EventEmitter {
     constructor() {
