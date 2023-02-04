@@ -12,7 +12,7 @@ import Model from "./components/Model"
 
 
 export default function App() {
-  const experience = new Experience(document.getElementById("can"));
+  
   //for gradient headings
   // var el = document.getElementById('elem');
   // const children = el.children;
@@ -218,10 +218,9 @@ export default function App() {
           </section>
         </div>
       </div>
-      
+      <script src="/util.js"></script>
     </>
     
-
 
   );
 }

@@ -32,7 +32,7 @@ export default function Model({ url, ...props }) {
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
       mixer.update(delta);
-      mixer.setTime(99.9);
+      mixer.setTime(0);
     });
   
     var lerp = {
