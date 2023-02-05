@@ -39,27 +39,16 @@ svg {
   --color-pink-light: #e5a1aa;
   --color-green-light: #7ad0ac;
   --color-blue-light: #8395cd;
-
-  /* Dark Theme Variables */
-  --color-text-dark: #faf4e5;
-  --color-background-dark: #8395cd;
-}
-
-.light-theme {
   --color-text: var(--color-text-light);
-  --color-background: var(--color-background-light);
+  --color-background: #fff987;
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-green-light);
   --color-blue: var(--color-blue-light);
+
+ 
 }
 
-.dark-theme {
-  --color-text: var(--color-text-dark);
-  --color-background: var(--color-background-dark);
-  --color-pink: var(--color-text-dark);
-  --color-green: var(--color-text-dark);
-  --color-blue: var(--color-text-dark);
-}
+
 
 ul {
   list-style: none;
