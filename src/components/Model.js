@@ -27,9 +27,9 @@ export default function Model({ url, ...props }) {
       const action = mixer.clipAction(clip);
   
       action.play();
-      
+
       action.paused=pause;
-  
+
         
     });
   
@@ -38,9 +38,8 @@ export default function Model({ url, ...props }) {
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
       mixer.update(delta);
-
-  
     });
+    
   
     var lerp = {
       current: 0,
@@ -76,8 +75,10 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
+
     const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause);
-  
+
+
   
     return <primitive object={scene} {...props} />;
   }

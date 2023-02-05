@@ -16,8 +16,6 @@ import {EventEmitter} from "events"
 import convert from "./components/covertDivsToSpans"
 
 export default function App() {
-  
-
 
   //for gradient headings
   // var el = document.getElementById('elem');
