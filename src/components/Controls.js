@@ -6,6 +6,7 @@ import ASScroll from "@ashthornton/asscroll";
 
 
 export default class Controls {
+   
     constructor() {
         this.experience = new Experience();
         this.scene = this.experience.scene;
@@ -64,7 +65,7 @@ export default class Controls {
 
 
     setupASScroll() {
-
+      
         const asscroll = new ASScroll({
             ease: 0.1,
             disableRaf: true,
@@ -100,6 +101,7 @@ export default class Controls {
         
 
         requestAnimationFrame(() => {
+            
             asscroll.enable({
                 newScrollElements: document.querySelectorAll(
                     ".gsap-marker-start, .gsap-marker-end, [asscroll]"
