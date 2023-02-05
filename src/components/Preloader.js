@@ -11,7 +11,8 @@ export default class Preloader extends EventEmitter {
         
        this.pause=this.experience.pause;
        this.usepause=this.experience.usepause;
-       this.useclamp=this.experience.useclamp;
+       this.val=this.experience.val;
+       this.useval=this.experience.useval;
        
         console.log(this.scene)
         this.animations = this.experience.animations;
@@ -160,9 +161,12 @@ export default class Preloader extends EventEmitter {
                     onComplete: () => {
                  
                         this.usepause(false);
-                      
+                        
+                        
+                        
                       },
                  }
+            
                 )
           
               
@@ -203,13 +207,15 @@ export default class Preloader extends EventEmitter {
                     },
                     "introtext"
                 )
-                
+
                 .to(".arrow-svg-wrapper", {
                     opacity: 1,
-                    onComplete: resolve,
+                    onComplete:resolve,
                 });
         });
     }
+
+
 
     onScroll(e) {
      
@@ -256,7 +262,8 @@ export default class Preloader extends EventEmitter {
     async playSecondIntro() {
        
         this.moveFlag = false;
-       await this.secondIntro();
+        await this.secondIntro();
+
         this.scaleFlag = false;
         this.emit("enablecontrols");
     }
