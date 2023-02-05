@@ -8,7 +8,7 @@ export default class Experience {
     
     static instance;
     constructor(canvas,scene,animations) {
-        
+      
         if (Experience.instance) {
             return Experience.instance;
         }
@@ -24,6 +24,8 @@ export default class Experience {
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
+            console.log("ssn");
+           
         });
 
         this.sizes.on("resize", () => {
@@ -40,8 +42,8 @@ export default class Experience {
     update() {
         this.preloader.update();
         
-        // if (this.controls) {
-        //     this.controls.update();
-        // }
+        if (this.controls) {
+            this.controls.update();
+        }
     }
 }
