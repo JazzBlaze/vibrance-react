@@ -43,6 +43,15 @@ export default class Experience {
           });
         }, 4000);
 
+        //gradient headings
+        var el = document.getElementById('elem');
+        const children = el.children;
+        setTimeout(function () {
+          Array.from(children).forEach(span => {
+            span.classList.add('gradient-headings')
+          });
+        }, 4000);
+
     }
 
     resize() {

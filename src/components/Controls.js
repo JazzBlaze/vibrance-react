@@ -122,7 +122,10 @@ export default class Controls {
                 // console.log("fired desktop");
 
                 // this.scene.scale.set(0.11, 0.11, 0.11);
-              
+
+                this.scene.scale.set(0.11, 0.11, 0.11);
+
+
                 // First section -----------------------------------------
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -135,15 +138,13 @@ export default class Controls {
                     },
                 });
                 this.firstMoveTimeline.fromTo(
+
                     this.scene.position,
                     { x: 0, y: -2, z: 0 },
                     {
                         x: () => {
                             console.log(this.sizes.width*0.0020);
-                            return this.sizes.width * 0.0057;
-                        },
-                    }
-                );
+
 
                 // Second section -----------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
