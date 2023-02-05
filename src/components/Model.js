@@ -41,6 +41,7 @@ export default function Model({ url, ...props }) {
     useFrame((state, delta) => {
       
       mixer.update(delta);
+ 
   
     });
   
