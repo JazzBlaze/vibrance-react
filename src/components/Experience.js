@@ -16,7 +16,6 @@ export default class Experience {
         this.canvas = canvas;
         this.scene= scene;
         this.animations=animations;
-        this.mixer= mixer;
 
         this.sizes = new Sizes();
 

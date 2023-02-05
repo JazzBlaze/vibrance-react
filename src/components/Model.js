@@ -26,7 +26,6 @@ export default function Model({ url, ...props }) {
       const action = mixer.clipAction(clip);
       action.startAt(3);
       action.play();
- 
         
     });
   
@@ -35,9 +34,8 @@ export default function Model({ url, ...props }) {
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
       mixer.update(delta);
-
-  
     });
+    
   
     var lerp = {
       current: 0,
