@@ -1,8 +1,9 @@
 import * as THREE from "three";
 import Experience from "./Experience";
-import { gsap } from "gsap";
+import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ASScroll from "@ashthornton/asscroll";
+
 
 export default class Controls {
    
@@ -47,7 +48,7 @@ export default class Controls {
         this.scene.add(this.circleSecond);
         this.scene.add(this.circleThird);
 
-        gsap.registerPlugin(ScrollTrigger);
+        GSAP.registerPlugin(ScrollTrigger);
 
         document.querySelector(".page").style.overflow = "visible";
 
@@ -70,7 +71,7 @@ export default class Controls {
             disableRaf: true,
         });
 
-        gsap.ticker.add(asscroll.update);
+        GSAP.ticker.add(asscroll.update);
 
         ScrollTrigger.defaults({
             scroller: asscroll.containerElement,
@@ -97,6 +98,7 @@ export default class Controls {
 
         asscroll.on("update", ScrollTrigger.update);
         ScrollTrigger.addEventListener("refresh", asscroll.resize);
+        
 
         requestAnimationFrame(() => {
             
@@ -125,7 +127,7 @@ export default class Controls {
                 this.camera.orthographicCamera.position.set(0, 6.5, 10);
                 this.room.position.set(0, 0, 0);
                 // First section -----------------------------------------
-                this.firstMoveTimeline = new gsap.timeline({
+                this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
                         start: "top top",
@@ -146,7 +148,7 @@ export default class Controls {
                 );
 
                 // Second section -----------------------------------------
-                this.secondMoveTimeline = new gsap.timeline({
+                this.secondMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".second-move",
                         start: "top top",
@@ -186,7 +188,7 @@ export default class Controls {
                     );
 
                 // Third section -----------------------------------------
-                this.thirdMoveTimeline = new gsap.timeline({
+                this.thirdMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "top top",
@@ -212,7 +214,7 @@ export default class Controls {
                 this.camera.orthographicCamera.position.set(0, 6.5, 10);
 
                 // First section -----------------------------------------
-                this.firstMoveTimeline = new gsap.timeline({
+                this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
                         start: "top top",
@@ -227,7 +229,7 @@ export default class Controls {
                 });
 
                 // Second section -----------------------------------------
-                this.secondMoveTimeline = new gsap.timeline({
+                this.secondMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".second-move",
                         start: "top top",
@@ -262,7 +264,7 @@ export default class Controls {
                     );
 
                 // Third section -----------------------------------------
-                this.thirdMoveTimeline = new gsap.timeline({
+                this.thirdMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "top top",
@@ -284,7 +286,7 @@ export default class Controls {
                     this.progressBar = section.querySelector(".progress-bar");
 
                     if (section.classList.contains("right")) {
-                        gsap.to(section, {
+                        GSAP.to(section, {
                             borderTopLeftRadius: 10,
                             scrollTrigger: {
                                 trigger: section,
@@ -293,7 +295,7 @@ export default class Controls {
                                 scrub: 0.6,
                             },
                         });
-                        gsap.to(section, {
+                        GSAP.to(section, {
                             borderBottomLeftRadius: 700,
                             scrollTrigger: {
                                 trigger: section,
@@ -303,7 +305,7 @@ export default class Controls {
                             },
                         });
                     } else {
-                        gsap.to(section, {
+                        GSAP.to(section, {
                             borderTopRightRadius: 10,
                             scrollTrigger: {
                                 trigger: section,
@@ -312,7 +314,7 @@ export default class Controls {
                                 scrub: 0.6,
                             },
                         });
-                        gsap.to(section, {
+                        GSAP.to(section, {
                             borderBottomRightRadius: 700,
                             scrollTrigger: {
                                 trigger: section,
@@ -322,7 +324,7 @@ export default class Controls {
                             },
                         });
                     }
-                    gsap.from(this.progressBar, {
+                    GSAP.from(this.progressBar, {
                         scaleY: 0,
                         scrollTrigger: {
                             trigger: section,
@@ -337,7 +339,7 @@ export default class Controls {
 
                 // All animations
                 // First section -----------------------------------------
-                this.firstCircle = new gsap.timeline({
+                this.firstCircle = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
                         start: "top top",
@@ -351,7 +353,7 @@ export default class Controls {
                 });
 
                 // Second section -----------------------------------------
-                this.secondCircle = new gsap.timeline({
+                this.secondCircle = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".second-move",
                         start: "top top",
@@ -377,7 +379,7 @@ export default class Controls {
                     );
 
                 // Third section -----------------------------------------
-                this.thirdCircle = new gsap.timeline({
+                this.thirdCircle = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "top top",
@@ -391,7 +393,7 @@ export default class Controls {
                 });
 
                 // Mini Platform Animations
-                this.secondPartTimeline = new gsap.timeline({
+                this.secondPartTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "center center",
@@ -400,14 +402,14 @@ export default class Controls {
 
                 this.room.children.forEach((child) => {
                     if (child.name === "Mini_Floor") {
-                        this.first = gsap.to(child.position, {
+                        this.first = GSAP.to(child.position, {
                             x: -5.44055,
                             z: 13.6135,
                             duration: 0.3,
                         });
                     }
                     if (child.name === "Mailbox") {
-                        this.second = gsap.to(child.scale, {
+                        this.second = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -415,7 +417,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "Lamp") {
-                        this.third = gsap.to(child.scale, {
+                        this.third = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -424,7 +426,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "FloorFirst") {
-                        this.fourth = gsap.to(child.scale, {
+                        this.fourth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -433,7 +435,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "FloorSecond") {
-                        this.fifth = gsap.to(child.scale, {
+                        this.fifth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -441,7 +443,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "FloorThird") {
-                        this.sixth = gsap.to(child.scale, {
+                        this.sixth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -450,7 +452,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "Dirt") {
-                        this.seventh = gsap.to(child.scale, {
+                        this.seventh = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -459,7 +461,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "Flower1") {
-                        this.eighth = gsap.to(child.scale, {
+                        this.eighth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -468,7 +470,7 @@ export default class Controls {
                         });
                     }
                     if (child.name === "Flower2") {
-                        this.ninth = gsap.to(child.scale, {
+                        this.ninth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
