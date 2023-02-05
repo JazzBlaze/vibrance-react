@@ -326,7 +326,7 @@ export default class Preloader extends EventEmitter {
     }
 
     onScroll(e) {
-        console.log(e)
+     
         if (e.deltaY > 0) {
             this.removeEventListeners();
             this.playSecondIntro();
@@ -356,8 +356,10 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-        await this.firstIntro();
+        
+         this.firstIntro();  //add await if possible bug
         this.moveFlag = true;
+        console.log(this.moveFlag);
         this.scrollOnceEvent = this.onScroll.bind(this);
         this.touchStart = this.onTouch.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
@@ -366,6 +368,7 @@ export default class Preloader extends EventEmitter {
         window.addEventListener("touchmove", this.touchMove);
     }
     async playSecondIntro() {
+       
         this.moveFlag = false;
         await this.secondIntro();
         this.scaleFlag = false;

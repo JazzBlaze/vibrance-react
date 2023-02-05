@@ -24,7 +24,10 @@ export default function Model({ url, ...props }) {
     let mixer = new THREE.AnimationMixer(scene);
     animations.forEach((clip) => {
       const action = mixer.clipAction(clip);
+      action.startAt(3);
       action.play();
+ 
+        
     });
   
     console.log(animations);
@@ -32,7 +35,8 @@ export default function Model({ url, ...props }) {
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
       mixer.update(delta);
-      mixer.setTime(0);
+
+  
     });
   
     var lerp = {
