@@ -11,6 +11,7 @@ import { useState } from "react";
 
 export default function Model({ url, ...props }) {
   const [pause,usepause]=useState(true)
+  const [clamp,useclamp]=useState(false);
     var { scene, animations } = useGLTF(url);
     const can=document.getElementById('can')
     can.style.background = "#EABFFF";
@@ -21,13 +22,14 @@ export default function Model({ url, ...props }) {
 
   
     const actions = useAnimations(animations)
-  let state=true;
+
     let mixer = new THREE.AnimationMixer(scene);
     animations.forEach((clip) => {
       const action = mixer.clipAction(clip);
-  
-      action.play();
-      
+      action.clampWhenFinished = true;
+      action.loop = THREE.LoopOnce;
+       action.play();
+     
       action.paused=pause;
   
         
@@ -37,8 +39,8 @@ export default function Model({ url, ...props }) {
   
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
+      
       mixer.update(delta);
-
   
     });
   
@@ -59,6 +61,7 @@ export default function Model({ url, ...props }) {
         lerp.current,
         lerp.target,
         lerp.ease
+        
       );
 
 
@@ -76,8 +79,8 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
-    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause);
-  
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,useclamp);
+  console.log(animations);
   
     return <primitive object={scene} {...props} />;
   }
