@@ -55,7 +55,6 @@ export default function Model({ url, ...props }) {
     var Lspeaker = THREE.AnimationUtils.subclip( animations[17], 'run1', 100, 150 );
     var Rspeaker =THREE.AnimationUtils.subclip( animations[16], 'run2', 100, 150 );
     var TextRot =THREE.AnimationUtils.subclip( animations[2], 'rotate', 100, 150 );
-
     const runAction1 = mixer.clipAction( Lspeaker );
     const runAction2 = mixer.clipAction( Rspeaker );
     const runAction3 = mixer.clipAction( TextRot );
