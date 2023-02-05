@@ -32,7 +32,6 @@ export default function Model({ url, ...props }) {
     mixer.timeScale = 0.5;
     useFrame((state, delta) => {
       mixer.update(delta);
-      mixer.setTime(0);
     });
   
     var lerp = {
@@ -69,7 +68,7 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
-    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations);
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,mixer);
   
   
     return <primitive object={scene} {...props} />;

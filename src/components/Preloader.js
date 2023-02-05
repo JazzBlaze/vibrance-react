@@ -356,7 +356,7 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-        await this.firstIntro();
+        this.firstIntro();
         this.moveFlag = true;
         this.scrollOnceEvent = this.onScroll.bind(this);
         this.touchStart = this.onTouch.bind(this);

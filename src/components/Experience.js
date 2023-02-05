@@ -7,7 +7,7 @@ import Controls from "./Controls";
 export default class Experience {
     
     static instance;
-    constructor(canvas,scene,animations) {
+    constructor(canvas,scene,animations,mixer) {
         
         if (Experience.instance) {
             return Experience.instance;
@@ -16,6 +16,7 @@ export default class Experience {
         this.canvas = canvas;
         this.scene= scene;
         this.animations=animations;
+        this.mixer= mixer;
 
         this.sizes = new Sizes();
 
@@ -40,8 +41,8 @@ export default class Experience {
     update() {
         this.preloader.update();
         
-        // if (this.controls) {
-        //     this.controls.update();
-        // }
+        if (this.controls) {
+            this.controls.update();
+        }
     }
 }
