@@ -7,13 +7,15 @@ import Preloader from "./Preloader.js";
 export default class Experience {
     
     static instance;
-    constructor(canvas) {
+    constructor(canvas,scene,animations) {
         
         if (Experience.instance) {
             return Experience.instance;
         }
         Experience.instance = this;
         this.canvas = canvas;
+        this.scene= scene;
+        this.animations=animations;
 
         this.sizes = new Sizes();
 

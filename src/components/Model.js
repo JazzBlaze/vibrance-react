@@ -2,24 +2,24 @@ import React, { useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF, useAnimations } from "@react-three/drei";
-
+import Experience from "./Experience";
 import { gsap } from "gsap";
 
 
 
 
 export default function Model({ url, ...props }) {
-    const { scene, animations } = useGLTF(url);
+    var { scene, animations } = useGLTF(url);
     const can=document.getElementById('can')
     can.style.background = "#EABFFF";
     scene.scale.set(0.4,0.4,0.4);
     scene.rotateX(-0.0872665);
     scene.position.set(0,-2,0);
+
+
   
     const actions = useAnimations(animations)
-    useEffect(()=>{
-      console.log(actions);
-    })
+    
   
     let mixer = new THREE.AnimationMixer(scene);
     animations.forEach((clip) => {
@@ -53,9 +53,11 @@ export default function Model({ url, ...props }) {
         lerp.target,
         lerp.ease
       );
-  
-    
+
+
       scene.rotation.y= lerp.current;
+
+     
   
     })
    
@@ -67,6 +69,7 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations);
   
   
     return <primitive object={scene} {...props} />;
