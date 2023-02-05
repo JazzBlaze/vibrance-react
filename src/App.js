@@ -5,8 +5,10 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import "./App.css";
 import { gsap } from "gsap";
 import Experience from "./components/Experience";
+import UseEffectOnce from "./components/UseEffectOnce"
 
 import Model from "./components/Model";
+import ASScroll from "@ashthornton/asscroll";
 
 //for preloader
 import Sizes from "./components/Sizes"
@@ -27,6 +29,7 @@ export default function App() {
   // }, 4000);
 
   return (
+    
     
     <>
     
@@ -59,8 +62,8 @@ export default function App() {
         </div>
       </div>
 
-      <div className="page" asscroll-container>
-        <div className="page-wrapper" asscroll>
+      <div className="page" asscroll-container="true">
+        <div className="page-wrapper" asscroll="true">
           
           <section className="hero">
             <div className="hero-wrapper">

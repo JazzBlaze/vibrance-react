@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import Sizes from "./Sizes";
 import Preloader from "./Preloader.js";
+import Controls from "./Controls";
 
-// import Controls from "./World/Controls.js";
 
 export default class Experience {
     
@@ -22,9 +22,9 @@ export default class Experience {
 
         this.preloader = new Preloader();
 
-        // this.preloader.on("enablecontrols", () => {
-        //     this.controls = new Controls();
-        // });
+        this.preloader.on("enablecontrols", () => {
+            this.controls = new Controls();
+        });
 
         this.sizes.on("resize", () => {
             this.resize();
