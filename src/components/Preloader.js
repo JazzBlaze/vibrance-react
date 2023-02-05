@@ -7,7 +7,7 @@ export default class Preloader extends EventEmitter {
         super();
         this.experience = new Experience();
         this.scene = this.experience.scene;
-        this.scene.position.set(0,0,0);
+        this.scene.position.set(1,0,0);
         
        this.pause=this.experience.pause;
        this.usepause=this.experience.usepause;
@@ -57,17 +57,17 @@ export default class Preloader extends EventEmitter {
             if (this.device === "desktop") {
                 this.timeline
                     .to(this.scene.scale, {
-                        x: 5,
-                        y: 5,
-                        z: 5,
+                        x: 2,
+                        y: 2,
+                        z: 2,
                         ease: "back.out(2.5)",
                         duration: 0.7,
                     })
                     .to(this.scene.position, {
-                        x: -10,
+                        x: -7,
                         ease: "power1.out",
                         duration: 0.7,
-                    
+                     
                     
                     
                     });
@@ -156,7 +156,7 @@ export default class Preloader extends EventEmitter {
                     x: 0.4,
                     y: 0.4,
                     z: 0.4,
-                    ease: "back.out(2.5)",
+                    ease: "back.out(0)",
                     duration: 0.7,
                     onComplete: () => {
                  
