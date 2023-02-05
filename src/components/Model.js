@@ -16,7 +16,7 @@ export default function Model({ url, ...props }) {
     const can=document.getElementById('can')
     can.style.background = "#EABFFF";
     scene.scale.set(0.4,0.4,0.4);
-    scene.rotateX(-0.0872665);
+    // scene.rotateX(-0.0872665);
     scene.position.set(0,-2,0);
 
 
@@ -67,9 +67,8 @@ export default function Model({ url, ...props }) {
         lerp.ease
         
       );
-
-
       scene.rotation.y= lerp.current;
+      scene.rotation.z-=0;
 
      
   
