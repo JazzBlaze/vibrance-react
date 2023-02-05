@@ -16,7 +16,6 @@ import {EventEmitter} from "events"
 import convert from "./components/covertDivsToSpans"
 
 export default function App() {
-
   return (
     
     
