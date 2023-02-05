@@ -69,7 +69,7 @@ export default class Preloader extends EventEmitter {
                     });
             } else {
                 this.timeline
-                    .to(this.roomChildren.scene.scale, {
+                    .to(this.scene.scale, {
                         x: 1.4,
                         y: 1.4,
                         z: 1.4,
@@ -92,8 +92,10 @@ export default class Preloader extends EventEmitter {
                     ".arrow-svg-wrapper",
                     {
                         opacity: 1,
+                        onComplete: resolve,
                     },
                     "same"
+
                 );
         });
     }
@@ -233,12 +235,13 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-        await this.firstIntro();
+       await this.firstIntro();
         this.moveFlag = true;
         console.log(this.moveFlag);
         this.scrollOnceEvent = this.onScroll.bind(this);
         this.touchStart = this.onTouch.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
+        
         window.addEventListener("wheel", this.scrollOnceEvent);
         window.addEventListener("touchstart", this.touchStart);
         window.addEventListener("touchmove", this.touchMove);

@@ -29,7 +29,7 @@ export default function App() {
           <directionalLight position={[-10, 20, 0]} intensity={1.5} />
           <directionalLight position={[0, -10, 0]} intensity={0.25} />
           
-          <Model url="stage.glb" />
+          <Model url="stageup.glb" />
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
