@@ -121,11 +121,8 @@ export default class Controls {
             "(min-width: 969px)": () => {
                 // console.log("fired desktop");
 
-                this.room.scale.set(0.11, 0.11, 0.11);
-                this.rectLight.width = 0.5;
-                this.rectLight.height = 0.7;
-                this.camera.orthographicCamera.position.set(0, 6.5, 10);
-                this.room.position.set(0, 0, 0);
+                this.scene.scale.set(0.11, 0.11, 0.11);
+
                 // First section -----------------------------------------
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -139,10 +136,10 @@ export default class Controls {
                 });
                 this.firstMoveTimeline.fromTo(
                     this.room.position,
-                    { x: 0, y: 0, z: 0 },
+                    { x: 0, y: -2, z: 0 },
                     {
                         x: () => {
-                            return this.sizes.width * 0.0014;
+                            return this.sizes.width * 0.0057;
                         },
                     }
                 );
