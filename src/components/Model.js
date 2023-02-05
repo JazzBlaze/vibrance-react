@@ -26,12 +26,14 @@ export default function Model({ url, ...props }) {
     let mixer = new THREE.AnimationMixer(scene);
     animations.forEach((clip) => {
       const action = mixer.clipAction(clip);
+
       action.clampWhenFinished = true;
       action.loop = THREE.LoopOnce;
        action.play();
      
+
       action.paused=pause;
-  
+
         
     });
   
@@ -44,6 +46,7 @@ export default function Model({ url, ...props }) {
  
   
     });
+    
   
     var lerp = {
       current: 0,
@@ -80,8 +83,12 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
-    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,useclamp);
-  console.log(animations);
+
+
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause);
+
+
+
   
     return <primitive object={scene} {...props} />;
   }
