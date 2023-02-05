@@ -9,12 +9,14 @@ export default class Preloader extends EventEmitter {
         this.scene = this.experience.scene;
         this.scene.position.set(0,0,0);
         this.scene.rotateX(0.1872665);
-
+       this.pause=this.experience.pause;
+       this.usepause=this.experience.usepause;
        
         console.log(this.scene)
         this.animations = this.experience.animations;
         this.sizes = this.experience.sizes;
         this.device = this.sizes.device;
+        
 
         this.sizes.on("switchdevice", (device) => {
             this.device = device;
@@ -122,24 +124,18 @@ export default class Preloader extends EventEmitter {
                         x: 0,
                         y: 0,
                         z: 0,
-                        ease: "power1.out",
+                        ease: "power1.out",   
+                        onComplete: () => {
+                        
+                            this.usepause(false);
+                          },
                     },
                     "same"
                 )
+               
+            
                 .to(
-                    this.roomChildren.cube.rotation,
-                    {
-                        y: 2 * Math.PI + Math.PI / 4,
-                    },
-                    "same"
-                )
-                .to(
-                    this.roomChildren.cube.scale,
-                    {
-                        x: 10,
-                        y: 10,
-                        z: 10,
-                    },
+                    console.log(this.state),
                     "same"
                 )
                 .to(

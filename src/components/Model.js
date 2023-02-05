@@ -5,10 +5,12 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import Experience from "./Experience";
 import { gsap } from "gsap";
 
+import { useState } from "react";
 
 
 
 export default function Model({ url, ...props }) {
+  const [pause,usepause]=useState(true)
     var { scene, animations } = useGLTF(url);
     const can=document.getElementById('can')
     can.style.background = "#EABFFF";
@@ -19,14 +21,15 @@ export default function Model({ url, ...props }) {
 
   
     const actions = useAnimations(animations)
-    
-  
+  let state=true;
     let mixer = new THREE.AnimationMixer(scene);
     animations.forEach((clip) => {
       const action = mixer.clipAction(clip);
-      action.startAt(3);
+  
       action.play();
- 
+      
+      action.paused=pause;
+  
         
     });
   
@@ -73,7 +76,7 @@ export default function Model({ url, ...props }) {
     // }
     
     // animate();
-    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations);
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause);
   
   
     return <primitive object={scene} {...props} />;
