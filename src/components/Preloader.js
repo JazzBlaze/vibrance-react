@@ -49,9 +49,9 @@ export default class Preloader extends EventEmitter {
                 opacity: 0,
                 delay: 1,
                 onComplete: () => {
-                    document
-                        .querySelector(".preloader")
-                        .classList.add("hidden");
+                    document.querySelector(".preloader").classList.add("hidden");
+                    document.querySelector(".alpha").style.visibility = "visible";
+                    
                 },
             });
             if (this.device === "desktop") {

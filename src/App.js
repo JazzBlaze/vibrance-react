@@ -3,17 +3,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import "./App.css";
-import { gsap } from "gsap";
-import Experience from "./components/Experience";
-import UseEffectOnce from "./components/UseEffectOnce"
+import Menu from "./components/Menu"
 
 import Model from "./components/Model";
-import ASScroll from "@ashthornton/asscroll";
 
-//for preloader
-import Sizes from "./components/Sizes"
-import {EventEmitter} from "events"
-import convert from "./components/covertDivsToSpans"
 
 export default function App() {
 
@@ -22,7 +15,9 @@ export default function App() {
     
     <>
     
+    
       <div className="experience">
+        
         <Canvas  id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
           <directionalLight position={[10, 10, 0]} intensity={1.5} />
           <directionalLight position={[-10, 10, 5]} intensity={1} />
@@ -50,8 +45,11 @@ export default function App() {
           </div>
         </div>
       </div>
+      
 
       <div className="page" asscroll-container="true">
+      <Menu/>
+        
         <div className="page-wrapper" asscroll="true">
           
           <section className="hero">
