@@ -3,6 +3,7 @@ import Experience from "./Experience";
 import GSAP, { Linear } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ASScroll from "@ashthornton/asscroll";
+import { delay } from "q";
 
 
 export default class Controls {
@@ -162,26 +163,28 @@ export default class Controls {
                     .to(
                         this.scene.position,
                         {   
-                            duration:100,
+                           duration:300,
                             x: () => {
                                 return -7;
                             },
+                            y:-24,
+                          
                             
                            
                         },
                         "same"
                     )
-                    .to(
-                        this.scene.position,{
+                    // .to(
+                    //     this.scene.position,{
                      
-                            duration:100,
-                            y:()=>{
-                                return -24;
+                    //         duration:100,
+                    //         y:()=>{
+                    //             return -24;
                                 
-                            }
+                    //         }
                       
-                        }
-                    )
+                    //     }
+                    // )
                     .to(
                         this.scene.scale,
                         {   duration:500,
@@ -192,6 +195,12 @@ export default class Controls {
                         },
                         "same"
                     )
+                    // .to(
+                    //     this.scene.position,{
+                    //         duration:1000,
+                    //         y:-24,
+                    //     }
+                    // )
 
 
 
@@ -205,12 +214,45 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
-                
-                .to(this.camera.orthographicCamera.position, {
-                    y: 1.5,
-                    x: -4.1,
-                });
-            },
+
+             
+            
+            this.fourthMoveTimeline = new GSAP.timeline({
+                scrollTrigger: {
+                    trigger: ".fourth-move",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.6,
+                    invalidateOnRefresh: true,
+                },
+            })
+            .to(
+                this.scene.position,{
+                    x:-this.sizes.width * 0.0059,
+                    y:-2,
+                    z:0,
+                    duration:300000,
+                }
+            )
+            .to(
+                this.scene.scale,{
+                    delay:9,
+                    x:0.4,
+                    y:0.4,
+                    z:0.4,
+                    duration:300000,
+                }
+            )
+            // .to(
+                    
+            //             this.scene.rotation,{
+            //                 delay:9,
+            //                 duration: 222, z: -Math.PI * 2,repeat:-1, ease: "none"
+            //             })
+
+            
+            
+        },
 
             // Mobile
             "(max-width: 968px)": () => {
@@ -282,10 +324,11 @@ export default class Controls {
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                     },
-                }).to(this.room.position, {
-                    z: -4.5,
-                });
+                })
+                
             },
+
+           
 
             // all
             all: () => {
@@ -402,102 +445,6 @@ export default class Controls {
                     z: 3,
                 });
 
-                // Mini Platform Animations
-                this.secondPartTimeline = new GSAP.timeline({
-                    scrollTrigger: {
-                        trigger: ".third-move",
-                        start: "center center",
-                    },
-                });
-
-                this.room.children.forEach((child) => {
-                    if (child.name === "Mini_Floor") {
-                        this.first = GSAP.to(child.position, {
-                            x: -5.44055,
-                            z: 13.6135,
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "Mailbox") {
-                        this.second = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "Lamp") {
-                        this.third = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "FloorFirst") {
-                        this.fourth = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "FloorSecond") {
-                        this.fifth = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "FloorThird") {
-                        this.sixth = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "Dirt") {
-                        this.seventh = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "Flower1") {
-                        this.eighth = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "Flower2") {
-                        this.ninth = GSAP.to(child.scale, {
-                            x: 1,
-                            y: 1,
-                            z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                });
-                this.secondPartTimeline.add(this.first);
-                this.secondPartTimeline.add(this.second);
-                this.secondPartTimeline.add(this.third);
-                this.secondPartTimeline.add(this.fourth, "-=0.2");
-                this.secondPartTimeline.add(this.fifth, "-=0.2");
-                this.secondPartTimeline.add(this.sixth, "-=0.2");
-                this.secondPartTimeline.add(this.seventh, "-=0.2");
-                this.secondPartTimeline.add(this.eighth);
-                this.secondPartTimeline.add(this.ninth, "-=0.1");
             },
         });
     }

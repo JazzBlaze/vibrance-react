@@ -15,6 +15,7 @@ export default function Model({ url, ...props }) {
   const[rotatex,userotatex]=useState(0);
   const[rotatez,userotatez]=useState(0);
 
+
     var { scene, animations } = useGLTF(url);
     const can=document.getElementById('can')
     can.style.background = "#EABFFF";

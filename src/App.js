@@ -1,17 +1,16 @@
-import React, { Suspense, useRef, useEffect } from "react";
+import React, { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import "./App.css";
-import Menu from "./components/Menu"
-
+import Menu from "./components/Menu";
 import Model from "./components/Model";
 
 
 export default function App() {
-
+  
   return (
-    
+   
     
     <>
     
@@ -24,7 +23,7 @@ export default function App() {
           <directionalLight position={[-10, 20, 0]} intensity={1.5} />
           <directionalLight position={[0, -10, 0]} intensity={0.25} />
           
-          <Model url="stageup.glb" />
+          <Model url="stageup.glb"  />
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
@@ -109,7 +108,7 @@ export default function App() {
 
             <div className="section-intro-wrapper">
               <h1 className="section-title">
-                <span className="section-title-text">About Me</span>
+                <span className="section-title-text">About Vibrance</span>
                 <div className="section-title-decoration styleOne"></div>
                 <div className="section-title-decoration styleTwo"></div>
                 <div className="section-title-decoration styleThree"></div>
@@ -142,7 +141,7 @@ export default function App() {
 
             <div className="section-intro-wrapper blue-text blue-border">
               <h1 className="section-title blue-text blue-border">
-                <span className="section-title-text blue-text">My Work</span>
+                <span className="section-title-text blue-text">Second Section</span>
                 <div className="section-title-decoration styleOne blue-border"></div>
                 <div className="section-title-decoration styleTwo blue-border"></div>
                 <div
@@ -183,7 +182,7 @@ export default function App() {
 
             <div className="section-intro-wrapper green-text green-border">
               <h1 className="section-title green-text green-border">
-                <span className="section-title-text green-text">Contact Me</span>
+                <span className="section-title-text green-text">Third Section</span>
                 <div className="section-title-decoration styleOne green-border"></div>
                 <div className="section-title-decoration styleTwo green-border"></div>
                 <div
@@ -208,8 +207,55 @@ export default function App() {
               <p className="section-text">Career updates and so much more!</p>
             </div>
           </section>
+           
+          <div className="fourth-move section-margin"></div>
+
+          <section className="second-section section right">
+            <div className="progress-wrapper progress-bar-wrapper-right">
+              <div className="progress-bar blue-background"></div>
+            </div>
+
+            <div className="section-intro-wrapper blue-text blue-border">
+              <h1 className="section-title blue-text blue-border">
+                <span className="section-title-text blue-text">Fourth Section</span>
+                <div className="section-title-decoration styleOne blue-border"></div>
+                <div className="section-title-decoration styleTwo blue-border"></div>
+                <div
+                  className="section-title-decoration styleThree blue-background blue-border"
+                ></div>
+              </h1>
+              <span className="section-number blue-text">02</span>
+            </div>
+
+            <div className="section-detail-wrapper">
+              <h3 className="section-heading">Candycane Village</h3>
+              <p className="section-text">
+                This project is in progress but it's about a super colorful
+                village where the entire world including the people are candies.
+                So far the story is that they are set out to explore their "space"
+                only to realize it's a human that will try to destroy them.
+              </p>
+              <h3 className="section-heading">Rebecca's Reddish Radishes</h3>
+              <p className="section-text">
+                Oh what's that? Why, it's a red radish! Oop, another one! In this
+                playful and comedy animation, Rebecca, a young farmer, decided to
+                plant radishes for the first time, but there is a big twist!
+              </p>
+              <h3 className="section-heading">Flora</h3>
+              <p className="section-text">
+                A heartwarming story about a little orphan girl who tries to find
+                her way back home.
+              </p>
+            </div>
+          </section>
+
+
+
+
+
         </div>
       </div>
+
 
 
 

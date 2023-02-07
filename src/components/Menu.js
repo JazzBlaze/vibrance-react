@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Menu.css';
 import logo from "../images/exit.svg";
-import { Link } from 'react-router-dom';
+
 
 
 function Menu() {
@@ -12,7 +12,7 @@ function Menu() {
     <>
             <div className='alpha'>
                 <div className="home">
-                    <div className="container"><div className="menu-div" href="/">EXPLORE</div></div>
+                    <div className="container"><div className="menu-div" href="/">MENU</div></div>
                 </div>
                 <div className="menu">
                     <div className="background">Menu</div>
