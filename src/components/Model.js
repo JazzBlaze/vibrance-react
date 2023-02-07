@@ -11,7 +11,9 @@ import { useState } from "react";
 
 export default function Model({ url, ...props }) {
   const [pause,usepause]=useState(true)
-  const [clamp,useclamp]=useState(false);
+  const [lerpdisabley,uselerpdisable]=useState(0);
+  const[rotatex,userotatex]=useState(0);
+  const[rotatez,userotatez]=useState(0);
 
     var { scene, animations } = useGLTF(url);
     const can=document.getElementById('can')
@@ -60,7 +62,7 @@ export default function Model({ url, ...props }) {
     const runAction3 = mixer.clipAction( TextRot );
 
 
-    //inifite animations
+    //inifite animationsq
     //add cross fade from idleaction after getting precise frame values
 
     function set(){
@@ -104,7 +106,7 @@ export default function Model({ url, ...props }) {
     window.addEventListener("mousemove", (e) => {
       var rotation =
           ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
-      lerp.target = rotation * 0.05;
+      lerp.target = rotation * 0.09;
   
     });
     
@@ -115,16 +117,17 @@ export default function Model({ url, ...props }) {
         lerp.ease
         
       );
+ 
       scene.rotation.y= lerp.current;
-      scene.rotation.z-=0;
-
+      scene.rotation.x+=rotatex;
+      scene.rotation.z+=rotatez;
      
   
     })
    
 
 
-    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause);
+    const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,userotatex,userotatez,uselerpdisable);
 
 
 

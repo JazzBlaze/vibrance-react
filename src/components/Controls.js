@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import Experience from "./Experience";
-import GSAP from "gsap";
+import GSAP, { Linear } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ASScroll from "@ashthornton/asscroll";
 
@@ -11,8 +11,8 @@ export default class Controls {
         this.experience = new Experience();
         this.scene = this.experience.scene;
         this.sizes = this.experience.sizes;
+        this.uselerpdisable=this.experience.uselerpdisable;
       
-
         //filling circles
         const geometry = new THREE.CircleGeometry(5, 64);
         const material = new THREE.MeshStandardMaterial({ color: 0xF7DC22 });
@@ -134,7 +134,9 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 });
-                this.firstMoveTimeline.fromTo(
+        
+                this.firstMoveTimeline
+                .fromTo(
                     this.scene.position,
                     { x: 0, y: -2, z: 0 },
                     {
@@ -142,8 +144,17 @@ export default class Controls {
                             console.log(this.sizes.width*0.0020);
                             return this.sizes.width * 0.0057;
                         },
-                    }
-                );
+                    },
+
+                   
+
+                   
+                    
+                )
+                
+             
+    
+
 
                 // Second section -----------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -157,22 +168,34 @@ export default class Controls {
                 })
                     .to(
                         this.scene.position,
-                        {
+                        {   
+                            duration:100,
                             x: () => {
-                                return 1;
+                                return -7;
                             },
-                            z: () => {
-                                return this.sizes.height * 0.0032;
-                            },
+                            
+                           
                         },
                         "same"
                     )
                     .to(
+                        this.scene.position,{
+                     
+                            duration:100,
+                            y:()=>{
+                                return -24;
+                                
+                            }
+                      
+                        }
+                    )
+                    .to(
                         this.scene.scale,
-                        {
-                            x: 0.8,
-                            y: 0.8,
-                            z: 0.8,
+                        {   duration:500,
+                            x: 3,
+                            y: 3,
+                            z: 3,
+                           
                         },
                         "same"
                     )
@@ -187,7 +210,9 @@ export default class Controls {
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                     },
-                }).to(this.camera.orthographicCamera.position, {
+                })
+                
+                .to(this.camera.orthographicCamera.position, {
                     y: 1.5,
                     x: -4.1,
                 });

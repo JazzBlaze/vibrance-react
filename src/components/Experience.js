@@ -7,7 +7,7 @@ import Controls from "./Controls";
 export default class Experience {
     
     static instance;
-    constructor(canvas,scene,animations,pause,usepause) {
+    constructor(canvas,scene,animations,pause,usepause,useroatex,userotatez,uselerpdisable) {
       
         if (Experience.instance) {
             return Experience.instance;
@@ -18,7 +18,9 @@ export default class Experience {
         this.animations=animations;
         this.pause=pause;
         this.usepause=usepause;
-
+        this.useroatex=useroatex;
+        this.userotatez=userotatez;
+        this.uselerpdisable=uselerpdisable;
         this.sizes = new Sizes();
 
 

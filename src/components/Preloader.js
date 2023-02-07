@@ -11,6 +11,8 @@ export default class Preloader extends EventEmitter {
         
        this.pause=this.experience.pause;
        this.usepause=this.experience.usepause;
+       this.userotatex=this.experience.useroatex;
+       this.useroatez=this.experience.userotatez;
        this.val=this.experience.val;
        this.useval=this.experience.useval;
        
@@ -129,9 +131,24 @@ export default class Preloader extends EventEmitter {
                 // .to(
                 //     this.scene, {rotation:"360",duration:1, ease:"Linear", repeat:-1}
                 // )
+                // .to(
+                    
+                //     this.useroatez(-0.1),
+                // )
+                // .to(
+                    
+                //         this.scene.rotation,{
+                //             duration: 2, z: -Math.PI * 2,repeat:-1, ease: "none"
+                //         }
+                    
+                // )
+                
                 .to(
+                    
+                  
+                
                     this.scene.position,
-                    {
+                    {   
                         x: 0,
                         y: 0,
                         z: 0,
