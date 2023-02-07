@@ -2,6 +2,7 @@ import * as THREE from "three";
 import Sizes from "./Sizes";
 import Preloader from "./Preloader.js";
 import Controls from "./Controls";
+import Floor from "./Floor";
 
 
 export default class Experience {
@@ -23,8 +24,9 @@ export default class Experience {
         this.uselerpdisable=uselerpdisable;
         this.sizes = new Sizes();
 
-
+        this.floor=new Floor();
         this.preloader = new Preloader();
+        
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();

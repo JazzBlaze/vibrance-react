@@ -15,6 +15,7 @@ export default class Preloader extends EventEmitter {
        this.useroatez=this.experience.userotatez;
        this.val=this.experience.val;
        this.useval=this.experience.useval;
+
        
         console.log(this.scene)
         this.animations = this.experience.animations;
@@ -178,6 +179,8 @@ export default class Preloader extends EventEmitter {
                     onComplete: () => {
                  
                         this.usepause(false);
+
+
                         
                         
                         

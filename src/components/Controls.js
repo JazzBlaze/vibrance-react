@@ -14,40 +14,10 @@ export default class Controls {
         this.sizes = this.experience.sizes;
         this.uselerpdisable=this.experience.uselerpdisable;
       
-        //filling circles
-        const geometry = new THREE.CircleGeometry(5, 64);
-        const material = new THREE.MeshStandardMaterial({ color: 0xF7DC22 });
-        const material2 = new THREE.MeshStandardMaterial({ color: 0x8395cd });
-        const material3 = new THREE.MeshStandardMaterial({ color: 0x7ad0ac });
-
-        this.circleFirst = new THREE.Mesh(geometry, material);
-        this.circleSecond = new THREE.Mesh(geometry, material2);
-        this.circleThird = new THREE.Mesh(geometry, material3);
-
-        this.circleFirst.position.y = -0.29;
-
-        this.circleSecond.position.y = -0.28;
-        this.circleSecond.position.x = 2;
-
-        this.circleThird.position.y = -0.27;
-
-        this.circleFirst.scale.set(0, 0, 0);
-        this.circleSecond.scale.set(0, 0, 0);
-        this.circleThird.scale.set(0, 0, 0);
-
-        this.circleFirst.rotation.x =
-            this.circleSecond.rotation.x =
-            this.circleThird.rotation.x =
-                -Math.PI / 2;
-
-        this.circleFirst.receiveShadow =
-            this.circleSecond.receiveShadow =
-            this.circleThird.receiveShadow =
-                true;
-
-        this.scene.add(this.circleFirst);
-        this.scene.add(this.circleSecond);
-        this.scene.add(this.circleThird);
+        this.circleFirst = this.experience.floor.circleFirst;
+        this.circleSecond = this.experience.floor.circleSecond;
+        this.circleThird = this.experience.floor.circleThird;
+        this.circleFour = this.experience.floor.circleFour;
 
      GSAP.registerPlugin(ScrollTrigger);
 
@@ -400,9 +370,10 @@ export default class Controls {
                         scrub: 0.6,
                     },
                 }).to(this.circleFirst.scale, {
-                    x: 10,
-                    y: 10,
-                    z: 10,
+                    x: 13,
+                    y: 13,
+                    z: 13,
+                    
                 });
 
                 // Second section -----------------------------------------
@@ -417,16 +388,9 @@ export default class Controls {
                     .to(
                         this.circleSecond.scale,
                         {
-                            x: 3,
-                            y: 3,
-                            z: 3,
-                        },
-                        "same"
-                    )
-                    .to(
-                        this.room.position,
-                        {
-                            y: 0.7,
+                            x: 13,
+                            y: 13,
+                            z: 13,
                         },
                         "same"
                     );
@@ -440,9 +404,22 @@ export default class Controls {
                         scrub: 0.6,
                     },
                 }).to(this.circleThird.scale, {
-                    x: 3,
-                    y: 3,
-                    z: 3,
+                    x: 13,
+                    y: 13,
+                    z: 13,
+                });
+                //Fourth section--------------------------------------------
+                this.circleFour = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".fourth-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                    },
+                }).to(this.circleFour.scale, {
+                    x: 13,
+                    y: 13,
+                    z: 13,
                 });
 
             },
