@@ -33,7 +33,7 @@ svg {
   --td: 150ms;
   --te: cubic-bezier(0.215, 0.61, 0.355, 1);
   /* Light Theme Variables */
-  --color-text-light: #333332;
+  --color-text-light: #ecec15;
   --color-background-light: #9275D2;
   --color-pink-light: #e5a1aa;
   --color-green-light: #7ad0ac;
