@@ -17,26 +17,29 @@ export default function Model({ url, ...props }) {
 
 
     var { scene, animations } = useGLTF(url);
-    const can=document.getElementById('can')
-    can.style.background = "#EABFFF";
+
+    
     scene.scale.set(0.4,0.4,0.4);
     // scene.rotateX(-0.0872665);
     scene.position.set(0,-2,0);
     console.log(scene.children)
 
     //to access children from scene
+    var text;
+    scene.children.forEach((child)=>{
+      child.children.forEach((asset)=>{
 
-    // scene.children.forEach((child)=>{
-    //   child.children.forEach((asset)=>{
-    //     if(asset.name=== "board_text"){
-    //       text=asset;
-    //     }
-
-
-    //   })
-    // })
+        if(asset.name=== "display_box"){
+          text=asset;
+        }
 
 
+      })
+    })
+    const texture = new THREE.TextureLoader().load( "vibrance.svg" );
+    // text.material = new THREE.MeshBasicMaterial({
+    //   map: texture,
+    // });
     let mixer = new THREE.AnimationMixer(scene);
 
     animations.forEach((clip) => {
@@ -51,13 +54,13 @@ export default function Model({ url, ...props }) {
     });
 
 
-    
+    console.log(animations)
 
 
 
     var Lspeaker = THREE.AnimationUtils.subclip( animations[17], 'run1', 100, 150 );
     var Rspeaker =THREE.AnimationUtils.subclip( animations[16], 'run2', 100, 150 );
-    var TextRot =THREE.AnimationUtils.subclip( animations[2], 'rotate', 100, 150 );
+    var TextRot =THREE.AnimationUtils.subclip( animations[2], 'rotate', 105, 150 );
     const runAction1 = mixer.clipAction( Lspeaker );
     const runAction2 = mixer.clipAction( Rspeaker );
     const runAction3 = mixer.clipAction( TextRot );
@@ -125,7 +128,7 @@ export default function Model({ url, ...props }) {
      
   
     })
-
+    //menu
     const menuBtn = document.querySelector(".menu-div");
 
     const exitBtn = document.querySelector(".exit");
@@ -152,6 +155,31 @@ export default function Model({ url, ...props }) {
         t1.timeScale(2.5);
         t1.reverse();
     });
+
+    //section text slider
+    // window.addEventListener('mousemove', handleMouseMove);
+    // window.addEventListener('resize', handleWindowResize);
+
+    // const spansSlow = document.querySelectorAll('.spanSlow');
+    // const spansFast = document.querySelectorAll('.spanFast');
+
+    // let width = window.innerWidth;
+
+    // function handleMouseMove(e) {
+    //   let normalizedPosition = e.pageX / (width/2) - 1;
+    //   let speedSlow = 100 * normalizedPosition;
+    //   let speedFast = 200 * normalizedPosition;
+    //   spansSlow.forEach((span) => {
+    //     span.style.transform = `translate(${speedSlow}px)`;
+    //   });
+    //   spansFast.forEach((span) => {
+    //     span.style.transform = `translate(${speedFast}px)`
+    //   })
+    // }
+    // //we need to recalculate width when the window is resized
+    // function handleWindowResize() {
+    //   width = window.innerWidth;
+    // }
    
 
 
