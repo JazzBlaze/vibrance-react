@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@font-face {
+  font-family: "Fred";
+  src: local("FredokaOne"), url("./fonts/FredokaOne.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NM";
+  src: local("NaughtyMonster"),
+    url("./fonts/NaughtyMonster.woff") format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
-  font-family: "Montserrat", sans-serif;
+body{
+  font-family: "Fred";
 }
-
-/* body{
-  overflow: hidden;
-} */
 
 h1,
 section,
@@ -33,8 +39,8 @@ svg {
   --td: 150ms;
   --te: cubic-bezier(0.215, 0.61, 0.355, 1);
   /* Light Theme Variables */
-  --color-text-light: #ecec15;
-  --color-background-light: #9275D2;
+  --color-text-light: #333332;
+  --color-background-light: #9275d2;
   --color-pink-light: #e5a1aa;
   --color-green-light: #7ad0ac;
   --color-blue-light: #8395cd;
@@ -43,22 +49,17 @@ svg {
   --color-pink: var(--color-pink-light);
   --color-green: var(--color-green-light);
   --color-blue: var(--color-blue-light);
-
- 
 }
-
-
 
 ul {
   list-style: none;
 }
 
-
-
-
-
 /* Experience --------------------------------------------- */
 
+#can {
+  background-color: #c6d2ff;
+}
 .experience {
   position: fixed;
   width: 100vw;
@@ -148,13 +149,14 @@ ul {
 }
 
 .intro-text {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 50%;
   left: 60%;
-  font-weight:lighter;
+  font-weight: lighter;
   font-size: 66px;
   color: var(--color-text);
   transform: translate(-50%, -50%);
@@ -187,8 +189,6 @@ ul {
   right: 48px;
   z-index: 99999999999999;
 }
-
-
 
 /* Section Formatting --------------------------------------------- */
 .section-margin {
@@ -346,7 +346,7 @@ ul {
 
 .hero-main {
   position: absolute;
-  bottom: 168px;
+  bottom: calc(50% - 240px);
   left: 0;
   color: var(--color-text);
 }
@@ -361,6 +361,7 @@ ul {
 .hero-main-title {
   font-size: 64px;
   color: var(--color-text);
+  font-family: "NM", sans-serif;
 }
 
 .hero-main-description {
@@ -415,8 +416,7 @@ ul {
   }
   .hero-second {
     bottom: 30px;
-    top:unset;
-    
+    top: unset;
   }
   .hero-wrapper {
     width: calc(100% - 60px);
@@ -445,7 +445,6 @@ ul {
 
 /* navbar */
 
-
 .button_container {
   position: fixed;
   top: 5%;
@@ -454,22 +453,22 @@ ul {
   width: 35px;
   cursor: pointer;
   z-index: 100;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
 .button_container:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 .button_container.active .top {
   transform: translateY(11px) translateX(0) rotate(45deg);
-  background: #FFF;
+  background: #fff;
 }
 .button_container.active .middle {
   opacity: 0;
-  background: #FFF;
+  background: #fff;
 }
 .button_container.active .bottom {
   transform: translateY(-11px) translateX(0) rotate(-45deg);
-  background: #FFF;
+  background: #fff;
 }
 .button_container span {
   background: #171717;
@@ -480,7 +479,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all .35s ease;
+  transition: all 0.35s ease;
   cursor: pointer;
 }
 .button_container span:nth-of-type(2) {
@@ -499,7 +498,7 @@ ul {
   height: 0%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .35s, visibility .35s, height .35s;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
 }
 .overlay.open {
@@ -508,17 +507,17 @@ ul {
   height: 100%;
 }
 .overlay.open li {
-  animation: fadeInRight .5s ease forwards;
-  animation-delay: .35s;
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
 }
 .overlay.open li:nth-of-type(2) {
-  animation-delay: .4s;
+  animation-delay: 0.4s;
 }
 .overlay.open li:nth-of-type(3) {
-  animation-delay: .45s;
+  animation-delay: 0.45s;
 }
 .overlay.open li:nth-of-type(4) {
-  animation-delay: .50s;
+  animation-delay: 0.5s;
 }
 .overlay nav {
   position: relative;
@@ -548,23 +547,25 @@ ul {
 .overlay ul li a {
   display: block;
   position: relative;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   overflow: hidden;
 }
-.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+.overlay ul li a:hover:after,
+.overlay ul li a:focus:after,
+.overlay ul li a:active:after {
   width: 100%;
 }
 .overlay ul li a:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 0%;
   transform: translateX(-50%);
   height: 3px;
-  background: #FFF;
-  transition: .35s;
+  background: #fff;
+  transition: 0.35s;
 }
 
 @keyframes fadeInRight {
@@ -579,12 +580,9 @@ ul {
 }
 
 .gradient-headings {
-  background: #ff3400;
-
-
-  background: linear-gradient(
-    0deg, #FFDEE9 0%, #021d1c 100%
-  );
+  background: #f1f6f1;
+/* 
+  background: linear-gradient(180deg, #ff318a 0%, #ff006f 124.22%); */
   width: fit-content;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
