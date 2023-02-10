@@ -23,13 +23,18 @@ export default function App() {
     
       <div className="experience">
         
-        <Canvas  id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
-          <directionalLight position={[10, 10, 0]} intensity={1.5} />
-          <directionalLight position={[-10, 10, 5]} intensity={1} />
-          <directionalLight position={[-10, 20, 0]} intensity={1.5} />
-          <directionalLight position={[0, -10, 0]} intensity={0.25} />
-          
-          <Model url="stage.glb"  />
+        <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
+
+          <ambientLight  color="#484D64" intensity={1.5} />
+          {/* <directionalLight castShadow="true" position={[26.381, -6.93, 19.768]} intensity={3} /> */}
+          <pointLight  color="#B6F6FF" castShadow="true" position={[0,22,0]} intensity={1}/>
+          <pointLight color="#C796CC" castShadow="true" position={[24,20,24]} intensity={1.5}/>
+          <pointLight color="#FFFCC0" castShadow="true" position={[-4.9,11.05,-1]} intensity={1}/>
+          <pointLight color="#F1D1FF" castShadow="true" position={[-12,-13.6,-15]} intensity={0.8}/>
+          <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
+          <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
+          {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
+          <Model  url="stage.glb"  />
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
@@ -108,6 +113,7 @@ export default function App() {
           <div className="first-move section-margin"></div>
 
           <section className="first-section section left">
+            
             <div className="progress-wrapper progress-bar-wrapper-left">
               <div className="progress-bar"></div>
             </div>
