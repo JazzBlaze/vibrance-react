@@ -184,6 +184,20 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
+                .to(
+                    this.scene.position,
+                    {   
+                       duration:300,
+                        x: () => {
+                            return 15;
+                        },
+                        y:-24,
+                      
+                        
+                       
+                    },
+                    "same"
+                )
 
              
             
@@ -404,6 +418,7 @@ export default class Controls {
                         scrub: 0.6,
                     },
                 }).to(this.circleThird.scale, {
+                    
                     x: 13,
                     y: 13,
                     z: 13,
@@ -417,6 +432,8 @@ export default class Controls {
                         scrub: 0.6,
                     },
                 }).to(this.circleFour.scale, {
+                    delay:100,
+                    duration:30,
                     x: 13,
                     y: 13,
                     z: 13,
