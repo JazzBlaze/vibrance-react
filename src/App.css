@@ -40,7 +40,7 @@ svg {
   --te: cubic-bezier(0.215, 0.61, 0.355, 1);
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #9275d2;
+  --color-background-light: #9275D2;
   --color-pink-light: #e5a1aa;
   --color-green-light: #7ad0ac;
   --color-blue-light: #8395cd;
@@ -199,10 +199,13 @@ ul {
 .section {
   position: relative;
   width: 50%;
+
   padding: 1000px 4%;
   margin: 0;
-  background-color: var(--color-background);
+ 
+  background-image: url(./images/sectionbg.svg);
   overflow: hidden;
+
 }
 
 
@@ -591,3 +594,12 @@ ul {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
+.vivbg{
+  background-color: #8395cd;
+
+}
+
+
+
+
+

@@ -10,6 +10,12 @@ import { useState } from "react";
 
 
 export default function Model({ url, ...props }) {
+
+ 
+
+
+ 
+
   const [pause,usepause]=useState(true)
   const [lerpdisabley,uselerpdisable]=useState(0);
   const[rotatex,userotatex]=useState(0);

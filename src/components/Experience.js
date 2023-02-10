@@ -30,7 +30,7 @@ export default class Experience {
 
         this.preloader.on("enablecontrols", () => {
             this.controls = new Controls();
-            console.log("ssn");
+   
            
         });
 

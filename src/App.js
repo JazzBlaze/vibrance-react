@@ -5,21 +5,22 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 
 import Menu from "./components/Menu";
 import Model from "./components/Model";
+import Vivus from "vivus";
 
 
-//fonts
 // import "./fonts/FredokaOne.ttf"
 // import "./fonts/NaughtyMonster.ttf"
 import "./App.css";
 import Stats from "./components/Stats";
 
+
 export default function App() {
-  
+ 
   return (
    
-    
+
     <>
-    
+
     
       <div className="experience">
         
@@ -64,7 +65,7 @@ export default function App() {
           
           <section className="hero">
             <div className="hero-wrapper">
-
+    
               <div className="intro-text">VIBRANCE'23</div>
               <div className="arrow-svg-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
@@ -119,6 +120,7 @@ export default function App() {
             </div>
 
             <div className="section-intro-wrapper">
+           
               <h1 className="section-title">
                 <span className="section-title-text">About Vibrance</span>
                 <div className="section-title-decoration styleOne"></div>
@@ -127,9 +129,15 @@ export default function App() {
               </h1>
               <span className="section-number">01</span>
             </div>
-
+             
             <div className="section-detail-wrapper">
+            
+{/*            
+            <img src={bgsec} alt="Your SVG" /> */}
+            {/* <viv/> */}
+ 
 
+           
               <p className="section-text">
                 Hi there 👋! I'm a third-year digital media student from UK
                 currently studying in Germany. My dream is to work for Disney or

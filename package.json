@@ -15,7 +15,9 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-visibility-sensor": "^5.1.1",
+    "react-vivus": "^0.0.2",
     "three": "^0.148.0",
+    "vivus": "^0.4.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
