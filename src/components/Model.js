@@ -22,30 +22,34 @@ export default function Model({ url, ...props }) {
   const[rotatez,userotatez]=useState(0);
 
 
-    var { scene, animations } = useGLTF(url);
+    var { scene, animations  } = useGLTF(url);
 
-    
+
     scene.scale.set(0.4,0.4,0.4);
     // scene.rotateX(-0.0872665);
     scene.position.set(0,-2,0);
     console.log(scene.children)
 
     //to access children from scene
-    var text;
+    var text,disp;
     scene.children.forEach((child)=>{
       child.children.forEach((asset)=>{
 
-        if(asset.name=== "display_box"){
+        if(asset.name=== "display"){
+          disp=asset;
+        }
+        if(asset.name=== "board_text"){
           text=asset;
         }
 
 
       })
     })
-    const texture = new THREE.TextureLoader().load( "vibrance.svg" );
+    // const texture = new THREE.TextureLoader().load( "vibrance.svg" );
     // text.material = new THREE.MeshBasicMaterial({
     //   map: texture,
     // });
+    text.visible=false
     let mixer = new THREE.AnimationMixer(scene);
 
     animations.forEach((clip) => {
@@ -64,19 +68,32 @@ export default function Model({ url, ...props }) {
 
 
 
-    var Lspeaker = THREE.AnimationUtils.subclip( animations[17], 'run1', 100, 150 );
-    var Rspeaker =THREE.AnimationUtils.subclip( animations[16], 'run2', 100, 150 );
-    var TextRot =THREE.AnimationUtils.subclip( animations[2], 'rotate', 105, 150 );
+    var Lspeaker = THREE.AnimationUtils.subclip( animations[19], 'run1', 100, 160 );
+    var Rspeaker =THREE.AnimationUtils.subclip( animations[20], 'run2', 100, 160 );
+    
+    var Lamp1 =THREE.AnimationUtils.subclip( animations[12], 'Lamp', 100, 170 );
+    var Lamp2 =THREE.AnimationUtils.subclip( animations[13], 'Lamp', 100, 170 );
+    var Lamp3 =THREE.AnimationUtils.subclip( animations[14], 'Lamp', 100, 170 );
+    var Lamp4 =THREE.AnimationUtils.subclip( animations[15], 'Lamp', 100, 170 );
+    var Lamp5 =THREE.AnimationUtils.subclip( animations[16], 'Lamp', 100, 170 );
     const runAction1 = mixer.clipAction( Lspeaker );
     const runAction2 = mixer.clipAction( Rspeaker );
-    const runAction3 = mixer.clipAction( TextRot );
+    const runAction3 = mixer.clipAction( animations[2] );
+    runAction3.loop=THREE.LoopRepeat;
+    runAction3.clampWhenFinished = false;
+    const l1 = mixer.clipAction( Lamp1 );
+    const l2 = mixer.clipAction( Lamp2 );
+    const l3 = mixer.clipAction( Lamp3 );
+    const l4 = mixer.clipAction( Lamp4 );
+    const l5 = mixer.clipAction( Lamp5 );
+
 
 
     //inifite animationsq
     //add cross fade from idleaction after getting precise frame values
 
     function set(){
-
+      
       // idleAction1.play();
       // setTimeout( () => {
       //   idleAction1.crossFadeTo( runAction1, 1 );
@@ -87,6 +104,12 @@ export default function Model({ url, ...props }) {
       runAction2.play();
 
       runAction3.play();
+      l1.play();
+      l2.play();
+      l3.play();
+      l4.play();
+      l5.play();
+      text.visible=true
 
       
     }

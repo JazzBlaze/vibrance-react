@@ -58,7 +58,7 @@ ul {
 /* Experience --------------------------------------------- */
 
 #can {
-  background-color: #c6d2ff;
+  background-color: #ffb52c;
 }
 .experience {
   position: fixed;
@@ -149,7 +149,7 @@ ul {
 }
 
 .intro-text {
-  font-family: "Montserrat", sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,6 +207,8 @@ ul {
   overflow: hidden;
 
 }
+
+
 
 .left {
   margin-right: auto;
