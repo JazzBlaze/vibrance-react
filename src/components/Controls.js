@@ -110,16 +110,16 @@ export default class Controls {
                 .fromTo(
                     this.scene.position,
                     { x: 0, y: -2, z: 0,
-                        onComplete: () => {
-                            
-                        this.experience.preloader.emit('myEvent')
-                        }
+                        
                     },
                     {
                         x: () => {
                             
                             return this.sizes.width * 0.0057;
                         },
+                        onComplete: () => {
+                            this.experience.preloader.emit('myEvent')
+                        }
                     }
                 );
 
@@ -142,13 +142,14 @@ export default class Controls {
                                 return -7;
                             },
                             y:-24,
-                            onComplete: () => {
-                                window.modelObjects.guitar.play();
-                                window.modelObjects.guitar.loop=THREE.LoopOnce;
-                                window.modelObjects.guitar.clampWhenFinished = true;
+                            // onComplete: () => {
+                            
+                            //     window.modelObjects.guitar.play();
+                            //     window.modelObjects.guitar.loop=THREE.LoopOnce;
+                            //     window.modelObjects.guitar.clampWhenFinished = true;
 
                                 
-                            },
+                            // },
                           
                             
                            
