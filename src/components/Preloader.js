@@ -180,7 +180,6 @@ export default class Preloader extends EventEmitter {
                  
                         this.usepause(false);
 
-
                         
                         
                         

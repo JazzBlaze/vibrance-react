@@ -5,13 +5,13 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 
 import Menu from "./components/Menu";
 import Model from "./components/Model";
-import Vivus from "vivus";
 
 
 // import "./fonts/FredokaOne.ttf"
 // import "./fonts/NaughtyMonster.ttf"
 import "./App.css";
 import Stats from "./components/Stats";
+import "./components/counter"
 
 
 export default function App() {

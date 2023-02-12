@@ -1,5 +1,5 @@
 import React, { Children, useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import Experience from "./Experience";
@@ -42,6 +42,28 @@ export default function Model({ url, ...props }) {
           text=asset;
         }
 
+        // ["board_back", "body_main","display", "Display_bar","display_box","stage","stairs1","stairs1001",].forEach(e => {
+        //   if (asset.name === e) {
+        //     asset.visible = true;
+        //   }
+        // })
+
+        // if(asset.name=== "board_back"){
+        //   asset.visible=true
+        // }
+        // if(asset.name=== "board_back"){
+        //   asset.visible=true
+        // }
+        // if(asset.name=== "board_back"){
+        //   asset.visible=true
+        // }
+        // if(asset.name=== "board_back"){
+        //   asset.visible=true
+        // }
+        
+
+        
+
 
       })
     })
@@ -49,16 +71,19 @@ export default function Model({ url, ...props }) {
     // text.material = new THREE.MeshBasicMaterial({
     //   map: texture,
     // });
-    text.visible=false
+    text.visible=false;
     let mixer = new THREE.AnimationMixer(scene);
 
     animations.forEach((clip) => {
+      if (clip.name!=="guitar_acousticAction"){
+        const action = mixer.clipAction(clip);
+        action.clampWhenFinished = true;
+        action.loop = THREE.LoopOnce;
+        action.play();
+        action.paused=pause;
+      }
 
-      const action = mixer.clipAction(clip);
-      action.clampWhenFinished = true;
-      action.loop = THREE.LoopOnce;
-      action.play();
-      action.paused=pause;
+      
 
 
     });
@@ -76,9 +101,14 @@ export default function Model({ url, ...props }) {
     var Lamp3 =THREE.AnimationUtils.subclip( animations[14], 'Lamp', 100, 170 );
     var Lamp4 =THREE.AnimationUtils.subclip( animations[15], 'Lamp', 100, 170 );
     var Lamp5 =THREE.AnimationUtils.subclip( animations[16], 'Lamp', 100, 170 );
+
+
     const runAction1 = mixer.clipAction( Lspeaker );
     const runAction2 = mixer.clipAction( Rspeaker );
     const runAction3 = mixer.clipAction( animations[2] );
+
+
+
     runAction3.loop=THREE.LoopRepeat;
     runAction3.clampWhenFinished = false;
     const l1 = mixer.clipAction( Lamp1 );
@@ -86,6 +116,7 @@ export default function Model({ url, ...props }) {
     const l3 = mixer.clipAction( Lamp3 );
     const l4 = mixer.clipAction( Lamp4 );
     const l5 = mixer.clipAction( Lamp5 );
+
 
 
 
@@ -116,6 +147,19 @@ export default function Model({ url, ...props }) {
     if(pause===false){
       setTimeout(set,5500)
     }
+
+
+    /**
+     * Exposing 3D model objects to the window
+     */
+    const guitar=mixer.clipAction(animations[11]);
+    guitar.clampWhenFinished=true;
+
+    window.modelObjects = {
+      guitar: guitar,
+
+    };
+
   
   
     
@@ -185,37 +229,20 @@ export default function Model({ url, ...props }) {
         t1.reverse();
     });
 
-    //section text slider
-    // window.addEventListener('mousemove', handleMouseMove);
-    // window.addEventListener('resize', handleWindowResize);
-
-    // const spansSlow = document.querySelectorAll('.spanSlow');
-    // const spansFast = document.querySelectorAll('.spanFast');
-
-    // let width = window.innerWidth;
-
-    // function handleMouseMove(e) {
-    //   let normalizedPosition = e.pageX / (width/2) - 1;
-    //   let speedSlow = 100 * normalizedPosition;
-    //   let speedFast = 200 * normalizedPosition;
-    //   spansSlow.forEach((span) => {
-    //     span.style.transform = `translate(${speedSlow}px)`;
-    //   });
-    //   spansFast.forEach((span) => {
-    //     span.style.transform = `translate(${speedFast}px)`
-    //   })
-    // }
-    // //we need to recalculate width when the window is resized
-    // function handleWindowResize() {
-    //   width = window.innerWidth;
-    // }
-   
-
-
     const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,userotatex,userotatez,uselerpdisable);
-
-
-
   
+    useThree(({camera}) => {
+      const rot=  new gsap.timeline();
+
+        experience.preloader.on('myEvent', () => rot.to(camera.position,
+          {
+            x:0,
+            y:7,
+            z:30,
+            duration:0.5,
+          }
+      ))
+    });
+
     return <primitive object={scene} {...props} />;
   }

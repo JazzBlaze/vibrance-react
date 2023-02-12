@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Fred";
 }
 
@@ -40,7 +40,7 @@ svg {
   --te: cubic-bezier(0.215, 0.61, 0.355, 1);
   /* Light Theme Variables */
   --color-text-light: #333332;
-  --color-background-light: #9275D2;
+  --color-background-light: #9275d2;
   --color-pink-light: #e5a1aa;
   --color-green-light: #7ad0ac;
   --color-blue-light: #8395cd;
@@ -59,6 +59,7 @@ ul {
 
 #can {
   background-color: #ffb52c;
+  background-image: url(./images/sectionbg.svg);
 }
 .experience {
   position: fixed;
@@ -149,7 +150,6 @@ ul {
 }
 
 .intro-text {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,13 +202,10 @@ ul {
 
   padding: 1000px 4%;
   margin: 0;
- 
+
   background-image: url(./images/sectionbg.svg);
   overflow: hidden;
-
 }
-
-
 
 .left {
   margin-right: auto;
@@ -586,7 +583,7 @@ ul {
 
 .gradient-headings {
   background: #f1f6f1;
-/* 
+  /* 
   background: linear-gradient(180deg, #ff318a 0%, #ff006f 124.22%); */
   width: fit-content;
   -webkit-background-clip: text;
@@ -594,12 +591,6 @@ ul {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
-.vivbg{
+.vivbg {
   background-color: #8395cd;
-
 }
-
-
-
-
-
