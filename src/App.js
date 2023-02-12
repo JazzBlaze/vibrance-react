@@ -5,7 +5,7 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 
 import Menu from "./components/Menu";
 import Model from "./components/Model";
-
+import SvgComponent from "./components/SvgComponent";
 
 // import "./fonts/FredokaOne.ttf"
 // import "./fonts/NaughtyMonster.ttf"
@@ -13,7 +13,7 @@ import "./App.css";
 import Stats from "./components/Stats";
 import "./components/counter"
 
-
+import svg from "./images/vibrance1.png"
 export default function App() {
  
   return (
@@ -35,7 +35,7 @@ export default function App() {
           <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
           <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
           {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
-          <Model  url="stage.glb"  />
+          <Model className="modeltest" url="stage.glb"  />
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
@@ -65,7 +65,10 @@ export default function App() {
           
           <section className="hero">
             <div className="hero-wrapper">
-    
+              <div className="vim" >
+              
+                      <SvgComponent className="svgimg"/>   
+              </div>
               <div className="intro-text">VIBRANCE'23</div>
               <div className="arrow-svg-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">

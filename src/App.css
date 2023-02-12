@@ -154,6 +154,7 @@ ul {
   justify-content: center;
   align-items: center;
   position: absolute;
+  
   top: 50%;
   left: 60%;
   font-weight: lighter;
@@ -591,6 +592,24 @@ ul {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
-.vivbg {
-  background-color: #8395cd;
+.vibimg {
+
+  height: 100%;
+  width: 100%;
+
+  
 }
+
+.vim{
+width: 215px;
+
+padding-top: 100px;
+height: 315px;
+top: 21%;
+  left: 19%;
+  position: absolute;
+  overflow: hidden;
+  transform: scale(1) translateX(2000px);
+}
+
+/* add media query for optimizing for devices less than 1138 */

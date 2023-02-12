@@ -40,7 +40,7 @@ export default class Preloader extends EventEmitter {
         convert(document.querySelectorAll(".hero-main-description"));
         convert(document.querySelectorAll(".hero-second-subheading"));
         convert(document.querySelector(".second-sub"));
-        
+       
 
     }
 
@@ -59,21 +59,16 @@ export default class Preloader extends EventEmitter {
             });
             if (this.device === "desktop") {
                 this.timeline
-                    .to(this.scene.scale, {
-                        x: 2,
-                        y: 2,
-                        z: 2,
-                        ease: "back.out(2.5)",
-                        duration: 0.7,
+                // .to(".vim", {
+                //     scale:1,
+                //     duration:2,
+                // })
+                    .to(".vim",{
+                        translateX:0,
+                        duration:0.8,
                     })
-                    .to(this.scene.position, {
-                        x: -7,
-                        ease: "power1.out",
-                        duration: 0.7,
-                     
-                    
-                    
-                    });
+                
+                
             } else {
                 this.timeline
                     .to(this.scene.scale, {
@@ -93,6 +88,7 @@ export default class Preloader extends EventEmitter {
                 .to(".intro-text .animatedis", {
                     yPercent: 0,
                     stagger: 0.05,
+                 
                     ease: "back.out(1.7)",
                 })
                 .to(
@@ -100,6 +96,7 @@ export default class Preloader extends EventEmitter {
                     {
                         opacity: 1,
                         onComplete: resolve,
+
                     },
                     "same"
 
@@ -112,6 +109,17 @@ export default class Preloader extends EventEmitter {
             this.secondTimeline = new GSAP.timeline();
 
             this.secondTimeline
+            // .to(".vim", 
+            // {   
+            //     yPercent:100,
+            //     ease: "back.in(1.7)",
+            // },"fadeout")
+            .to(".svgimg",
+            {
+                yPercent:100,
+                ease: "back.in(1.7)",
+            },"fadeout")
+    
                 .to(
                     ".intro-text .animatedis",
                     {
@@ -129,64 +137,25 @@ export default class Preloader extends EventEmitter {
                     "fadeout"
                 )
 
-                // .to(
-                //     this.scene, {rotation:"360",duration:1, ease:"Linear", repeat:-1}
-                // )
-                // .to(
-                    
-                //     this.useroatez(-0.1),
-                // )
-                // .to(
-                    
-                //         this.scene.rotation,{
-                //             duration: 2, z: -Math.PI * 2,repeat:-1, ease: "none"
-                //         }
-                    
-                // )
-                
-                .to(
-                    
-                  
-                
-                    this.scene.position,
-                    {   
-                        x: 0,
-                        y: 0,
-                        z: 0,
-                        ease: "power1.out",  
-                         
-
-                        
-                    },
-                    "same"
-                )
-                
+            
+              
+               
                 .to(
                     this.scene.position,{
                         x:0,
                         y:-2,
                         z:0,
-                        ease:"power1.out",
-                       
+                        onComplete: () => {
+                 
+                            this.usepause(false);
+    
+                            
+                            
+                            
+                          },
                     }
                 )
-                .to(this.scene.scale, {
-                    x: 0.4,
-                    y: 0.4,
-                    z: 0.4,
-                    ease: "back.out(0)",
-                    duration: 0.7,
-                    onComplete: () => {
-                 
-                        this.usepause(false);
-
-                        
-                        
-                        
-                      },
-                 }
-            
-                )
+                
           
               
             
