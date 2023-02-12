@@ -23,6 +23,7 @@ export default function App() {
 
     
       <div className="experience">
+      
         
         <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
 
@@ -36,6 +37,7 @@ export default function App() {
           <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
           {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
           <Model className="modeltest" url="stage.glb"  />
+
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
@@ -45,7 +47,7 @@ export default function App() {
         </Canvas>
       </div>
       
-
+      
 
       <div id="pre" className="preloader">
         <div className="preloader-wrapper">

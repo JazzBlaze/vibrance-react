@@ -31,7 +31,7 @@ export default function Model({ url, ...props }) {
     console.log(scene.children)
 
     //to access children from scene
-    var text,disp;
+    var text,disp,splane1,splane2;
     scene.children.forEach((child)=>{
       child.children.forEach((asset)=>{
         console.log(asset.name);
@@ -50,9 +50,38 @@ export default function Model({ url, ...props }) {
           asset.visible=false;
           text=asset;
         }
+        if(asset.name=== "sparkler_plane_1"){
+          splane1=asset;
+        }
+        if(asset.name=== "sparkler_plane_2"){
+          splane2=asset;
+        }
       })
     })
-   
+
+    //for video textures
+    
+    // const video= document.createElement("video");
+    // video.src = "flames_w_alpha.webm";
+    // video.muted = true;
+    // video.playsInline = true;
+    // video.autoplay = true;
+    // video.loop = true;
+    // video.play();
+
+    // const videoTexture = new THREE.VideoTexture(
+    //     video
+    // );
+    // videoTexture.flipY = false;
+
+    // videoTexture.format=THREE.RGBAFormat;
+
+    // videoTexture.minFilter = THREE.NearestFilter;
+    // videoTexture.magFilter = THREE.NearestFilter;
+    // videoTexture.generateMipmaps = false;
+    // splane1.material = new THREE.MeshBasicMaterial({
+    //   map: videoTexture, transparent:true
+    // });
     // const texture = new THREE.TextureLoader().load( "vibrance.svg" );
     // text.material = new THREE.MeshBasicMaterial({
     //   map: texture,
