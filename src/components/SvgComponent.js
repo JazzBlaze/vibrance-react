@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import "./svg.css"
 const SvgComponent = (props) => (
   <svg
     viewBox="0 0 6651.2 6651.2"
@@ -9,6 +9,7 @@ const SvgComponent = (props) => (
     <defs>
       <style>
         {
+          
           ".cls-1{fill:#fff}.cls-2{fill:#e52629}.cls-3{fill:#1875bc}.cls-4{fill:#10a651}.cls-5{fill:#a02064}.cls-6{fill:#f9b042}.cls-8{fill:#f9b043}.cls-9{fill:#eb5b2d}.cls-10{fill:#0fa652}.cls-11{fill:#1877bd}.cls-12{fill:#0ca752}.cls-13{fill:#e6282b}.cls-14{fill:#12a753}"
         }
       </style>

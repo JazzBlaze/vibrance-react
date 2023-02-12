@@ -60,7 +60,7 @@ export default function Model({ url, ...props }) {
     // text.visible=false;
     let mixer = new THREE.AnimationMixer(scene);
 
-    const dont = new Set([9,2,3,8,10,11,12,13,14,15,17,18,19,20,21,22]);
+    const dont = new Set([9,2,3,8,10,11,12,13,14,15,17,19,20,18,21,22]);
     for (let i = 0; i < animations.length; i++) {
       
         if(!(dont.has(i))){
@@ -251,12 +251,12 @@ export default function Model({ url, ...props }) {
       const rot=  new gsap.timeline();
 
         experience.preloader.on('myEvent', () => rot
-        .to(camera.position,
-          {
-            x:0,
-            y:7,
-            z:30,
-            duration:0,
+        .to(scene.scale,
+          { x: 0.42,
+            y: 0.42,
+            z: 0.42,
+            duration:2,
+     
             onComplete: () => {
               window.modelObjects.speaker_topL.play();
               window.modelObjects.speaker_topL.loop=THREE.LoopOnce;
