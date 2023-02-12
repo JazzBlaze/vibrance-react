@@ -115,14 +115,14 @@ export default class Controls {
                     {
                         x: () => {
                             
-                            return this.sizes.width * 0.0057;
+                            return this.sizes.width * 0.0077;
                         },
                         onComplete: () => {
                             this.experience.preloader.emit('myEvent')
                         }
                     }
-                );
-
+                )
+               
                 // Second section -----------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -139,9 +139,9 @@ export default class Controls {
                         {   
                            duration:300,
                             x: () => {
-                                return -7;
+                                return -1;
                             },
-                            y:-24,
+                            y:-6,
                             // onComplete: () => {
                             
                             //     window.modelObjects.guitar.play();
@@ -170,9 +170,9 @@ export default class Controls {
                     .to(
                         this.scene.scale,
                         {   duration:500,
-                            x: 3,
-                            y: 3,
-                            z: 3,
+                            x: 1,
+                            y: 1,
+                            z: 1,
                            
                         },
                         "same"
@@ -183,8 +183,7 @@ export default class Controls {
                     //         y:-24,
                     //     }
                     // )
-
-
+                    
 
                 // Third section -----------------------------------------
                 this.thirdMoveTimeline = new GSAP.timeline({
@@ -196,6 +195,7 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
+                
                 .to(
                     this.scene.position,
                     {   
@@ -203,14 +203,22 @@ export default class Controls {
                         x: () => {
                             return 15;
                         },
-                        y:-24,
+                        y:-6,
+                        // onComplete: () => {
+                        
+                        //     window.modelObjects.guitar.play();
+                        //     window.modelObjects.guitar.loop=THREE.LoopOnce;
+                        //     window.modelObjects.guitar.clampWhenFinished = true;
+
+                            
+                        // },
                       
                         
                        
                     },
                     "same"
                 )
-
+               
              
             
             this.fourthMoveTimeline = new GSAP.timeline({
@@ -224,18 +232,18 @@ export default class Controls {
             })
             .to(
                 this.scene.position,{
-                    x:-this.sizes.width * 0.0059,
-                    y:-2,
-                    z:0,
+                    x:-this.sizes.width * 0.0067,
+                    y:-4,
+                    z:-1,
                     duration:300000,
                 }
             )
             .to(
                 this.scene.scale,{
                     delay:9,
-                    x:0.4,
-                    y:0.4,
-                    z:0.4,
+                    x:0.43,
+                    y:0.43,
+                    z:0.43,
                     duration:300000,
                 }
             )
