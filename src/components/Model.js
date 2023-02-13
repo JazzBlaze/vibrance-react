@@ -372,7 +372,7 @@ export default function Model({ url, ...props }) {
                 y: 7,
                 z: 30,
                 duration:0,
-                Oncomplete:()=>{
+                onComplete:()=>{
                   window.modelObjects.speakerL.play();
                   window.modelObjects.speakerL.loop=THREE.LoopOnce;
                   window.modelObjects.speakerL.clampWhenFinished = true;
