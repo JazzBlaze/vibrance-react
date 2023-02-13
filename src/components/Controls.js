@@ -148,9 +148,9 @@ export default class Controls {
                                 window.modelObjects.keyboard.loop=THREE.LoopOnce;
                                 window.modelObjects.keyboard.clampWhenFinished = true;
 
-                                window.modelObjects.cable1.play();
-                                window.modelObjects.cable1.loop=THREE.LoopOnce;
-                                window.modelObjects.cable1.clampWhenFinished = true;
+                                window.modelObjects.Cable1.play();
+                                window.modelObjects.Cable1.loop=THREE.LoopOnce;
+                                window.modelObjects.Cable1.clampWhenFinished = true;
 
                                 
                             },
