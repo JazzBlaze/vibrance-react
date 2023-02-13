@@ -154,7 +154,7 @@ ul {
   justify-content: center;
   align-items: center;
   position: absolute;
-  
+
   top: 50%;
   left: 60%;
   font-weight: lighter;
@@ -201,11 +201,27 @@ ul {
   position: relative;
   width: 50%;
 
-  padding: 1000px 4%;
+  padding: 500px 4%;
   margin: 0;
-background-color: #9275d2;
+  
   background-image: url(./images/sectionbg.svg);
   overflow: hidden;
+}
+
+.first-section{
+  background-color: #bf10d6;
+}
+
+.second-section{
+  background-color: #9275d2;
+}
+
+.third-section{
+  background-color: #eb4444;
+}
+
+.fourth-section{
+  background-color: #63cd62;
 }
 
 .left {
@@ -373,9 +389,11 @@ background-color: #9275d2;
 }
 
 .hero-second-subheading {
-  font-size: 32px;
+  font-size: 42px;
+  font-weight: 600;
   text-transform: uppercase;
   color: var(--color-text);
+  font-family: "NM";
 }
 
 /* Other colors override */
@@ -388,8 +406,8 @@ background-color: #9275d2;
   border-color: var(--color-blue);
 }
 
-.blue-background {
-  background-color: var(--color-blue);
+.black-background {
+  background-color: #171717;
 }
 
 .green-text {
@@ -593,19 +611,16 @@ background-color: #9275d2;
   -moz-text-fill-color: transparent;
 }
 .vibimg {
-
   height: 100%;
   width: 100%;
-
-  
 }
 
-.vim{
-width: 215px;
+.vim {
+  width: 215px;
 
-padding-top: 100px;
-height: 315px;
-top: 21%;
+  padding-top: 100px;
+  height: 315px;
+  top: 21%;
   left: 19%;
   position: absolute;
   overflow: hidden;
@@ -613,3 +628,95 @@ top: 21%;
 }
 
 /* add media query for optimizing for devices less than 1138 */
+
+/* 
+** Change this if you need to modify
+** the amount of lines displayed
+*/
+/*
+** Leave these unless you want
+** to open a whole can of worms
+*/
+/*
+** Set up the experiment
+*/
+
+.sec-title {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+/*
+** Apply styles to the parent element
+*/
+.Words {
+  margin: 0 auto;
+  padding-bottom: 80px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*
+** Apply common styles to each line of text
+*/
+
+
+.Words-line {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.Words-line:nth-child(odd) {
+  transform: skew(60deg, -30deg) scaleY(0.66667);
+}
+.Words-line:nth-child(even) {
+  transform: skew(0deg, -30deg) scaleY(1.33333);
+}
+.Words-line:nth-child(1) {
+  left: 29px;
+}
+.Words-line:nth-child(2) {
+  left: 58px;
+}
+.Words-line:nth-child(3) {
+  left: 87px;
+}
+.Words-line:nth-child(4) {
+  left: 116px;
+}
+.Words-line:nth-child(5) {
+  left: 145px;
+}
+.Words-line:nth-child(6) {
+  left: 174px;
+}
+.Words-line:nth-child(7) {
+  left: 203px;
+}
+
+/*
+** Fine-grained text styles
+*/
+.sec-p {
+  height: 50px;
+  line-height: 45px;
+  padding: 0 10px;
+  transition: all 0.4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/*
+** The hover interaction
+*/
+.Words:hover p {
+  transform: translate3d(0, -50px, 0);
+}

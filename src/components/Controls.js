@@ -115,10 +115,10 @@ export default class Controls {
                     {
                         x: () => {
                             
-                            return this.sizes.width * 0.0077;
+                            return this.sizes.width * 0.0067;
                         },
                         onComplete: () => {
-                            this.experience.preloader.emit('myEvent')
+                            this.experience.preloader.emit('sec1-t2')
                         }
                     }
                 )
@@ -142,14 +142,18 @@ export default class Controls {
                                 return -1;
                             },
                             y:-6,
-                            // onComplete: () => {
+                            onComplete: () => {
                             
-                            //     window.modelObjects.guitar.play();
-                            //     window.modelObjects.guitar.loop=THREE.LoopOnce;
-                            //     window.modelObjects.guitar.clampWhenFinished = true;
+                                window.modelObjects.keyboard.play();
+                                window.modelObjects.keyboard.loop=THREE.LoopOnce;
+                                window.modelObjects.keyboard.clampWhenFinished = true;
+
+                                window.modelObjects.cable1.play();
+                                window.modelObjects.cable1.loop=THREE.LoopOnce;
+                                window.modelObjects.cable1.clampWhenFinished = true;
 
                                 
-                            // },
+                            },
                           
                             
                            
@@ -195,6 +199,22 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
+
+                .to(
+                    this.scene.scale,
+                    {   
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        onComplete:()=>{
+                            this.experience.preloader.emit('sec3-t2')
+                        }
+                        
+                       
+                    },
+                )
+
+            
                 
                 .to(
                     this.scene.position,
@@ -232,18 +252,22 @@ export default class Controls {
             })
             .to(
                 this.scene.position,{
-                    x:-this.sizes.width * 0.0067,
-                    y:-4,
+                    x:-this.sizes.width * 0.006,
+                    y:-3,
                     z:-1,
                     duration:300000,
+                    onComplete:()=>{
+                        console.log("sec4")
+                        this.experience.preloader.emit('sec4-t2');
+                    }
                 }
             )
             .to(
                 this.scene.scale,{
-                    delay:9,
-                    x:0.43,
-                    y:0.43,
-                    z:0.43,
+
+                    x:0.41,
+                    y:0.41,
+                    z:0.41,
                     duration:300000,
                 }
             )
@@ -452,8 +476,8 @@ export default class Controls {
                         scrub: 0.6,
                     },
                 }).to(this.circleFour.scale, {
-                    delay:100,
-                    duration:30,
+                    // delay:100,
+                    // duration:30,
                     x: 13,
                     y: 13,
                     z: 13,

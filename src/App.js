@@ -36,7 +36,7 @@ export default function App() {
           <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
           <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
           {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
-          <Model className="modeltest" url="stage.glb"  />
+          <Model className="modeltest" url="stage_sparklers.glb"  />
 
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
@@ -164,7 +164,29 @@ export default function App() {
               <div className="progress-bar blue-background"></div>
             </div>
             {/* SECTION2 */}
-            
+            <div className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">WHAT'S</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">WHAT'S</p>
+                  <p className="sec-p">DIFFERENT</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">DIFFERENT</p>
+                  <p className="sec-p">THIS</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">THIS</p>
+                  <p className="sec-p">YEAR?</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">YEAR?</p>
+                </li>
+              </ul>
+            </div>
             <div className="section-detail-wrapper">
 
               <p className="section-text">
@@ -215,9 +237,9 @@ export default function App() {
            
           <div className="fourth-move section-margin"></div>
 
-          <section className="second-section section right">
+          <section className="fourth-section section right">
             <div className="progress-wrapper progress-bar-wrapper-right">
-              <div className="progress-bar blue-background"></div>
+              <div className="progress-bar black-background"></div>
             </div>
 
             <div className="section-intro-wrapper blue-text blue-border">
