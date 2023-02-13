@@ -288,7 +288,7 @@ ul {
 .section-intro-wrapper {
   position: relative;
   padding: 20% 5%;
-  border-bottom: 2px solid var(--color-pink);
+
   padding-bottom: 200px;
 }
 
@@ -746,7 +746,7 @@ ul {
 }
 .tagline{
 margin: 20%;
-font-size: larger;
+font-size: 2.3rem;
 font-family: "Fred";
 font-style: italic;
 }
@@ -897,11 +897,12 @@ font-style: italic;
 }
 .crackers{
   width: 411px;
-  height: 1201%;
+  height: 1736%;
   position: absolute;
   top: -844%;
   left: -49%;
   opacity: 0.8;
+  fill: #75757c;
 }
 .decorations{
  width: fit-content;
@@ -909,4 +910,16 @@ font-style: italic;
  transform: scale(1.8);
  margin-top: 60%;
 
+}
+
+.vitbooks{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  
+  position: absolute;
+  left: -23%;
+  transform: rotate(30deg);
+  bottom: 0.1%;
+  top: 0%;
 }
