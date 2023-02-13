@@ -344,7 +344,7 @@ export default function Model({ url, ...props }) {
                 y: 7,
                 z: 30,
                 duration:0,
-                Oncomplete:()=>{
+                onComplete:()=>{
                   window.modelObjects.Drumkit.play();
                   window.modelObjects.Drumkit.loop=THREE.LoopOnce;
                   window.modelObjects.Drumkit.clampWhenFinished = true;
