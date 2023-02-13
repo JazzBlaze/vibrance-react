@@ -227,6 +227,8 @@ ul {
 
 .first-section {
   background-color: #e76f51;
+  padding-top: 300px;
+  color: #feac64;
 }
 
 .second-section {
@@ -310,7 +312,7 @@ ul {
 .section-text {
   line-height: 2;
   margin-top: 18px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 /* Fancy Decoration Part of Section */
@@ -398,7 +400,7 @@ ul {
   font-size: 74px;
   color: var(--color-text);
   font-family: "NM", sans-serif;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .hero-main-description {
@@ -624,7 +626,7 @@ ul {
 
 .gradient-headings {
   background: #171717;
-  background: linear-gradient(0deg, #B125C9 -3.03%, #3D198A 101.9%);
+  background: linear-gradient(0deg, #b125c9 -3.03%, #3d198a 101.9%);
 
   width: fit-content;
   -webkit-background-clip: text;
@@ -884,7 +886,7 @@ ul {
   padding-bottom: 20px;
 }
 
-.crackers{
+.crackers {
   width: 411px;
   height: 1736%;
   position: absolute;
@@ -893,15 +895,14 @@ ul {
   opacity: 0.8;
   fill: #75757c;
 }
-.decorations{
- width: fit-content;
- height: fit-content;
- transform: scale(1.8);
- margin-top: 60%;
-
+.decorations {
+  width: fit-content;
+  height: fit-content;
+  transform: scale(1.8);
+  margin-top: 60%;
 }
 
-.vitbooks{
+.vitbooks {
   width: 300px;
   height: 300px;
   position: absolute;
