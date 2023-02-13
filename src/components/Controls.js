@@ -263,11 +263,9 @@ export default class Controls {
                 // console.log("fired mobile");
 
                 // Resets
-                this.room.scale.set(0.07, 0.07, 0.07);
-                this.room.position.set(0, 0, 0);
-                this.rectLight.width = 0.3;
-                this.rectLight.height = 0.4;
-                this.camera.orthographicCamera.position.set(0, 6.5, 10);
+                this.scene.set(0.07, 0.07, 0.07);
+                this.scene.position.set(0, 0, 0);
+                
 
                 // First section -----------------------------------------
                 this.firstMoveTimeline = new GSAP.timeline({
@@ -278,7 +276,7 @@ export default class Controls {
                         scrub: 0.6,
                         // invalidateOnRefresh: true,
                     },
-                }).to(this.room.scale, {
+                }).to(this.scene.scale, {
                     x: 0.1,
                     y: 0.1,
                     z: 0.1,
@@ -295,7 +293,7 @@ export default class Controls {
                     },
                 })
                     .to(
-                        this.room.scale,
+                        this.scene.scale,
                         {
                             x: 0.25,
                             y: 0.25,
@@ -303,16 +301,9 @@ export default class Controls {
                         },
                         "same"
                     )
+                 
                     .to(
-                        this.rectLight,
-                        {
-                            width: 0.3 * 3.4,
-                            height: 0.4 * 3.4,
-                        },
-                        "same"
-                    )
-                    .to(
-                        this.room.position,
+                        this.scene.position,
                         {
                             x: 1.5,
                         },

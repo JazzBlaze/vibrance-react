@@ -6,7 +6,7 @@ import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
 import Menu from "./components/Menu";
 import Model from "./components/Model";
 import SvgComponent from "./components/SvgComponent";
-
+import as from "./images/Vitangle.gif"
 // import "./fonts/FredokaOne.ttf"
 // import "./fonts/NaughtyMonster.ttf"
 import "./App.css";
@@ -126,31 +126,49 @@ export default function App() {
            
               <h1 className="section-title">
                 <span className="section-title-text">About Vibrance</span>
-                <div className="section-title-decoration styleOne"></div>
-                <div className="section-title-decoration styleTwo"></div>
-                <div className="section-title-decoration styleThree"></div>
+             
               </h1>
-              <span className="section-number">01</span>
+             
             </div>
              
             <div className="section-detail-wrapper">
+           
+              <p className="section-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ab quis ea autem asperiores alias ex eaque quia ipsa ipsam iure molestiae quas, quam similique pariatur, debitis quod voluptas beatae.
+              </p>
+              <p className="section-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati sed minima nihil repudiandae quaerat, autem distinctio provident voluptas eligendi vitae totam! Maiores a aut praesentium ut totam quos tempora sequi!
+              </p>
+
+            </div>
+       
+    {/* section1 part 2 */}
+            <div className="progress-wrapper progress-bar-wrapper-left">
+              <div className="progress-bar"></div>
+            </div>
+            <div className="section-intro-wrapper">
+           
+           <h1 className="section-title">
+             <span className="section-title-text vit">About Vit</span>
+              
+           </h1>
+               <img className="gifvit" src={as} alt=""/>
+            </div>
+            <div className="section-detail-wrapper">
             
-{/*            
-            <img src={bgsec} alt="Your SVG" /> */}
-            {/* <viv/> */}
+
  
 
            
-              <p className="section-text">
-                Hi there 👋! I'm a third-year digital media student from UK
-                currently studying in Germany. My dream is to work for Disney or
-                Pixar one day.
-              </p>
-              <p className="section-text">
-                I love creating art and playing with my cats! I also like drinking
-                bubble tea and going for hikes! Totally hippie lol ✌️. Welcome to
-                my portfolio!
-              </p>
+            <p className="section-text">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sunt nisi expedita ea labore doloribus, praesentium ipsum, dolorum fugit, consectetur optio molestias rerum nostrum nam earum corrupti dolor autem obcaecati!
+            </p>
+
+            <p className="tagline">"A Place to Learn,Chance to Grow" </p>
+
+            <p className="section-text">
+             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis alias aliquid fugit provident laudantium unde consequatur distinctio accusantium, minus, tempore asperiores esse! Aut iusto nemo dolorem natus dolore! Labore, nobis?
+            </p>
 
             </div>
           </section>
@@ -161,20 +179,21 @@ export default function App() {
             <div className="progress-wrapper progress-bar-wrapper-right">
               <div className="progress-bar blue-background"></div>
             </div>
+
             {/* SECTION2 */}
             
             <div className="section-detail-wrapper">
 
               <p className="section-text">
-                This project is in progress but it's about a super colorful
-                village where the entire world including the people are candies.
-                So far the story is that they are set out to explore their "space"
-                only to realize it's a human that will try to destroy them.
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut eius soluta unde? Consequatur nam praesentium, voluptate tempora repellat nobis maxime temporibus qui nulla quia explicabo! Voluptatem labore ducimus fuga iure?
               </p>
 
             </div>
             <Stats/>
           </section>
+
+        
+
 
           <div className="third-move section-margin"></div>
 
@@ -185,30 +204,54 @@ export default function App() {
 
             <div className="section-intro-wrapper green-text green-border">
               <h1 className="section-title green-text green-border">
-                <span className="section-title-text green-text">Third Section</span>
-                <div className="section-title-decoration styleOne green-border"></div>
-                <div className="section-title-decoration styleTwo green-border"></div>
-                <div
-                  className="section-title-decoration styleThree green-background green-border"
-                ></div>
+                <span className="section-title-text green-text">A Glimpse into the past</span>
+               
               </h1>
-              <span className="section-number green-text">03</span>
+
             </div>
 
             <div className="section-detail-wrapper">
               <h3 className="section-heading">ArtStation</h3>
               <p className="section-text">
-                I post all my work here. I don't want to link it yet because I
-                want to sort it out a little bit!
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores dignissimos, esse hic sit doloremque est libero, necessitatibus eligendi repudiandae quod minima, nemo veniam! Quos vel laboriosam optio veniam itaque.!
               </p>
               <h3 className="section-heading">Instagram</h3>
               <p className="section-text">
-                Check out my personal instagram for travel pics and food and
-                stuff.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa cupiditate placeat consectetur, illum fuga nam quasi maxime aliquid? Non, possimus dolor. Expedita dolorem excepturi, eius deserunt voluptatem totam sed numquam.
               </p>
               <h3 className="section-heading">LinkedIn</h3>
-              <p className="section-text">Career updates and so much more!</p>
+              <p className="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dignissimos accusamus consectetur amet saepe impedit quaerat non eum vero delectus in perferendis dolorum itaque, dolor aut corrupti, odit earum voluptate!</p>
             </div>
+
+            {/* Section three part 2 */}
+            <div className="section-intro-wrapper green-text green-border">
+              <h1 className="section-title green-text green-border">
+                <span className="section-title-text green-text">A Glimpse into the future</span>
+               
+              </h1>
+
+            </div>
+
+            <div className="section-detail-wrapper">
+          
+              <p className="section-text">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores dignissimos, esse hic sit doloremque est libero, necessitatibus eligendi repudiandae quod minima, nemo veniam! Quos vel laboriosam optio veniam itaque.!
+              </p>
+              {/* <h3 className="section-heading">Instagram</h3> */}
+              <p className="section-text">
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime praesentium eveniet, et possimus soluta quod dicta quo, blanditiis, architecto natus obcaecati? Excepturi dolorem sunt adipisci, odio provident quasi iste error?
+              </p>
+              {/* <h3 className="section-heading">LinkedIn</h3> */}
+              <p className="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, magnam? Maiores deserunt culpa, itaque eius minus quam praesentium ipsa consectetur, in neque reiciendis sit natus cupiditate qui, nam ducimus minima!</p>
+            </div>
+
+
+
+
+
+
+
+
           </section>
            
           <div className="fourth-move section-margin"></div>

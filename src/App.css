@@ -200,8 +200,8 @@ ul {
 .section {
   position: relative;
   width: 50%;
-
-  padding: 1000px 4%;
+  
+  padding: 650px 4%;
   margin: 0;
 background-color: #9275d2;
   background-image: url(./images/sectionbg.svg);
@@ -251,9 +251,8 @@ background-color: #9275d2;
 
 .section-intro-wrapper {
   position: relative;
-  padding: 20% 5%;
-  border-bottom: 2px solid var(--color-pink);
-  padding-bottom: 400px;
+
+  padding-bottom: 200px;
 }
 
 .section-intro-wrapper:nth-child(3) {
@@ -263,6 +262,7 @@ background-color: #9275d2;
 .section-detail-wrapper {
   position: relative;
   padding: 20% 5%;
+  padding-top: 40%;
 }
 
 .section-heading {
@@ -288,10 +288,10 @@ background-color: #9275d2;
 
 .section-title-text {
   display: block;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 500;
   transform-origin: left;
-  transform: skewY(25deg);
+
   z-index: 5;
   text-transform: uppercase;
   color: var(--color-pink);
@@ -613,3 +613,27 @@ top: 21%;
 }
 
 /* add media query for optimizing for devices less than 1138 */
+
+
+
+/* Section 1 about vit */
+.vit{
+  margin-top: 20%;
+  margin-left: 200px;
+  left: 80px;
+  top: 0px;
+  position: absolute;
+}
+.gifvit{
+  width: 60%;
+  position: absolute;
+  top: -67%;
+  left: -18%;
+  opacity: 0.2;
+  filter: grayscale(1);
+}
+.tagline{
+  margin:10%;
+  font-size: x-large;
+  font-family: "Fred" ;
+}
