@@ -240,7 +240,6 @@ ul {
 
 .fourth-section {
   padding-top: 300px;
-  padding-bottom: 300px;
   background-color: #c7c7c7;
   color: #282828;
 }
@@ -289,8 +288,6 @@ ul {
 .section-intro-wrapper {
   position: relative;
   padding: 20% 5%;
-  border-bottom: 2px solid var(--color-pink);
-  padding-bottom: 400px;
 }
 
 .section-intro-wrapper:nth-child(3) {
@@ -327,7 +324,7 @@ ul {
   font-size: 40px;
   font-weight: 500;
   transform-origin: left;
-  transform: skewY(25deg);
+
   z-index: 5;
   text-transform: uppercase;
   color: var(--color-pink);
@@ -769,7 +766,7 @@ ul {
 .team-container .team-card {
   position: relative;
   width: 250px;
-  height: 290px;
+  height: 300px;
   margin: 20px;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -779,7 +776,6 @@ ul {
   align-items: center;
 }
 .team-container .team-card .team-content {
-  text-transform: uppercase;
   position: absolute;
   bottom: -100%;
   width: 100%;
@@ -886,6 +882,34 @@ ul {
 .contact-header,
 .contact-sub {
   padding-bottom: 20px;
+}
+
+.crackers{
+  width: 411px;
+  height: 1736%;
+  position: absolute;
+  top: -844%;
+  left: -49%;
+  opacity: 0.8;
+  fill: #75757c;
+}
+.decorations{
+ width: fit-content;
+ height: fit-content;
+ transform: scale(1.8);
+ margin-top: 60%;
+
+}
+
+.vitbooks{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  position: absolute;
+  left: -23%;
+  transform: rotate(30deg);
+  bottom: 0.1%;
+  top: 0%;
 }
 
 .contact-sub {
