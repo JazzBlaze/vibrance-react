@@ -31,7 +31,7 @@ export default function Model({ url, ...props }) {
     console.log(scene.children)
 
     //to access children from scene
-    var text,disp;
+    var text,disp,splane1,splane2;
     scene.children.forEach((child)=>{
       child.children.forEach((asset)=>{
         console.log(asset.name);
@@ -50,26 +50,54 @@ export default function Model({ url, ...props }) {
           asset.visible=false;
           text=asset;
         }
+        if(asset.name=== "sparkler_planeL"){
+          splane1=asset;
+        }
+        if(asset.name=== "sparkler_planeR"){
+          splane2=asset;
+        }
       })
     })
-   
+
+    // for video textures
+    
+    const video= document.createElement("video");
+    video.src = "flames_w_alpha.webm";
+    video.muted = true;
+    video.playsInline = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.play();
+
+    const videoTexture = new THREE.VideoTexture(
+        video
+    );
+    videoTexture.flipY = false;
+
+    videoTexture.format=THREE.RGBAFormat;
+
+    videoTexture.minFilter = THREE.NearestFilter;
+    videoTexture.magFilter = THREE.NearestFilter;
+    videoTexture.generateMipmaps = false;
+    splane1.material = new THREE.MeshBasicMaterial({
+      map: videoTexture, transparent:true
+    });
+    splane2.material = new THREE.MeshBasicMaterial({
+      map: videoTexture, transparent:true
+    });
+    splane1.visible=false;
+    splane2.visible=false;
     // const texture = new THREE.TextureLoader().load( "vibrance.svg" );
     // text.material = new THREE.MeshBasicMaterial({
     //   map: texture,
     // });
-    // text.visible=false;
     let mixer = new THREE.AnimationMixer(scene);
 
-    const dont = new Set([9,2,3,8,10,11,12,13,14,15,17,19,20,18,21,22]);
+    const dont = new Set([2,3,8,9,10,11,12,13,14,15,21,22,23,24,25,26]);
     for (let i = 0; i < animations.length; i++) {
       
         if(!(dont.has(i))){
-          if(i===16){
-            console.log(16)
-          }
-          if (animations[i].name==="speakerL.action"){
-            console.log(true)
-          }
+
           const action = mixer.clipAction(animations[i]);
           action.clampWhenFinished = true;
           action.loop = THREE.LoopOnce;
@@ -98,8 +126,8 @@ export default function Model({ url, ...props }) {
 
 
     //infinite looping clips
-    var Lspeaker = THREE.AnimationUtils.subclip( animations[19], 'run1', 100, 180 );
-    var Rspeaker =THREE.AnimationUtils.subclip( animations[20], 'run2', 100, 180 );
+    var Lspeaker = THREE.AnimationUtils.subclip( animations[23], 'run1', 100, 180 );
+    var Rspeaker =THREE.AnimationUtils.subclip( animations[24], 'run2', 100, 180 );
     
     var Lam1 =THREE.AnimationUtils.subclip( animations[11], 'Lamp', 100, 180 );
     var Lam2 =THREE.AnimationUtils.subclip( animations[12], 'Lamp', 100, 180 );
@@ -125,23 +153,22 @@ export default function Model({ url, ...props }) {
     const board_text = mixer.clipAction( animations[2] );
     board_text.loop=THREE.LoopRepeat;
     board_text.clampWhenFinished = false;
-    
-    const guitar=mixer.clipAction(animations[9]);
     const Cable1=mixer.clipAction(animations[3]);
-
     const Drumkit=mixer.clipAction(animations[8]);
+    const guitar=mixer.clipAction(animations[9]);
     const keyboard=mixer.clipAction(animations[10]);
     const lamp1=mixer.clipAction(animations[11]);
     const lamp2=mixer.clipAction(animations[12]);
     const lamp3=mixer.clipAction(animations[13]);
     const lamp4=mixer.clipAction(animations[14]);
     const lamp5=mixer.clipAction(animations[15]);
-    const speaker_topL=mixer.clipAction(animations[17]);
-    const speaker_topR=mixer.clipAction(animations[18]);
-    const speakerL=mixer.clipAction(animations[19]);
-    const speakerR=mixer.clipAction(animations[20]);
-    const speakersmallL=mixer.clipAction(animations[21]);
-    const speakersmallR=mixer.clipAction(animations[22]);
+    const speaker_topL=mixer.clipAction(animations[21]);
+    const speaker_topR=mixer.clipAction(animations[22]);
+    const speakerL=mixer.clipAction(animations[23]);
+    const speakerR=mixer.clipAction(animations[24]);
+    const speakersmallL=mixer.clipAction(animations[25]);
+    const speakersmallR=mixer.clipAction(animations[26]);
+
 
     window.modelObjects = {
       guitar: guitar,
@@ -165,7 +192,9 @@ export default function Model({ url, ...props }) {
       l2:l2,
       l3:l3,
       l4:l4,
-      l5:l5
+      l5:l5,
+      Lspeak:Lspeak,
+      Rspeak:Rspeak,
     };
 
 
@@ -247,59 +276,129 @@ export default function Model({ url, ...props }) {
 
     const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,userotatex,userotatez,uselerpdisable);
   
-    useThree(({camera}) => {
-      const rot=  new gsap.timeline();
+    
+      
 
-        experience.preloader.on('myEvent', () => rot
-        .to(scene.scale,
-          { x: 0.42,
-            y: 0.42,
-            z: 0.42,
-            duration:2,
-     
-            onComplete: () => {
-              window.modelObjects.speaker_topL.play();
-              window.modelObjects.speaker_topL.loop=THREE.LoopOnce;
-              window.modelObjects.speaker_topL.clampWhenFinished = true;
+      useThree(({camera}) => {
+        const sec1_t2=  new gsap.timeline();
+        experience.preloader.on('sec1-t2', () => sec1_t2
+          .to(camera.position,
+            {  
+                x: 0,
+                y: 7,
+                z: 30,
+                duration:0,
+      
+                onComplete: () => {
+                  window.modelObjects.speaker_topL.play();
+                  window.modelObjects.speaker_topL.loop=THREE.LoopOnce;
+                  window.modelObjects.speaker_topL.clampWhenFinished = true;
 
-              window.modelObjects.speaker_topR.play();
-              window.modelObjects.speaker_topR.loop=THREE.LoopOnce;
-              window.modelObjects.speaker_topR.clampWhenFinished = true;
+                  window.modelObjects.speaker_topR.play();
+                  window.modelObjects.speaker_topR.loop=THREE.LoopOnce;
+                  window.modelObjects.speaker_topR.clampWhenFinished = true;
 
-              window.modelObjects.lamp1.play();
-              window.modelObjects.lamp1.loop=THREE.LoopOnce;
-              window.modelObjects.lamp1.clampWhenFinished = true;
-              window.modelObjects.l1.play();
+                  window.modelObjects.lamp1.play();
+                  window.modelObjects.lamp1.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp1.clampWhenFinished = true;
+                  window.modelObjects.l1.play();
 
-              window.modelObjects.lamp2.play();
-              window.modelObjects.lamp2.loop=THREE.LoopOnce;
-              window.modelObjects.lamp2.clampWhenFinished = true;
-              window.modelObjects.l2.play();
+                  window.modelObjects.lamp2.play();
+                  window.modelObjects.lamp2.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp2.clampWhenFinished = true;
+                  window.modelObjects.l2.play();
 
-              window.modelObjects.lamp2.play();
-              window.modelObjects.lamp2.loop=THREE.LoopOnce;
-              window.modelObjects.lamp2.clampWhenFinished = true;
-              window.modelObjects.l2.play();
+                  window.modelObjects.lamp2.play();
+                  window.modelObjects.lamp2.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp2.clampWhenFinished = true;
+                  window.modelObjects.l2.play();
 
-              window.modelObjects.lamp3.play();
-              window.modelObjects.lamp3.loop=THREE.LoopOnce;
-              window.modelObjects.lamp3.clampWhenFinished = true;
-              window.modelObjects.l3.play();
+                  window.modelObjects.lamp3.play();
+                  window.modelObjects.lamp3.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp3.clampWhenFinished = true;
+                  window.modelObjects.l3.play();
 
-              window.modelObjects.lamp4.play();
-              window.modelObjects.lamp4.loop=THREE.LoopOnce;
-              window.modelObjects.lamp4.clampWhenFinished = true;
-              window.modelObjects.l4.play();
+                  window.modelObjects.lamp4.play();
+                  window.modelObjects.lamp4.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp4.clampWhenFinished = true;
+                  window.modelObjects.l4.play();
 
-              window.modelObjects.lamp5.play();
-              window.modelObjects.lamp5.loop=THREE.LoopOnce;
-              window.modelObjects.lamp5.clampWhenFinished = true;
-              window.modelObjects.l5.play();
-          
-          }
-          }
-      ))
-    });
+                  window.modelObjects.lamp5.play();
+                  window.modelObjects.lamp5.loop=THREE.LoopOnce;
+                  window.modelObjects.lamp5.clampWhenFinished = true;
+                  window.modelObjects.l5.play();
+            
+            }
+            }
+        ))
+
+
+        const sec3_t2= new gsap.timeline();
+        experience.preloader.on('sec3-t2', () => sec3_t2
+
+          .to(
+                        
+            camera.position,
+            {   
+                x: 0,
+                y: 7,
+                z: 30,
+                duration:0,
+                Oncomplete:()=>{
+                  window.modelObjects.Drumkit.play();
+                  window.modelObjects.Drumkit.loop=THREE.LoopOnce;
+                  window.modelObjects.Drumkit.clampWhenFinished = true;
+
+                  window.modelObjects.guitar.play();
+                  window.modelObjects.guitar.loop=THREE.LoopOnce;
+                  window.modelObjects.guitar.clampWhenFinished = true;
+                }
+              
+            }
+
+        
+          )
+
+        )
+
+        const sec4_t2= new gsap.timeline();
+        experience.preloader.on('sec4-t2', () => sec4_t2
+
+          .to(
+                        
+            camera.position,
+            {   
+                x: 0,
+                y: 7,
+                z: 30,
+                duration:0,
+                Oncomplete:()=>{
+                  window.modelObjects.speakerL.play();
+                  window.modelObjects.speakerL.loop=THREE.LoopOnce;
+                  window.modelObjects.speakerL.clampWhenFinished = true;
+                  window.modelObjects.Lspeak.play();
+
+                  window.modelObjects.speakerR.play();
+                  window.modelObjects.speakerR.loop=THREE.LoopOnce;
+                  window.modelObjects.speakerR.clampWhenFinished = true;
+                  window.modelObjects.Rspeak.play();
+
+                  splane1.visible=true
+                  splane2.visible=true
+
+                }
+              
+            }
+
+        
+          )
+
+        )
+
+      });
+
+      
+    
 
     return <primitive object={scene} {...props} />;
   }
