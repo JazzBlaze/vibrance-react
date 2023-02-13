@@ -269,7 +269,7 @@ ul {
   position: relative;
   padding: 20% 5%;
   border-bottom: 2px solid var(--color-pink);
-  padding-bottom: 400px;
+  padding-bottom: 200px;
 }
 
 .section-intro-wrapper:nth-child(3) {
@@ -307,7 +307,7 @@ ul {
   font-size: 40px;
   font-weight: 500;
   transform-origin: left;
-  transform: skewY(25deg);
+
   z-index: 5;
   text-transform: uppercase;
   color: var(--color-pink);
@@ -755,4 +755,19 @@ font-style: italic;
 .team-card--sub{
   padding-bottom: 20px;
   padding-left: 20px;
+}
+.crackers{
+  width: 411px;
+  height: 1201%;
+  position: absolute;
+  top: -844%;
+  left: -49%;
+  opacity: 0.8;
+}
+.decorations{
+ width: fit-content;
+ height: fit-content;
+ transform: scale(1.8);
+ margin-top: 60%;
+
 }
