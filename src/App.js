@@ -11,7 +11,8 @@ import as from "./images/Vitangle.gif"
 // import "./fonts/NaughtyMonster.ttf"
 import "./App.css";
 import Stats from "./components/Stats";
-import "./components/counter"
+import "./components/counter";
+import SecTitle from "./components/SecTitle"
 
 import svg from "./images/vibrance1.png"
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
 
     
       <div className="experience">
+      
         
         <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
 
@@ -35,7 +37,8 @@ export default function App() {
           <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
           <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
           {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
-          <Model className="modeltest" url="stage.glb"  />
+          <Model className="modeltest" url="stage_sparklers.glb"  />
+
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
             // maxAzimuthAngle={Math.PI / 25}
@@ -45,7 +48,7 @@ export default function App() {
         </Canvas>
       </div>
       
-
+      
 
       <div id="pre" className="preloader">
         <div className="preloader-wrapper">
@@ -181,7 +184,7 @@ export default function App() {
             </div>
 
             {/* SECTION2 */}
-            
+            <SecTitle/>
             <div className="section-detail-wrapper">
 
               <p className="section-text">
@@ -256,9 +259,9 @@ export default function App() {
            
           <div className="fourth-move section-margin"></div>
 
-          <section className="second-section section right">
+          <section className="fourth-section section right">
             <div className="progress-wrapper progress-bar-wrapper-right">
-              <div className="progress-bar blue-background"></div>
+              <div className="progress-bar black-background"></div>
             </div>
 
             <div className="section-intro-wrapper blue-text blue-border">
