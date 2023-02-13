@@ -14,6 +14,10 @@
 .stats-comp {
   text-align: center;
 }
+
+.stats-comp3{
+  width:251px
+}
 .stats-comp_h1 {
   color: black;
   font-size: 6rem;
