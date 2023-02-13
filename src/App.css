@@ -288,8 +288,6 @@ ul {
 .section-intro-wrapper {
   position: relative;
   padding: 20% 5%;
-
-  padding-bottom: 200px;
 }
 
 .section-intro-wrapper:nth-child(3) {
