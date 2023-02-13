@@ -155,7 +155,7 @@ export default function App() {
              <span className="section-title-text vit">About Vit</span>
               
            </h1>
-               <img className="gifvit" src={as} alt=""/>
+               {/* <img className="gifvit" src={as} alt=""/> */}
             </div>
             <div className="section-detail-wrapper">
             
