@@ -116,7 +116,7 @@ export default class Preloader extends EventEmitter {
             // },"fadeout")
             .to(".svgimg",
             {
-                yPercent:100,
+                yPercent:110,
                 ease: "back.in(1.7)",
             },"fadeout")
     
@@ -236,7 +236,7 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-         this.firstIntro();
+        await this.firstIntro();
         this.moveFlag = true;
         console.log(this.moveFlag);
         this.scrollOnceEvent = this.onScroll.bind(this);
@@ -250,7 +250,7 @@ export default class Preloader extends EventEmitter {
     async playSecondIntro() {
        
         this.moveFlag = false;
-         this.secondIntro();
+        await this.secondIntro();
 
         this.scaleFlag = false;
         this.emit("enablecontrols");

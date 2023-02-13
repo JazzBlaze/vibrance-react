@@ -39,10 +39,20 @@ export default class Experience {
         });
         
         //gradient headings
-        var el = document.getElementById('elem');
-        const children = el.children;
+        var grad1 = document.getElementById('grad1');
+        var grad2 = document.getElementById('grad2');
+        var grad3 = document.getElementById('grad3');
+        const children1 = grad1.children;
+        const children2 = grad2.children;
+        const children3 = grad3.children;
         setTimeout(function () {
-          Array.from(children).forEach(span => {
+          Array.from(children1).forEach(span => {
+            span.classList.add('gradient-headings')
+          });
+          Array.from(children2).forEach(span => {
+            span.classList.add('gradient-headings')
+          });
+          Array.from(children3).forEach(span => {
             span.classList.add('gradient-headings')
           });
         }, 4000);
