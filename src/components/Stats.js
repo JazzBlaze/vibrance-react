@@ -11,7 +11,7 @@ function Stats (){
                     <AppearSensor>
                         {({ hasBeenVisible }) =>
                             hasBeenVisible
-                                ? <CountUp className='stats-comp_h1' start={0} end={50} suffix={'+'} enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
+                                ? <CountUp className='stats-comp_h1' start={0} end={50}  enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
                         }
                     </AppearSensor>
                     <p>EVENTS</p>
@@ -20,16 +20,16 @@ function Stats (){
                     <AppearSensor>
                         {({ hasBeenVisible }) =>
                             hasBeenVisible
-                                ? <CountUp className='stats-comp_h1' start={0} end={9} enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
+                                ? <CountUp className='stats-comp_h1' start={0} end={6} enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
                         }
                     </AppearSensor>
-                    <p>SPECTACULAR PRO-SHOWS</p>
+                    <p>RENOWNED ARTISTS</p>
                 </div>
-                <div className='stats-comp'>
+                <div className='stats-comp stats-comp3'>
                     <AppearSensor>
                         {({ hasBeenVisible }) =>
                             hasBeenVisible
-                                ? <CountUp className='stats-comp_h1' start={0} end={20} enableScrollSpy /> : <span className='stats-comp_h1'>500</span>
+                                ? <CountUp className='stats-comp_h1' start={0} end={8000} suffix={'+'}enableScrollSpy /> : <span className='stats-comp_h1'>500</span>
                         }
                     </AppearSensor>
                     <p>PARTICIPANTS</p>
