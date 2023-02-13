@@ -258,9 +258,9 @@ export default function Model({ url, ...props }) {
         {
             opacity: 1,
             marginBottom: 0,
-            duration: 1,
+            duration: 0.4,
             ease: "power2.inOut",
-            stagger: 0.3,
+            stagger: 0.2,
         },
         ">-0.5"
     );

@@ -47,6 +47,10 @@ h3 {
 } */
 
 :root {
+
+
+
+
   --color-primary: #18181a;
   --color-secondary: #75757c;
   --color-dark: #364c62;
@@ -240,6 +244,7 @@ ul {
 
 .fourth-section{
   padding-top: 300px;
+  padding-bottom: 300px;
   background-color: #c7c7c7;
   color: #282828;
 }
@@ -765,7 +770,7 @@ font-style: italic;
 .team-container .team-card {
   position: relative;
   width: 250px;
-  height: 300px;
+  height: 290px;
   margin: 20px;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -775,6 +780,7 @@ font-style: italic;
   align-items: center;
 }
 .team-container .team-card .team-content {
+  text-transform: uppercase;
   position: absolute;
   bottom: -100%;
   width: 100%;
@@ -879,4 +885,50 @@ font-style: italic;
 
 .contact-header,.contact-sub{
   padding-bottom: 20px;
+}
+
+.contact-sub{
+  font-weight: 200;
+  color: #3d3d3d;
+}
+
+
+/* COPYRIGHT */
+
+
+/* 
+.copyright-container{
+
+} */
+
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.copyright{
+  position: absolute;
+  right: 30%;
+  bottom: 10px;
+}
+.support a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
+.insta{
+  width: 30px;
+  height: 30px;
+}
+
+.yout{
+  width: 40px;
+  height: 40px;
 }

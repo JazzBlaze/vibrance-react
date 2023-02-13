@@ -16,6 +16,11 @@ import SecTitle from "./components/SecTitle"
 
 import svg from "./images/vibrance1.png"
 import team1 from "./images/team1.jpg"
+import team2 from "./images/team2.jpg"
+import team3 from "./images/team3.jpg"
+import team4 from "./images/team4.jpg"
+import insta from "./images/instagram.svg"
+import yout from "./images/youtube.svg"
 
 import TeamCard from "./components/TeamCard";
 import Button from "./components/Button";
@@ -314,9 +319,9 @@ export default function App() {
 
             <div class="team-container">
               <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
-              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
-              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
-              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
+              <TeamCard img={team2} name="Mr. Sankar Viswanathan" sub="VICE-PRESIDENT"/>
+              <TeamCard img={team3} name="Dr. Sekar Viswanathan" sub="VICE-PRESIDENT"/>
+              <TeamCard img={team4} name="Mr. G V Selvam" sub="VICE-PRESIDENT"/>
             </div>
             <div className="Button-container"><Button text="VIEW MORE"/></div>
 
@@ -346,6 +351,16 @@ export default function App() {
               <h2 className="contact-sub">Convenor, Vibrance 2023</h2>
             </div>
             <div className="Button-container"><Button text="EMAIL"/></div>
+
+            <div className="copyright-container">
+             
+            </div>
+            <div class="support">
+              
+              <a className="insta" href="/" ><img src={insta} alt=""/></a>
+              <a className="yout" href="/" ><img src={yout} alt=""/></a>
+            </div>
+            <p className="copyright"> ©Copyright VIBRANCE 2023</p>
 
 
           </section>
