@@ -15,6 +15,10 @@ import "./components/counter";
 import SecTitle from "./components/SecTitle"
 
 import svg from "./images/vibrance1.png"
+import team1 from "./images/team1.jpg"
+
+import TeamCard from "./components/TeamCard";
+import Button from "./components/Button";
 export default function App() {
  
   return (
@@ -227,11 +231,33 @@ export default function App() {
 
           <section className="second-section section right">
             <div className="progress-wrapper progress-bar-wrapper-right">
-              <div className="progress-bar blue-background"></div>
+              <div className="progress-bar black-background"></div>
             </div>
 
             {/* SECTION2 */}
-            <SecTitle/>
+            <div className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">WHAT'S</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">WHAT'S</p>
+                  <p className="sec-p">DIFFERENT</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">DIFFERENT</p>
+                  <p className="sec-p">THIS</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">THIS</p>
+                  <p className="sec-p">YEAR?</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">YEAR?</p>
+                </li>
+              </ul>
+            </div>
             <div className="section-detail-wrapper">
 
               <p className="section-text">
@@ -308,41 +334,67 @@ export default function App() {
 
           <section className="fourth-section section right">
             <div className="progress-wrapper progress-bar-wrapper-right">
-              <div className="progress-bar black-background"></div>
+              <div className="progress-bar grey-background"></div>
             </div>
 
-            <div className="section-intro-wrapper blue-text blue-border">
-              <h1 className="section-title blue-text blue-border">
-                <span className="section-title-text blue-text">Fourth Section</span>
-                <div className="section-title-decoration styleOne blue-border"></div>
-                <div className="section-title-decoration styleTwo blue-border"></div>
-                <div
-                  className="section-title-decoration styleThree blue-background blue-border"
-                ></div>
-              </h1>
-              <span className="section-number blue-text">02</span>
+            <div className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">MEET</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">MEET</p>
+                  <p className="sec-p">THE</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">THE</p>
+                  <p className="sec-p">TEAM</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">TEAM</p>
+
+                </li>
+
+              </ul>
             </div>
 
-            <div className="section-detail-wrapper">
-              <h3 className="section-heading">Candycane Village</h3>
-              <p className="section-text">
-                This project is in progress but it's about a super colorful
-                village where the entire world including the people are candies.
-                So far the story is that they are set out to explore their "space"
-                only to realize it's a human that will try to destroy them.
-              </p>
-              <h3 className="section-heading">Rebecca's Reddish Radishes</h3>
-              <p className="section-text">
-                Oh what's that? Why, it's a red radish! Oop, another one! In this
-                playful and comedy animation, Rebecca, a young farmer, decided to
-                plant radishes for the first time, but there is a big twist!
-              </p>
-              <h3 className="section-heading">Flora</h3>
-              <p className="section-text">
-                A heartwarming story about a little orphan girl who tries to find
-                her way back home.
-              </p>
+            <div class="team-container">
+              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
+              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
+              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
+              <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
             </div>
+            <div className="Button-container"><Button text="VIEW MORE"/></div>
+
+            <div className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">WANT TO</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">WANT TO</p>
+                  <p className="sec-p">REACH</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">REACH</p>
+                  <p className="sec-p">US?</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">US?</p>
+
+                </li>
+ 
+              </ul>
+            </div>
+            <div className="contact">
+              <h1 className="contact-header">Name</h1>
+              <h2 className="contact-sub">Convenor, Vibrance 2023</h2>
+            </div>
+            <div className="Button-container"><Button text="EMAIL"/></div>
+
+
           </section>
 
 

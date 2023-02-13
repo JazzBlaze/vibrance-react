@@ -29,6 +29,23 @@ svg {
   transition: background-color 0.5s, color 0.5s;
 }
 
+body {
+  font-size: 20px;
+}
+
+/* h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+} */
+
 :root {
   --color-primary: #18181a;
   --color-secondary: #75757c;
@@ -209,6 +226,7 @@ ul {
 }
 
 .first-section{
+  
   background-color: #e76f51;
 }
 
@@ -221,7 +239,9 @@ ul {
 }
 
 .fourth-section{
+  padding-top: 300px;
   background-color: #c7c7c7;
+  color: #282828;
 }
 
 .left {
@@ -408,6 +428,10 @@ ul {
 
 .black-background {
   background-color: #171717;
+}
+
+.grey-background {
+  background-color: #282828;
 }
 
 .green-text {
@@ -729,32 +753,147 @@ font-style: italic;
 
 
 /* team cards */
-.team-card{
-  width: fit-content;
-  height: fit-content;
-  border-radius: 20px;
-  border: 3px solid rgb(206, 206, 206);
-  box-shadow: 0 0 20px 10px #eeeeee;
+.team-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  padding-top: 20px;
+}
+.team-container .team-card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin: 20px;
   overflow: hidden;
-  transition: transform 0.2s ease-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.team-card{
-  transform: scale(1.05);
+.team-container .team-card .team-content {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -10px 10px rgb(0 0 0 / 10%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: bottom 0.5s;
+
+}
+.team-container .team-card:hover .team-content {
+  bottom: 0;
+  transition-delay: 0s;
+}
+.team-container .team-card .team-content .contentBx h3 {
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 15px;
+  line-height: 1.1em;
+  transition: 0.5s;
+  transition-delay: 0.6s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.team-container .team-card:hover .team-content .contentBx h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.team-container .team-card .team-content .contentBx h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
 }
 
 
-.team-card--img{
-  border-radius: 20px;
+/* buttons */
 
+
+.button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 0.50em 0.75em;
+  color: #282828;
+  border: 0.15em solid #171717;
+  border-radius: calc(0.75em + 0.5em + 0.15em);
+  transition: 3s;
 }
-.team-card--header{
-  padding-top: 10px;
-  padding-left: 20px;
+.button:before, .button:after {
+  content: "";
+  position: absolute;
+  top: -1.5em;
+  z-index: -1;
+  width: 200%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 40%;
+  background-color: rgba(22, 22, 22, 0.25);
+  transition: 3s;
+}
+.button:before {
+  left: -80%;
+  transform: translate3d(0, 5em, 0) rotate(-340deg);
+}
+.button:after {
+  right: -80%;
+  transform: translate3d(0, 5em, 0) rotate(390deg);
+}
+.button:hover, .button:focus {
+  color: rgb(171, 171, 171);
+}
+.button:hover:before, .button:hover:after, .button:focus:before, .button:focus:after {
+  transform: none;
+  background-color: rgba(22, 22, 22, 0.75);
 }
 
-.team-card--sub{
+.Button-container{
+  position: relative;
+  left: 38%;
   padding-bottom: 20px;
-  padding-left: 20px;
+
+}
+
+.contact{
+  margin-top: 15%;
+  text-align: center;
+}
+
+.contact-header,.contact-sub{
+  padding-bottom: 20px;
+}
+.crackers{
+  width: 411px;
+  height: 1201%;
+  position: absolute;
+  top: -844%;
+  left: -49%;
+  opacity: 0.8;
+}
+.decorations{
+ width: fit-content;
+ height: fit-content;
+ transform: scale(1.8);
+ margin-top: 60%;
+
 }
 .crackers{
   width: 411px;
