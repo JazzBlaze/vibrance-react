@@ -30,7 +30,7 @@ ul {
 }
 
 .menu-div:hover {
-    color: gray;
+    color: rgb(72, 72, 72);
     transition: all 0.2s ease-in-out;
 }
 
