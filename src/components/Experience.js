@@ -35,7 +35,7 @@ export default class Experience {
         });
 
         this.sizes.on("resize", () => {
-            this.resize();
+            this.update();
         });
         
         //gradient headings
@@ -60,7 +60,7 @@ export default class Experience {
     }
 
     resize() {
-        //resize the scene for mobile
+
 
     }
 

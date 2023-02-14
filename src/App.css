@@ -475,7 +475,7 @@ ul {
 
 /* Media Queries */
 
-@media (max-width: 968px) {
+@media (max-width: 1138px) {
   .section {
     width: 100%;
   }
@@ -483,12 +483,19 @@ ul {
     right: 0;
     left: auto;
   }
+  #grad2{
+    font-size: 30px;
+  }
+  #grad3{
+    font-size: 30px;
+  }
   .hero-main {
     top: 120px;
   }
   .hero-second {
     bottom: 30px;
     top: unset;
+    font-size: 10px;
   }
   .hero-wrapper {
     width: calc(100% - 60px);
@@ -1174,4 +1181,13 @@ border: 1px solid;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   align-self: center;
+}
+
+
+
+/* Responsivness */
+@media (max-width:1138px) {
+  .intro-text{
+    font-size: 40px;
+  }
 }
