@@ -60,7 +60,28 @@ export default function Model({ url, ...props }) {
     })
 
     // for video textures
-    
+
+
+    const video2=document.createElement("video");
+    video2.src = "1.mp4";
+    video2.muted = true;
+    video2.playsInline = true;
+    video2.autoplay = true;
+    video2.loop = true;
+    video2.play();
+    const videoTexture1 = new THREE.VideoTexture(
+      video2
+    );
+    videoTexture1.minFilter = THREE.NearestFilter;
+    videoTexture1.magFilter = THREE.NearestFilter;
+    videoTexture1.generateMipmaps = false;
+    videoTexture1.flipY = false;
+    videoTexture1.encoding = THREE.sRGBEncoding;
+    disp.material = new THREE.MeshBasicMaterial({
+      map: videoTexture1
+    });
+
+
     const video= document.createElement("video");
     video.src = "flames_w_alpha.webm";
     video.muted = true;
@@ -68,7 +89,6 @@ export default function Model({ url, ...props }) {
     video.autoplay = true;
     video.loop = true;
     video.play();
-
     const videoTexture = new THREE.VideoTexture(
         video
     );
