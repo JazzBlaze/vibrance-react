@@ -888,13 +888,13 @@ ul {
 }
 
 .crackers {
-  width: 411px;
-  height: 1736%;
-  position: absolute;
-  top: -844%;
-  left: -49%;
-  opacity: 0.8;
-  fill: #75757c;
+width: 411px;
+height: 1736%;
+position: absolute;
+top: -858%;
+left: -28%;
+opacity: 0.8;
+fill: #75757c;
 }
 .decorations {
   width: fit-content;
