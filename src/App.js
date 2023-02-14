@@ -83,11 +83,13 @@ export default function App() {
           
           <section className="hero">
             <div className="hero-wrapper">
-              <div className="vim" >
-              
-                      <SvgComponent className="svgimg"/>   
+              <div className="intro-container">
+                <div className="vim" >
+                
+                        <SvgComponent className="svgimg"/>
+                </div>
+                <div className="intro-text">VIBRANCE'23</div>
               </div>
-              <div className="intro-text">VIBRANCE'23</div>
               <div className="arrow-svg-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
                   <path
