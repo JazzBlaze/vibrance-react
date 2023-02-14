@@ -65,6 +65,12 @@ export default function App() {
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
+            <div className="pre-links">
+              <a href="/" >Events</a>
+              <a href="/" >Pro-Shows</a>
+              <a href="/" >Merchandise</a>
+              <a href="/" >Sponsors</a>
+            </div>
           </div>
         </div>
       </div>
