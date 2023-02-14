@@ -1,9 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @font-face {
   font-family: "Fred";
   src: local("FredokaOne"), url("./fonts/FredokaOne.woff") format("woff");
+  font-weight: 600;
 }
+@font-face {
+  font-family: "FredLight";
+  src: local("Fredoka"), url("./fonts/Fredoka.woff") format("woff");
+}
+
 
 @font-face {
   font-family: "NM";
@@ -238,6 +243,7 @@ ul {
 
 .third-section {
   background-color: #90eafe;
+  padding-top: 200px;
 }
 
 .fourth-section {
@@ -826,15 +832,16 @@ ul {
 /* buttons */
 
 .button {
+  font-family: "FredLight";
   display: inline-block;
   position: relative;
   z-index: 1;
   overflow: hidden;
   text-decoration: none;
-  font-size: 1.5em;
-  padding: 0.5em 0.75em;
+  font-size: 24px;
+  padding: 0.3em 0.5em;
   color: #282828;
-  border: 0.15em solid #171717;
+  border: 0.1em solid #171717;
   border-radius: calc(0.75em + 0.5em + 0.15em);
   transition: 3s;
 }
@@ -956,4 +963,195 @@ fill: #75757c;
 .yout {
   width: 40px;
   height: 40px;
+}
+
+/* Start of events */
+
+.event{
+  border-radius: 1.5rem;
+  border: 1px solid #000000;
+  width: 50%;
+ flex: 1;
+  padding: 2%;
+  margin: 3%;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease-in;
+
+}
+.event:hover{
+  background-color: #FFFFFF;
+  filter: drop-shadow(8px 8px 0px rgb(0 0 0 / 1));
+
+  
+}
+.event:hover .eventdetails{
+
+  filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 1));
+  border: 2px solid;
+  border-color: #90eafe;
+ 
+  
+}
+.event:hover .desc{
+  filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 1));
+}
+.event:hover .wrap {
+ border: 1px solid  #90eafe;
+
+}
+.imgeve{
+  width: 100%;
+  border-radius: 12px;
+}
+.events{
+  display: flex;
+}
+.desc{
+ 
+  margin: 2%;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 1));
+}
+
+
+.eventdetails{
+  background-color: #FFFFFF;
+  margin: 1%;
+  border-radius: 24px;
+  padding: 2% 6% 2% 6%;
+  display: flex;
+  filter: none;
+  border: 2px solid #FFFFFF;
+  
+  
+}
+.eventbox{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
+
+
+}
+.btnreg{
+margin: 7% 30% 7% 30%;
+display: inline-block;
+color: white;
+padding: 10px;
+padding-top:12px;
+padding-bottom: 12px;
+text-align: center;
+overflow: hidden;
+font-size: 9px;
+border-radius: 12px;
+border: 1px solid;
+}
+.wrap{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:15px;
+  margin-top: 30px;
+  padding: 2% 10% 2% 10%;
+  border: 0px solid;
+}
+.butt{
+  text-align: center;
+}
+
+.loc{
+  font-size: 14px;
+  font-weight: 100;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  margin-left: 10px;
+  align-self: center;
+
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0;
+	color: #1a1a1a;
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+ 
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+.gallery-btn{
+  align-self: center;
+  justify-self:center;
+}
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+.svgimg{
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.date{
+  font-size: 14px;
+  font-weight: 100;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  margin-left: 10px;
+  align-self: center;
+}
+.price{
+  font-size: 14px;
+  font-weight: 100;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  margin-left: 10px;
+  align-self: center;
 }
