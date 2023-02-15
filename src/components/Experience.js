@@ -61,7 +61,6 @@ export default class Experience {
 
     resize() {
 
-
     }
 
     update() {

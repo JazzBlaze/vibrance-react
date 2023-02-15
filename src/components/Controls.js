@@ -287,8 +287,7 @@ export default class Controls {
                 // console.log("fired mobile");
 
                 // Resets
-                this.scene.set(0.07, 0.07, 0.07);
-                this.scene.position.set(0, 0, 0);
+
                 
 
                 // First section -----------------------------------------
