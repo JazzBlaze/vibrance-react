@@ -296,6 +296,9 @@ export default function Model({ url, ...props }) {
 
     const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,userotatex,userotatez,uselerpdisable);
   
+    // experience.preloader.on('render', () => alert('hi'))
+    
+    // var {gl} =useThree();
     
       
 

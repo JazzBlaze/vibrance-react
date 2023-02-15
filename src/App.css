@@ -97,6 +97,10 @@ ul {
   height: 100%;
 }
 
+.page-wrapper {
+  overflow: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -199,7 +203,7 @@ ul {
   width: 225px;
   height: 320px;
   padding-top: 100px;
-  margin-right: 220px;
+  margin-right: 250px;
   margin-bottom: 80px;
   /* display: flex;
   justify-content: center;
@@ -214,7 +218,8 @@ ul {
 }
 .intro-text {
   margin-top: 70px;
-  margin-left: 20px;
+
+  margin-right: 230px;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -229,10 +234,7 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-
 @media (max-width: 1160px) {
-  
-  
 }
 
 .arrow-svg-wrapper {

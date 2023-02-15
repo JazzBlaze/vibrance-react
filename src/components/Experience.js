@@ -61,7 +61,7 @@ export default class Experience {
 
     resize() {
         //resize the scene for mobile
-
+        this.preloader.emit('render');
     }
 
     update() {
