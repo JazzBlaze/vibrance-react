@@ -33,7 +33,7 @@ export default function Model({ url, ...props }) {
     var text,disp,splane1,splane2;
     scene.children.forEach((child)=>{
       child.children.forEach((asset)=>{
-        console.log(asset.name);
+        
         // asset.visible=false;
 
         // ["stage","Mic","trusses","trusses001","trusses002","trusses003","trusstopfront","trusstopfront001","display", "Display_bar","display_box","stage","stairs1","stairs1001","board_back"].forEach(e => {

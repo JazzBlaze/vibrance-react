@@ -289,7 +289,7 @@ export default class Controls {
 
                 // Resets
                 // this.scene.set(0.07, 0.07, 0.07);
-                // this.scene.position.set(0, 0, 0);
+                
                 
 
                 // First section -----------------------------------------
@@ -300,14 +300,17 @@ export default class Controls {
                         end: "bottom bottom",
                         scrub: 0.6,
                         // invalidateOnRefresh: true,
-                        onComplete: () => {
-                            this.experience.preloader.emit('sec1-t2')
-                        }
+                       
                     },
                 }).to(this.scene.scale, {
-                    x: 0.3,
-                    y: 0.3,
-                    z: 0.3,
+                    x: 0.25,
+                    y: 0.25,
+                    z: 0.25,
+                    onComplete: () => {
+                        console.log("dsd");
+                        this.experience.preloader.emit('sec1-t2')
+                        
+                    }
                 });
 
                 // Second section -----------------------------------------
@@ -323,15 +326,28 @@ export default class Controls {
                     .to(
                         this.scene.scale,
                         {
-                            x: 0.25,
-                            y: 0.25,
-                            z: 0.25,
+                            x: 0.2,
+                            y: 0.2,
+                            z: 0.2,
+                            onComplete: () => {
+                            
+                                window.modelObjects.keyboard.play();
+                                window.modelObjects.keyboard.loop=THREE.LoopOnce;
+                                window.modelObjects.keyboard.clampWhenFinished = true;
+
+                                window.modelObjects.Cable1.play();
+                                window.modelObjects.Cable1.loop=THREE.LoopOnce;
+                                window.modelObjects.Cable1.clampWhenFinished = true;
+
+                                
+                            },
+                          
                         },
                         "same"
+                        
                     )
                  
                   
-
                 // Third section -----------------------------------------
                 this.thirdMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -341,7 +357,25 @@ export default class Controls {
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                     },
-                });
+                    
+                }) .to(
+                    this.scene.scale,
+                    {
+                        x: 0.4,
+                        y: 0.4,
+                        z: 0.4,
+                        onComplete: () => {
+                        
+                            this.experience.preloader.emit('sec3-t2')
+                            
+                        },
+                      
+                    },
+                    "same"
+                    
+                )
+             
+                
                 this.fourthMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".fourth-move",
