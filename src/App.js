@@ -1,19 +1,22 @@
-import React, { Suspense, useRef, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import { useGLTF, OrbitControls, useAnimations } from "@react-three/drei";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
 import Menu from "./components/Menu";
 import Model from "./components/Model";
 import SvgComponent from "./components/SvgComponent";
 import as from "./images/Placeholder.png"
-// import "./fonts/FredokaOne.ttf"
-// import "./fonts/NaughtyMonster.ttf"
+
 import "./App.css";
 import Stats from "./components/Stats";
 import "./components/counter";
 
-import svg from "./images/vibrance1.png"
+import model from "./images/stage_sparklers.glb"
+
+
+import gallery1 from "./images/gallery1.jpeg"
+import gallery2 from "./images/gallery2.jpeg"
+import gallery3 from "./images/gallery3.jpeg"
 import team1 from "./images/team1.jpg"
 import team2 from "./images/team2.jpg"
 import team3 from "./images/team3.jpg"
@@ -46,7 +49,7 @@ export default function App() {
           <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
           <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
           {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
-          <Model className="modeltest" url="stage_sparklers.glb"  />
+          <Model className="modeltest" url={model}  />
 
           <OrbitControls 
             // minAzimuthAngle={-Math.PI / 25}
@@ -66,9 +69,9 @@ export default function App() {
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="pre-links">
-              <a href="/" >Events</a>
-              <a href="/" >Pro-Shows</a>
-              <a href="/" >Merchandise</a>
+              <a className="pre-links1" href="/events" >Events</a>
+              <a href="/pro-shows" >Pro-Shows</a>
+              <a href="/merchandise" >Merchandise</a>
               <a href="/" >Sponsors</a>
             </div>
           </div>
@@ -103,7 +106,7 @@ export default function App() {
 
               <div className="hero-main">
                 <h1 id="grad1" className="hero-main-title gradient-headings">VIBRANCE 2023</h1>
-                <p className="hero-main-description">Engage. Enthral. Entertain</p>
+                <p className="hero-main-description">Engage. Enthral. Entertain.</p>
               </div>
 
 
@@ -112,7 +115,7 @@ export default function App() {
               
                 <p id="grad2" className="hero-second-subheading first-sub gradient-headings">Dive In</p>
                 <p id="grad3" className="hero-second-subheading second-sub gradient-headings">Deep</p>
-
+{/* 
                 <div className="countdown">
                   <ul>
                     <li>
@@ -132,7 +135,7 @@ export default function App() {
                       <p className="hero-main-description">Seconds</p>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
@@ -224,14 +227,9 @@ export default function App() {
              
             <div className="section-detail-wrapper">
            
+              
               <p className="section-text">
               Vibrance is the annual cultural festival organized by the student community of the Vellore Institute of Technology, Chennai. It is a national-level fest organized by the students, for the students, which provides a platform to showcase their technical, artistic, and literary talents. The festival usually lasts for two to four days, but the Pre-Vibrance events are conducted about a month before and include hackathons, workshops, concerts, dance performances, debates, quizzes, and many more. It provides a unique opportunity for students to learn, communicate with others, and have fun.
-
-              </p>
-              <p className="section-text">
-              The 2020 edition of Vibrance gathered a footfall of 2500+, which includes over 12,000 internal and external participants from over 200 colleges, with a plethora of cultural and sports events conducted by the many clubs and chapters of VIT Chennai. 
-The main crowd-pullers of Vibrance are the Pro-shows, which showcase celebrity performances of music, dance, and comedy. 
-Vibrance was first founded in 2016 and has witnessed only exponential growth since then.
               </p>
 
             </div>
@@ -390,8 +388,13 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
             <div className="section-detail-wrapper">
 
               <p className="section-text">
-               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut eius soluta unde? Consequatur nam praesentium, voluptate tempora repellat nobis maxime temporibus qui nulla quia explicabo! Voluptatem labore ducimus fuga iure?
+              Vibrance '23 will be an festival like no other. 
+To start things off, we will be organising a 'Mini Marathon', with the total stretch being 10 kms for boys, and 5 kms for girls. The purpose of conducting this marathon is to increase awareness about drug abuse.
+The highlight of the pre-Vibrance extravaganza is the 'Vibrance Expo', an exhibition of sorts, where every club will be able to showcase their club through creative stalls to the rest of the University. 
+Many cultural events and games will also be conducted to entertain the participants.
               </p>
+              <p className="section-text">While the Pro-Shows will definitely pique the interest of the crowd, sports events like the swimming competition and the Cricket Tournament are bound to pull-in sports fanatics and other curious spectators.
+</p>
 
             </div>
             <Stats/>
@@ -407,45 +410,71 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
               <div className="progress-bar green-background"></div>
             </div>
 
-            <div className="section-intro-wrapper green-text green-border">
-              <h1 className="section-title green-text green-border">
-                <span className="section-title-text green-text">A Glimpse into the past</span>
+            <div className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">A GLIMPSE</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">A GLIMPSE</p>
+                  <p className="sec-p">INTO</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">INTO</p>
+                  <p className="sec-p">THE PAST</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">THE PAST</p>
+                </li>
                
-              </h1>
-
+              </ul>
             </div>
-            <div class="container">
+            <div className="container">
 
         
 
-              <div class="gallery">
+              <div className="gallery">
 
-                <div class="gallery-item">
-                  <img class="gallery-image" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"/>
+                <div className="gallery-item">
+                  <img className="gallery-image" src={gallery1} alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"/>
                 </div>
 
-                <div class="gallery-item">
-                  <img class="gallery-image" src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop" alt="sunset behind San Francisco city skyline"/>
+                <div className="gallery-item">
+                  <img className="gallery-image" src={gallery2} alt="sunset behind San Francisco city skyline"/>
                 </div>
 
-                <div class="gallery-item">
-                  <img class="gallery-image" src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop" alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan"/>
+                <div className="gallery-item">
+                  <img className="gallery-image" src={gallery3} alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan"/>
                 </div>
                 
-                <div class="gallery-btn">
-                  <Button text="View More"/>
+                <div className="gallery-btn">
+                  <Button text="View More" link="/gallery"/>
                 </div>
               </div>
 
             </div>
 
-            {/* Section three part 2 */}
-            <div className="section-intro-wrapper green-text green-border">
-              <h1 className="section-title green-text green-border">
-                <span className="section-title-text green-text">A Glimpse into the future</span>
+         
+            <div id="events-sectitle" className="sec-title">
+              <ul className="Words">
+                <li className="Words-line">
+                  <p className="sec-p">&nbsp;</p>
+                  <p className="sec-p">A GLIMPSE</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">A GLIMPSE</p>
+                  <p className="sec-p">INTO</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">INTO</p>
+                  <p className="sec-p">THE FUTUTRE</p>
+                </li>
+                <li className="Words-line">
+                  <p className="sec-p">THE FUTURE</p>
+                </li>
                
-              </h1>
-           
+              </ul>
             </div>
 
             <div className="events">
@@ -477,10 +506,9 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
                   </div>
               </div >
                <div className="wrap">
-                <btn className="but">Register Now</btn>
+                <button className="but">Register Now</button>
                </div>
               </div>
-
               <div className="event two">
                 <img className="imgeve" src={as} alt="img"/>
                 <p className="desc">This is a Swimming Event</p>
@@ -507,11 +535,13 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
                  
               </div>
               <div className="wrap">
-                <btn className="but">Register Now</btn>
+                <button className="but">Register Now</button>
                </div>
               </div>
 
             </div>
+
+            <div className="events-btn"><Button text="View More" link="/events"/></div>
 
 
 
@@ -551,13 +581,13 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
               </ul>
             </div>
 
-            <div class="team-container">
+            <div className="team-container">
               <TeamCard img={team1} name="DR. G. VISWANATHAN" sub="CHANCELLOR"/>
               <TeamCard img={team2} name="Mr. Sankar Viswanathan" sub="VICE-PRESIDENT"/>
               <TeamCard img={team3} name="Dr. Sekar Viswanathan" sub="VICE-PRESIDENT"/>
               <TeamCard img={team4} name="Mr. G V Selvam" sub="VICE-PRESIDENT"/>
             </div>
-            <div className="Button-container"><Button text="VIEW MORE"/></div>
+            <div className="Button-container"><Button text="VIEW MORE" link="/team"/></div>
 
             <div className="sec-title">
               <ul className="Words">
@@ -581,20 +611,22 @@ Vibrance was first founded in 2016 and has witnessed only exponential growth sin
               </ul>
             </div>
             <div className="contact">
-              <h1 className="contact-header">Name</h1>
-              <h2 className="contact-sub">Convenor, Vibrance 2023</h2>
+              <h1 className="contact-header">Dr. Anjali Gopakumar</h1>
+              <h1 className="contact-header">Dr. Sathiya Narayanan Sekar</h1>
+              <h2 className="contact-sub">Convenors, Vibrance 2023</h2>
             </div>
-            <div className="Button-container"><Button text="EMAIL"/></div>
-
+            <div className="Button-container"><Button text="Contact Us" link="mailto:marketing.vibrance@vit.ac.in"/></div>
+            
             <div className="copyright-container">
              
             </div>
-            <div class="support">
-              
-              <a className="insta" href="/" ><img src={insta} alt=""/></a>
-              <a className="yout" href="/" ><img src={yout} alt=""/></a>
+            <div className="footer" >
+              <div className="support">
+                <a className="insta" href="https://www.instagram.com/vibrancevit/" ><img src={insta} alt=""/></a>
+                <a className="yout" href="https://www.youtube.com/@vibrancevit" ><img src={yout} alt=""/></a>
+              </div>
+              <p className="copyright"><span style={{ fontSize: '24px', position: 'absolute', left: '-19px', bottom: '-5px' }}>&copy;</span> Copyright VIBRANCE 2023</p>
             </div>
-            <p className="copyright"> ©Copyright VIBRANCE 2023</p>
 
 
           </section>

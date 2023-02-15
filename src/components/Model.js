@@ -1,10 +1,12 @@
-import React, { Children, useEffect } from "react";
+import React from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import Experience from "./Experience";
 import { gsap } from "gsap";
 
+import vid from "../images/1.mp4"
+import flames from "../images/flames_w_alpha.webm"
 import { useState } from "react";
 
 
@@ -62,7 +64,7 @@ export default function Model({ url, ...props }) {
 
 
     const video2=document.createElement("video");
-    video2.src = "1.mp4";
+    video2.src = vid;
     video2.muted = true;
     video2.playsInline = true;
     video2.autoplay = true;
@@ -82,7 +84,7 @@ export default function Model({ url, ...props }) {
 
 
     const video= document.createElement("video");
-    video.src = "flames_w_alpha.webm";
+    video.src = flames;
     video.muted = true;
     video.playsInline = true;
     video.autoplay = true;
@@ -126,22 +128,9 @@ export default function Model({ url, ...props }) {
       
     }
 
-    // animations.forEach((clip) => {
-    //   if(animations[0]===clip){
-    //     console.log(true)
-    //   }
-    //   if (clip.name!=="board_text"){
-    //     const action = mixer.clipAction(clip);
-    //     action.clampWhenFinished = true;
-    //     action.loop = THREE.LoopOnce;
-    //     action.play();
-    //     action.paused=pause;
-    // }
-
-    // });
 
 
-    console.log(animations)
+
 
 
     //infinite looping clips

@@ -4,15 +4,15 @@ export default function TeamCard({img,name,sub}){
 	return (
         <>
 
-                <div class="team-card">
-                    <div class="imgBx">
+                <div className="team-card">
+                    <div className="imgBx">
                     <img
                         src={img}
                         alt=""
                     />
                     </div>
-                    <div class="team-content">
-                    <div class="contentBx">
+                    <div className="team-content">
+                    <div className="contentBx">
                         <h3>{name}<br /><span>{sub}</span></h3>
                     </div>
                     </div>

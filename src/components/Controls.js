@@ -90,10 +90,7 @@ export default class Controls {
         ScrollTrigger.matchMedia({
             //Desktop
             "(min-width: 969px)": () => {
-                // console.log("fired desktop");
-
-                // this.scene.scale.set(0.11, 0.11, 0.11);
-              
+   
                 // First section -----------------------------------------
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -258,7 +255,7 @@ export default class Controls {
                     z:-1,
                     duration:300000,
                     onComplete:()=>{
-                        console.log("sec4")
+                      
                         this.experience.preloader.emit('sec4-t2');
                     }
                 }
@@ -285,7 +282,7 @@ export default class Controls {
 
             // Mobile
             "(max-width: 1138px)": () => {
-                console.log("fired mobile");
+             
 
                 // Resets
                 // this.scene.set(0.07, 0.07, 0.07);
@@ -302,15 +299,23 @@ export default class Controls {
                         // invalidateOnRefresh: true,
                        
                     },
-                }).to(this.scene.scale, {
-                    x: 0.25,
-                    y: 0.25,
-                    z: 0.25,
+                })
+                .to(this.scene.scale, {
+                    x: 0.2,
+                    y: 0.2,
+                    z: 0.2,
                     onComplete: () => {
-                        console.log("dsd");
+
                         this.experience.preloader.emit('sec1-t2')
                         
                     }
+                })
+                .to(this.scene.scale, {
+                    x: 0.25,
+                    y: 0.25,
+                    z: 0.25,
+                    duration:2,
+ 
                 });
 
                 // Second section -----------------------------------------
@@ -323,24 +328,34 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
+                .to(
+                    this.scene.position,{
+                        x:2,
+                        y:-1,
+                        z:0,
+                        duration:1,
+                        onComplete: () => {
+                            
+                            window.modelObjects.keyboard.play();
+                            window.modelObjects.keyboard.loop=THREE.LoopOnce;
+                            window.modelObjects.keyboard.clampWhenFinished = true;
+
+                            window.modelObjects.Cable1.play();
+                            window.modelObjects.Cable1.loop=THREE.LoopOnce;
+                            window.modelObjects.Cable1.clampWhenFinished = true;
+
+                            
+                        },
+                    }
+                )
                     .to(
                         this.scene.scale,
                         {
-                            x: 0.2,
-                            y: 0.2,
-                            z: 0.2,
-                            onComplete: () => {
+                            x: 0.4,
+                            y: 0.4,
+                            z: 0.4,
+                            duration:2,
                             
-                                window.modelObjects.keyboard.play();
-                                window.modelObjects.keyboard.loop=THREE.LoopOnce;
-                                window.modelObjects.keyboard.clampWhenFinished = true;
-
-                                window.modelObjects.Cable1.play();
-                                window.modelObjects.Cable1.loop=THREE.LoopOnce;
-                                window.modelObjects.Cable1.clampWhenFinished = true;
-
-                                
-                            },
                           
                         },
                         "same"
@@ -358,17 +373,29 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                     
-                }) .to(
-                    this.scene.scale,
-                    {
-                        x: 0.4,
-                        y: 0.4,
-                        z: 0.4,
+                })
+                .to(
+                    this.scene.position,{
+                        x:0,
+                        y:-2,
+                        z:0,
                         onComplete: () => {
                         
                             this.experience.preloader.emit('sec3-t2')
                             
                         },
+
+                    }
+                )
+                
+                .to(
+                    this.scene.scale,
+                    {
+                        x: 0.5,
+                        y: 0.5,
+                        z: 0.5,
+                        duration:2,
+                        
                       
                     },
                     "same"
@@ -385,6 +412,34 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
+                .to(
+                    this.scene.position,{
+                        x:0,
+                        y:-2,
+                        z:0,
+                    
+                        onComplete: () => {
+                        
+                            this.experience.preloader.emit('sec4-t2')
+                            
+                        },
+
+                    }
+
+                )
+                .to(
+                    this.scene.scale,
+                    {
+                        x: 0.2,
+                        y: 0.2,
+                        z: 0.2,
+                        duration:3,
+                        
+                      
+                    },
+                    "same"
+                    
+                )
     
                 
             },

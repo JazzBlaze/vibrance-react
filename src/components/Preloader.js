@@ -27,11 +27,11 @@ export default class Preloader extends EventEmitter {
             this.device = device;
            
         });
-        if(this.device=="desktop"){
+        if(this.device==="desktop"){
             this.scene.scale.set(0.4,0.4,0.4);
            
         }
-        else if(this.device=="mobile"){
+        else if(this.device==="mobile"){
             this.scene.scale.set(0.2,0.2,0.2);
   
         }
@@ -68,14 +68,20 @@ export default class Preloader extends EventEmitter {
 
             if(this.device==="desktop"){
                 this.timeline
-                // .to(".vim", {
-                //     scale:1,
-                //     duration:2,
-                // })
+
                     .to(".vim",{
                         translateX:0,
                         duration:0.8,
                     })
+            }
+            else{
+                this.timeline
+
+                    .to(".vim",{
+                        translateX:0,
+                        duration:0.8,
+                    })
+
             }
             
                 
@@ -116,7 +122,7 @@ export default class Preloader extends EventEmitter {
             // },"fadeout")
             .to(".svgimg",
             {
-                yPercent:110,
+                yPercent:120,
                 ease: "back.in(1.7)",
             },"fadeout")
     
@@ -238,7 +244,7 @@ export default class Preloader extends EventEmitter {
         this.scaleFlag = true;
         await this.firstIntro();
         this.moveFlag = true;
-        console.log(this.moveFlag);
+
         this.scrollOnceEvent = this.onScroll.bind(this);
         this.touchStart = this.onTouch.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
@@ -265,15 +271,15 @@ export default class Preloader extends EventEmitter {
         }
     }
 
-    scale() {
+    // scale() {
 
-        if (this.device === "desktop") {
-            this.scene.scale.set(0.4, 0.4, 0.4);
-        } else if(this.device==="mobile") {
+    //     if (this.device === "desktop") {
+    //         this.scene.scale.set(0.4, 0.4, 0.4);
+    //     } else if(this.device==="mobile") {
            
-            this.scene.scale.set(-1, -1, -1);
-        }
-    }
+    //         this.scene.scale.set(-1, -1, -1);
+    //     }
+    // }
 
     update() {
         if (this.moveFlag) {
@@ -281,8 +287,8 @@ export default class Preloader extends EventEmitter {
 
         }
 
-        if (this.scaleFlag) {
-            this.scale();
-        }
+        // if (this.scaleFlag) {
+        //     this.scale();
+        // }
     }
 }
