@@ -12,7 +12,6 @@ import as from "./images/Placeholder.png"
 import "./App.css";
 import Stats from "./components/Stats";
 import "./components/counter";
-import SecTitle from "./components/SecTitle"
 
 import svg from "./images/vibrance1.png"
 import team1 from "./images/team1.jpg"
@@ -36,6 +35,7 @@ export default function App() {
       
         
         <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
+       
 
           <ambientLight  color="#484D64" intensity={1.5} />
           {/* <directionalLight castShadow="true" position={[26.381, -6.93, 19.768]} intensity={3} /> */}
@@ -77,15 +77,17 @@ export default function App() {
       
 
       <div className="page" asscroll-container="true">
-      {/* <Menu/> */}
+      <Menu/>
+        
         
         <div className="page-wrapper" asscroll="true">
+        
+          
           
           <section className="hero">
             <div className="hero-wrapper">
               <div className="intro-container">
                 <div className="vim" >
-                
                         <SvgComponent className="svgimg"/>
                 </div>
                 <div className="intro-text">VIBRANCE'23</div>
@@ -107,6 +109,7 @@ export default function App() {
 
 
               <div className="hero-second">
+              
                 <p id="grad2" className="hero-second-subheading first-sub gradient-headings">Dive In</p>
                 <p id="grad3" className="hero-second-subheading second-sub gradient-headings">Deep</p>
 
@@ -143,7 +146,7 @@ export default function App() {
             </div>
 
            
- 
+            
 
               <svg className="crackers" width="194" height="175" viewBox="0 0 194 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M72.8513 26.8238C70.4313 23.5338 65.4313 27.1038 67.6913 30.5138C68.2813 31.4038 68.9313 32.2638 69.5413 33.0938C76.9913 43.0938 80.8513 55.3638 84.1813 67.4438C84.9913 70.4438 85.7813 73.5638 84.8513 76.4438C86.1813 68.6038 85.3214 60.5038 83.3114 52.8038C81.3014 45.1038 78.1713 37.7938 74.9413 30.5238C74.3763 29.2206 73.6758 27.9805 72.8513 26.8238Z" fill="#E6E6E6" />

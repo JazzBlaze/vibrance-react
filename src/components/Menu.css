@@ -1,4 +1,4 @@
-.alpha{
+.menu-alpha{
     position: fixed;
     visibility: hidden;
 
@@ -14,11 +14,11 @@ ul {
     font-weight: 700;
 }
 
-.logo {
+.menu-logo {
     font-size: 2rem;
 }
 
-.home {
+.menu-home {
     display: flex;
     justify-content: space-between;
     padding: 50px;
@@ -67,7 +67,7 @@ ul {
     transition: all 0.4s ease-in-out;
 }
 
-.background {
+.menu-background {
     position: absolute;
     font-size: 15rem;
     font-weight: 600;
@@ -80,19 +80,19 @@ ul {
     font-size: 1.2rem;
 }
 
-.exit {
+.menu-exit {
     cursor: pointer;
     position: absolute;
     right: 40px;
     top: 40px;
 }
 
-.title {
+.menu-title {
     font-size: 2rem;
     color: rgb(170, 151, 126);
 }
 
-.right {
+.menu-right {
     padding-right: 100px;
 }
 
@@ -142,7 +142,7 @@ ul {
         justify-content: center;
     }
 
-    .right {
+    .menu-right {
         display: none;
     }
 }
