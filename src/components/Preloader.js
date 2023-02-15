@@ -17,7 +17,7 @@ export default class Preloader extends EventEmitter {
        this.useval=this.experience.useval;
 
        
-        console.log(this.scene)
+       
         this.animations = this.experience.animations;
         this.sizes = this.experience.sizes;
         this.device = this.sizes.device;
@@ -25,10 +25,18 @@ export default class Preloader extends EventEmitter {
 
         this.sizes.on("switchdevice", (device) => {
             this.device = device;
+           
         });
-
-
-
+        if(this.device=="desktop"){
+            this.scene.scale.set(0.4,0.4,0.4);
+           
+        }
+        else if(this.device=="mobile"){
+            this.scene.scale.set(0.2,0.2,0.2);
+  
+        }
+      
+   
    
         this.setAssets();
         this.playIntro();
@@ -57,7 +65,8 @@ export default class Preloader extends EventEmitter {
                     
                 },
             });
-            if (this.device === "desktop") {
+
+            if(this.device==="desktop"){
                 this.timeline
                 // .to(".vim", {
                 //     scale:1,
@@ -67,23 +76,14 @@ export default class Preloader extends EventEmitter {
                         translateX:0,
                         duration:0.8,
                     })
-                
-                
-            } else {
-                this.timeline
-                    .to(this.scene.scale, {
-                        x: 1.4,
-                        y: 1.4,
-                        z: 1.4,
-                        ease: "back.out(2.5)",
-                        duration: 0.7,
-                    })
-                    .to(this.scene.position, {
-                        z: -1,
-                        ease: "power1.out",
-                        duration: 0.7,
-                    });
             }
+            
+                
+                
+        
+          
+               
+            
             this.timeline
                 .to(".intro-text .animatedis", {
                     yPercent: 0,
@@ -221,7 +221,7 @@ export default class Preloader extends EventEmitter {
         let currentY = e.touches[0].clientY;
         let difference = this.initalY - currentY;
         if (difference > 0) {
-            console.log("swipped up");
+          
             this.removeEventListeners();
             this.playSecondIntro();
         }
@@ -257,6 +257,7 @@ export default class Preloader extends EventEmitter {
     }
 
     move() {
+
         if (this.device === "desktop") {
             this.scene.position.set(0, 0, 0);
         } else {
@@ -268,14 +269,16 @@ export default class Preloader extends EventEmitter {
 
         if (this.device === "desktop") {
             this.scene.scale.set(0.4, 0.4, 0.4);
-        } else {
-            this.scene.scale.set(0.07, 0.07, 0.07);
+        } else if(this.device==="mobile") {
+           
+            this.scene.scale.set(-1, -1, -1);
         }
     }
 
     update() {
         if (this.moveFlag) {
             this.move();
+
         }
 
         if (this.scaleFlag) {

@@ -25,10 +25,9 @@ export default function Model({ url, ...props }) {
     var { scene, animations  } = useGLTF(url);
 
 
-    scene.scale.set(0.4,0.4,0.4);
     // scene.rotateX(-0.0872665);
     scene.position.set(0,-2,0);
-    console.log(scene.children)
+ 
 
     //to access children from scene
     var text,disp,splane1,splane2;
