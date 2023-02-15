@@ -29,7 +29,14 @@
   font-size: 23px;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1138px) {
+  .stats-container{
+    display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 20px;
+  }
   .stats{
     padding-top: 40px;
     padding-bottom: 80px;
@@ -40,4 +47,9 @@
   .stats-comp > p {
     font-size: 1.5rem;
   }
+  .stats-comp3 {
+    width:auto;
+  }
 }
+
+

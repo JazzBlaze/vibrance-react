@@ -37,13 +37,14 @@ ul {
 /* Menu Stuff */
 
 .menu {
-    opacity: 0.3;
+    opacity: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0px 50px;
+
     position: fixed;
     top: -100%;
     align-items: center;

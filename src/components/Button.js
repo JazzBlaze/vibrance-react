@@ -1,8 +1,8 @@
 
-export default function Button({text}){
+export default function Button({text,link}){
 	return (
         <>
-            <a class="button" href="/">{text}</a>
+            <a className="button" href={link}>{text}</a>
         </>
     )
 }
