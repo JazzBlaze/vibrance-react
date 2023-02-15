@@ -77,7 +77,7 @@ export default function App() {
       
 
       <div className="page" asscroll-container="true">
-      <Menu/>
+      {/* <Menu/> */}
         
         <div className="page-wrapper" asscroll="true">
           

@@ -248,6 +248,7 @@ export default class Controls {
                     end: "bottom bottom",
                     scrub: 0.6,
                     invalidateOnRefresh: true,
+                    
                 },
             })
             .to(
@@ -283,11 +284,11 @@ export default class Controls {
         },
 
             // Mobile
-            "(max-width: 968px)": () => {
-                // console.log("fired mobile");
+            "(max-width: 1138px)": () => {
+                console.log("fired mobile");
 
                 // Resets
-                this.scene.set(0.07, 0.07, 0.07);
+                // this.scene.set(0.07, 0.07, 0.07);
                 this.scene.position.set(0, 0, 0);
                 
 
@@ -299,11 +300,14 @@ export default class Controls {
                         end: "bottom bottom",
                         scrub: 0.6,
                         // invalidateOnRefresh: true,
+                        onComplete: () => {
+                            this.experience.preloader.emit('sec1-t2')
+                        }
                     },
                 }).to(this.scene.scale, {
-                    x: 0.1,
-                    y: 0.1,
-                    z: 0.1,
+                    x: 0.3,
+                    y: 0.3,
+                    z: 0.3,
                 });
 
                 // Second section -----------------------------------------
@@ -326,13 +330,7 @@ export default class Controls {
                         "same"
                     )
                  
-                    .to(
-                        this.scene.position,
-                        {
-                            x: 1.5,
-                        },
-                        "same"
-                    );
+                  
 
                 // Third section -----------------------------------------
                 this.thirdMoveTimeline = new GSAP.timeline({
@@ -343,10 +341,22 @@ export default class Controls {
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                     },
+                });
+                this.fourthMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".fourth-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                    },
                 })
+    
                 
             },
-
+            //Fourth Section----------------------------------------------
+              
+          
            
 
             // all

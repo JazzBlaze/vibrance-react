@@ -268,30 +268,30 @@ export default function Model({ url, ...props }) {
     })
 
     //menu
-    const menuBtn = document.querySelector(".menu-div");
-    const exitBtn = document.querySelector(".exit");
-    let t1 = gsap.timeline({ paused: true });
-    t1.to(".menu", { opacity: 1, duration: 1, top: 0, ease: "power2.inOut" });
-    t1.to(
-        ".nav",
-        {
-            opacity: 1,
-            marginBottom: 0,
-            duration: 0.4,
-            ease: "power2.inOut",
-            stagger: 0.2,
-        },
-        ">-0.5"
-    );
+    // const menuBtn = document.querySelector(".menu-div");
+    // const exitBtn = document.querySelector(".exit");
+    // let t1 = gsap.timeline({ paused: true });
+    // t1.to(".menu", { opacity: 1, duration: 1, top: 0, ease: "power2.inOut" });
+    // t1.to(
+    //     ".nav",
+    //     {
+    //         opacity: 1,
+    //         marginBottom: 0,
+    //         duration: 0.4,
+    //         ease: "power2.inOut",
+    //         stagger: 0.2,
+    //     },
+    //     ">-0.5"
+    // );
 
-    menuBtn.addEventListener("click", () => {
-        t1.play().timeScale(1);
-    });
+    // menuBtn.addEventListener("click", () => {
+    //     t1.play().timeScale(1);
+    // });
 
-    exitBtn.addEventListener("click", () => {
-        t1.timeScale(2.5);
-        t1.reverse();
-    });
+    // exitBtn.addEventListener("click", () => {
+    //     t1.timeScale(2.5);
+    //     t1.reverse();
+    // });
 
     const experience = new Experience(document.querySelector(".experience-canvas"),scene,animations,pause,usepause,userotatex,userotatez,uselerpdisable);
   

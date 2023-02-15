@@ -236,7 +236,7 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-       await this.firstIntro();
+       this.firstIntro();
         this.moveFlag = true;
         console.log(this.moveFlag);
         this.scrollOnceEvent = this.onScroll.bind(this);
@@ -250,7 +250,7 @@ export default class Preloader extends EventEmitter {
     async playSecondIntro() {
        
         this.moveFlag = false;
-        await this.secondIntro();
+        this.secondIntro();
 
         this.scaleFlag = false;
         this.emit("enablecontrols");

@@ -230,11 +230,6 @@ ul {
 }
 
 
-@media (max-width: 1160px) {
-  
-  
-}
-
 .arrow-svg-wrapper {
   position: absolute;
   top: 90%;
@@ -509,9 +504,17 @@ ul {
   .section {
     width: 100%;
   }
+  .Words{
+    font-size: 58px !important; 
+    
+  }
+
   .progress-bar-wrapper-left {
     right: 0;
     left: auto;
+  }
+  .intro-text{
+    font-size: 30px;
   }
   #grad2{
     font-size: 30px;
@@ -734,9 +737,7 @@ ul {
   letter-spacing: -2px;
   text-transform: uppercase;
   transform: translate3d(0, 0, 0);
-  -webkit-font-smoothing: antialiased;
-  -webkit-font-kerning: normal;
-  -webkit-text-size-adjust: 100%;
+
 }
 
 /*
@@ -1183,9 +1184,3 @@ ul {
 
 
 
-/* Responsivness */
-@media (max-width:1138px) {
-  .intro-text{
-    font-size: 40px;
-  }
-}
