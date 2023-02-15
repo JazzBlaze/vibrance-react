@@ -61,7 +61,7 @@ export default class Preloader extends EventEmitter {
                 delay: 1,
                 onComplete: () => {
                     document.querySelector(".preloader").classList.add("hidden");
-                    document.querySelector(".alpha").style.visibility = "visible";
+                    document.querySelector(".menu-alpha").style.visibility = "visible";
                     
                 },
             });
@@ -236,7 +236,7 @@ export default class Preloader extends EventEmitter {
 
     async playIntro() {
         this.scaleFlag = true;
-       this.firstIntro();
+        await this.firstIntro();
         this.moveFlag = true;
         console.log(this.moveFlag);
         this.scrollOnceEvent = this.onScroll.bind(this);
@@ -250,7 +250,7 @@ export default class Preloader extends EventEmitter {
     async playSecondIntro() {
        
         this.moveFlag = false;
-        this.secondIntro();
+        await this.secondIntro();
 
         this.scaleFlag = false;
         this.emit("enablecontrols");
