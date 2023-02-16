@@ -8,7 +8,7 @@ export default function TeamCard({img,name,sub}){
                     <div className="imgBx">
                     <img
                         src={img}
-                        alt=""
+                        alt={name}
                     />
                     </div>
                     <div className="team-content">

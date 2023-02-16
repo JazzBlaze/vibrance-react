@@ -23,8 +23,17 @@ import team4 from "./images/team4.webp"
 import insta from "./images/instagram.svg"
 import yout from "./images/youtube.svg"
 
+
+import artist1 from "./images/artist1.webp"
+import artist2 from "./images/artist2.webp"
+import artist3 from "./images/artist3.webp"
+import artist4 from "./images/artist4.webp"
+import artist5 from "./images/artist5.webp"
+import artist6 from "./images/artist6.webp"
+
 import TeamCard from "./components/TeamCard";
 import Button from "./components/Button";
+import ArtistCard from "./components/ArtistCard";
 export default function App() {
  
   return (
@@ -471,72 +480,73 @@ Many cultural events and games will also be conducted to entertain the participa
             <div className="events">
           
             <div className="event one">
-                <img className="imgeve" src={as} alt="img"/>
-                <p className="desc">INDIVIDUAL TICKET</p>
+                <div className="imgeve" style={{ backgroundImage: 'url(https://vitvibrance.com/uploads/images/326dcc292c632fcac22ae9dde7625120.jpg)'}} />
+                <p className="desc">SILENT DISCO</p>
+                <p className="desc2">Silent Disco Slot 1 - 5 on 19th & 20th Feb.</p>
                 <div className="eventbox">
                   <div className="eventdetails">
-            
-                  <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 10C8.55 10 9.021 9.804 9.413 9.412C9.80433 9.02067 10 8.55 10 8C10 7.45 9.80433 6.979 9.413 6.587C9.021 6.19567 8.55 6 8 6C7.45 6 6.97933 6.19567 6.588 6.587C6.196 6.979 6 7.45 6 8C6 8.55 6.196 9.02067 6.588 9.412C6.97933 9.804 7.45 10 8 10ZM8 17.35C10.0333 15.4833 11.5417 13.7873 12.525 12.262C13.5083 10.7373 14 9.38333 14 8.2C14 6.38333 13.4207 4.89567 12.262 3.737C11.104 2.579 9.68333 2 8 2C6.31667 2 4.89567 2.579 3.737 3.737C2.579 4.89567 2 6.38333 2 8.2C2 9.38333 2.49167 10.7373 3.475 12.262C4.45833 13.7873 5.96667 15.4833 8 17.35ZM8 19.625C7.86667 19.625 7.73333 19.6 7.6 19.55C7.46667 19.5 7.35 19.4333 7.25 19.35C4.81667 17.2 3 15.2043 1.8 13.363C0.6 11.521 0 9.8 0 8.2C0 5.7 0.804333 3.70833 2.413 2.225C4.021 0.741667 5.88333 0 8 0C10.1167 0 11.979 0.741667 13.587 2.225C15.1957 3.70833 16 5.7 16 8.2C16 9.8 15.4 11.521 14.2 13.363C13 15.2043 11.1833 17.2 8.75 19.35C8.65 19.4333 8.53333 19.5 8.4 19.55C8.26667 19.6 8.13333 19.625 8 19.625Z" fill="black" />
-                    </svg>
-                    <p className="loc">VIT Chennai Main Ground Stage</p>
+                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    <p className="loc">MG Auditorium</p>
                   </div>
                   <div className="eventdetails">
-                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12C4.71667 12 4.479 11.904 4.287 11.712C4.09567 11.5207 4 11.2833 4 11C4 10.7167 4.09567 10.479 4.287 10.287C4.479 10.0957 4.71667 10 5 10C5.28333 10 5.521 10.0957 5.713 10.287C5.90433 10.479 6 10.7167 6 11C6 11.2833 5.90433 11.5207 5.713 11.712C5.521 11.904 5.28333 12 5 12ZM9 12C8.71667 12 8.47933 11.904 8.288 11.712C8.096 11.5207 8 11.2833 8 11C8 10.7167 8.096 10.479 8.288 10.287C8.47933 10.0957 8.71667 10 9 10C9.28333 10 9.521 10.0957 9.713 10.287C9.90433 10.479 10 10.7167 10 11C10 11.2833 9.90433 11.5207 9.713 11.712C9.521 11.904 9.28333 12 9 12ZM13 12C12.7167 12 12.4793 11.904 12.288 11.712C12.096 11.5207 12 11.2833 12 11C12 10.7167 12.096 10.479 12.288 10.287C12.4793 10.0957 12.7167 10 13 10C13.2833 10 13.5207 10.0957 13.712 10.287C13.904 10.479 14 10.7167 14 11C14 11.2833 13.904 11.5207 13.712 11.712C13.5207 11.904 13.2833 12 13 12ZM2 20C1.45 20 0.979 19.8043 0.587 19.413C0.195667 19.021 0 18.55 0 18V4C0 3.45 0.195667 2.97933 0.587 2.588C0.979 2.196 1.45 2 2 2H3V0H5V2H13V0H15V2H16C16.55 2 17.021 2.196 17.413 2.588C17.8043 2.97933 18 3.45 18 4V18C18 18.55 17.8043 19.021 17.413 19.413C17.021 19.8043 16.55 20 16 20H2ZM2 18H16V8H2V18Z" fill="black" />
-                    </svg>
-                    <p className="date">5:00 PM Onwards</p>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
+                    <p className="date">Entertainment</p>
                   </div>
 
                   <div className="eventdetails">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
-                    </svg>
-
-                    <p className="price">1499</p>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    <p className="price">550/-</p>
                   </div>
               </div >
-               <div className="wrap">
-                <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=375">Book Tickets</button>
-               </div>
+              <a target="_blank" href="/events">
+                <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=375">
+                  Register Now&nbsp;&nbsp;
+                  <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                </button>
+              </a>
               </div>
               <div className="event two">
-                <img className="imgeve" src={as} alt="img"/>
-                <p className="desc">COMBO TICKET</p>
-              <div className="eventbox">
-               <div className="eventdetails">
-                    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 10C8.55 10 9.021 9.804 9.413 9.412C9.80433 9.02067 10 8.55 10 8C10 7.45 9.80433 6.979 9.413 6.587C9.021 6.19567 8.55 6 8 6C7.45 6 6.97933 6.19567 6.588 6.587C6.196 6.979 6 7.45 6 8C6 8.55 6.196 9.02067 6.588 9.412C6.97933 9.804 7.45 10 8 10ZM8 17.35C10.0333 15.4833 11.5417 13.7873 12.525 12.262C13.5083 10.7373 14 9.38333 14 8.2C14 6.38333 13.4207 4.89567 12.262 3.737C11.104 2.579 9.68333 2 8 2C6.31667 2 4.89567 2.579 3.737 3.737C2.579 4.89567 2 6.38333 2 8.2C2 9.38333 2.49167 10.7373 3.475 12.262C4.45833 13.7873 5.96667 15.4833 8 17.35ZM8 19.625C7.86667 19.625 7.73333 19.6 7.6 19.55C7.46667 19.5 7.35 19.4333 7.25 19.35C4.81667 17.2 3 15.2043 1.8 13.363C0.6 11.521 0 9.8 0 8.2C0 5.7 0.804333 3.70833 2.413 2.225C4.021 0.741667 5.88333 0 8 0C10.1167 0 11.979 0.741667 13.587 2.225C15.1957 3.70833 16 5.7 16 8.2C16 9.8 15.4 11.521 14.2 13.363C13 15.2043 11.1833 17.2 8.75 19.35C8.65 19.4333 8.53333 19.5 8.4 19.55C8.26667 19.6 8.13333 19.625 8 19.625Z" fill="black" />
-                    </svg>
-                    <p className="loc">VIT Chennai Main Ground Stage</p>
+                <div className="imgeve" style={{ backgroundImage: 'url(https://vitvibrance.com/uploads/images/43d2097df8d9fda915f44fef9f81ee50.jpg)'}} />
+                <p className="desc">STANDUP COMEDY</p>
+                <p className="desc2">Ashish Solanki & Sapan Verma - Standup Comedy</p>
+                <div className="eventbox">
+                  <div className="eventdetails">
+                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    <p className="loc">MG Auditorium</p>
                   </div>
                   <div className="eventdetails">
-                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12C4.71667 12 4.479 11.904 4.287 11.712C4.09567 11.5207 4 11.2833 4 11C4 10.7167 4.09567 10.479 4.287 10.287C4.479 10.0957 4.71667 10 5 10C5.28333 10 5.521 10.0957 5.713 10.287C5.90433 10.479 6 10.7167 6 11C6 11.2833 5.90433 11.5207 5.713 11.712C5.521 11.904 5.28333 12 5 12ZM9 12C8.71667 12 8.47933 11.904 8.288 11.712C8.096 11.5207 8 11.2833 8 11C8 10.7167 8.096 10.479 8.288 10.287C8.47933 10.0957 8.71667 10 9 10C9.28333 10 9.521 10.0957 9.713 10.287C9.90433 10.479 10 10.7167 10 11C10 11.2833 9.90433 11.5207 9.713 11.712C9.521 11.904 9.28333 12 9 12ZM13 12C12.7167 12 12.4793 11.904 12.288 11.712C12.096 11.5207 12 11.2833 12 11C12 10.7167 12.096 10.479 12.288 10.287C12.4793 10.0957 12.7167 10 13 10C13.2833 10 13.5207 10.0957 13.712 10.287C13.904 10.479 14 10.7167 14 11C14 11.2833 13.904 11.5207 13.712 11.712C13.5207 11.904 13.2833 12 13 12ZM2 20C1.45 20 0.979 19.8043 0.587 19.413C0.195667 19.021 0 18.55 0 18V4C0 3.45 0.195667 2.97933 0.587 2.588C0.979 2.196 1.45 2 2 2H3V0H5V2H13V0H15V2H16C16.55 2 17.021 2.196 17.413 2.588C17.8043 2.97933 18 3.45 18 4V18C18 18.55 17.8043 19.021 17.413 19.413C17.021 19.8043 16.55 20 16 20H2ZM2 18H16V8H2V18Z" fill="black" />
-                    </svg>
-                    <p className="date">5:00 PM Onwards</p>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
+                    <p className="date">Entertainment</p>
                   </div>
-                  <div className="eventdetails">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
-                    </svg>
 
-                    <p className="price">6999</p>
+                  <div className="eventdetails">
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    <p className="price">300/-</p>
                   </div>
-                 
-              </div>
-              <div className="wrap">
-                <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=376">Book Tickets</button>
-               </div>
+              </div >
+                <a target="_blank" href="/events">
+                  <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=376">
+                    Register Now&nbsp;&nbsp;
+                    <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                  </button>
+                </a>
               </div>
 
             </div>
 
-            <div className="events-btn"><Button text="View More" link="/pro-shows"/></div>
+            <div className="events-btn"><Button text="View More" link="/events"/></div>
 
 
+            <div className="team-container">
+              <ArtistCard img={artist1} name="Benny Dayal" />
+              <ArtistCard img={artist2} name="Shirley Setia" />
+              <ArtistCard img={artist3} name="Sonu Nigam" />
+              <ArtistCard img={artist4} name="MJ 5 Dance Crew" />
+              <ArtistCard img={artist5} name="DJ Shadow Dubai" />
+              <ArtistCard img={artist6} name="DJ Paranox" />
+            </div>
 
-
+            <div className="events-btn"><Button text="Book Tickets" link="/pro-shows"/></div>
 
 
 
