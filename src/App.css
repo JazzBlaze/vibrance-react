@@ -1067,15 +1067,18 @@ grid-row-gap: 0px;
   border: 0px solid;
 }
 .but {
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
   text-align: center;
   border: 0px;
     background-color: inherit;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .loc {
   font-size: 0.875rem;
   font-weight: 100;
-  font-family: "source", Helvetica, Arial, sans-serif;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   align-self: center;
 }
@@ -1155,14 +1158,14 @@ grid-row-gap: 0px;
 .date {
   font-size: 0.875rem;
   font-weight: 100;
-  font-family: "source", Helvetica, Arial, sans-serif;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   align-self: center;
 }
 .price {
   font-size: 0.875rem;
   font-weight: 100;
-  font-family: "source", Helvetica, Arial, sans-serif;
+  font-family: "FredLight", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   align-self: center;
 }
