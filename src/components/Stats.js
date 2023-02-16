@@ -11,7 +11,7 @@ function Stats (){
                     <AppearSensor>
                         {({ hasBeenVisible }) =>
                             hasBeenVisible
-                                ? <CountUp className='stats-comp_h1' start={0} end={50}  enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
+                                ? <CountUp className='stats-comp_h1' start={0} end={150}  enableScrollSpy /> : <span className='stats-comp_h1'>0</span>
                         }
                     </AppearSensor>
                     <p>EVENTS</p>

@@ -1,6 +1,6 @@
 .menu-alpha{
     position: fixed;
-    visibility: hidden;
+    visibility: visible;
 
     z-index: 99999999999999;
 }
@@ -25,12 +25,19 @@ ul {
 }
 
 .menu-div {
+    font-family: "FredLight";
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    border-radius: 25px;
+    border:2px solid #171717;
+    padding: 8px 25px;
+    background-color: transparent;
 }
 
 .menu-div:hover {
-    color: rgb(72, 72, 72);
+    background-color: rgba(72, 72, 72, 0.33);
+    color: rgb(255, 255, 255);
+    
     transition: all 0.2s ease-in-out;
 }
 
@@ -103,6 +110,9 @@ ul {
 
 .menu-container {
     z-index: 3;
+        
+        
+      
 }
 
 
