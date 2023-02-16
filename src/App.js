@@ -9,18 +9,17 @@ import as from "./images/Placeholder.png"
 
 import "./App.css";
 import Stats from "./components/Stats";
-import "./components/counter";
 
 import model from "./images/stage_sparklers.glb"
 
 
-import gallery1 from "./images/gallery1.jpeg"
-import gallery2 from "./images/gallery2.jpeg"
-import gallery3 from "./images/gallery3.jpeg"
-import team1 from "./images/team1.jpg"
-import team2 from "./images/team2.jpg"
-import team3 from "./images/team3.jpg"
-import team4 from "./images/team4.jpg"
+import gallery1 from "./images/gallery1.webp"
+import gallery2 from "./images/gallery2.webp"
+import gallery3 from "./images/gallery3.webp"
+import team1 from "./images/team1.webp"
+import team2 from "./images/team2.webp"
+import team3 from "./images/team3.webp"
+import team4 from "./images/team4.webp"
 import insta from "./images/instagram.svg"
 import yout from "./images/youtube.svg"
 
@@ -52,10 +51,7 @@ export default function App() {
           <Model className="modeltest" url={model}  />
 
           <OrbitControls 
-            // minAzimuthAngle={-Math.PI / 25}
-            // maxAzimuthAngle={Math.PI / 25}
-            // minPolarAngle={Math.PI / 2.5}
-            // maxPolarAngle={Math.PI / 2.5}
+
           />
         </Canvas>
       </div>
@@ -68,18 +64,13 @@ export default function App() {
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
-            <div className="pre-links">
-              <a className="pre-links1" href="/events" >Events</a>
-              <a href="/pro-shows" >Pro-Shows</a>
-              <a href="/merchandise" >Merchandise</a>
-              <a href="/" >Sponsors</a>
-            </div>
+
           </div>
         </div>
       </div>
       
 
-      <div className="page" asscroll-container="true">
+      <div className="page" asscroll-container="true" >
       <Menu/>
         
         
@@ -343,7 +334,7 @@ export default function App() {
 
            
             <p className="section-text">
-            VIT was established with the aim of providing quality higher education on par with international standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis. The campus has a cosmopolitan atmosphere with students from all corners of the globe.
+            VIT was established with the aim to provide quality education on par with international standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis. The campus has a cosmopolitan atmosphere with students from all corners of the globe.
             </p>
 
             <p className="tagline"><q>A Place to Learn, <br/>Chance to Grow</q> </p>
@@ -388,8 +379,8 @@ export default function App() {
             <div className="section-detail-wrapper">
 
               <p className="section-text">
-              Vibrance '23 will be an festival like no other. 
-To start things off, we will be organising a 'Mini Marathon', with the total stretch being 10 kms for boys, and 5 kms for girls. The purpose of conducting this marathon is to increase awareness about drug abuse.
+              Vibrance '23 will be a festival like no other. 
+To start things off, we will be organising a 'Mini Marathon', with the total stretch being 10 kms for boys, and 5 kms for girls. The purpose of conducting this marathon is to increase awareness about drug abuse & cancer awareness.
 The highlight of the pre-Vibrance extravaganza is the 'Vibrance Expo', an exhibition of sorts, where every club will be able to showcase their club through creative stalls to the rest of the University. 
 Many cultural events and games will also be conducted to entertain the participants.
               </p>
@@ -414,18 +405,18 @@ Many cultural events and games will also be conducted to entertain the participa
               <ul className="Words">
                 <li className="Words-line">
                   <p className="sec-p">&nbsp;</p>
-                  <p className="sec-p">A GLIMPSE</p>
+                  <p className="sec-p">ECHOES</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">A GLIMPSE</p>
-                  <p className="sec-p">INTO</p>
+                  <p className="sec-p">ECHOES</p>
+                  <p className="sec-p">OF THE</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">INTO</p>
-                  <p className="sec-p">THE PAST</p>
+                  <p className="sec-p">OF THE</p>
+                  <p className="sec-p">PAST</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">THE PAST</p>
+                  <p className="sec-p">PAST</p>
                 </li>
                
               </ul>
@@ -460,18 +451,18 @@ Many cultural events and games will also be conducted to entertain the participa
               <ul className="Words">
                 <li className="Words-line">
                   <p className="sec-p">&nbsp;</p>
-                  <p className="sec-p">A GLIMPSE</p>
+                  <p className="sec-p">PROSPECT</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">A GLIMPSE</p>
-                  <p className="sec-p">INTO</p>
+                  <p className="sec-p">PROSPECT</p>
+                  <p className="sec-p">OF THE</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">INTO</p>
-                  <p className="sec-p">THE FUTUTRE</p>
+                  <p className="sec-p">OF THE</p>
+                  <p className="sec-p">FUTUTRE</p>
                 </li>
                 <li className="Words-line">
-                  <p className="sec-p">THE FUTURE</p>
+                  <p className="sec-p">FUTURE</p>
                 </li>
                
               </ul>
@@ -499,7 +490,7 @@ Many cultural events and games will also be conducted to entertain the participa
 
                   <div className="eventdetails">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
                     </svg>
 
                     <p className="price">500</p>
@@ -527,7 +518,7 @@ Many cultural events and games will also be conducted to entertain the participa
                   </div>
                   <div className="eventdetails">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M9.75 0C4.365 0 0 4.365 0 9.75C0 15.135 4.365 19.5 9.75 19.5C15.135 19.5 19.5 15.135 19.5 9.75C19.5 4.365 15.135 0 9.75 0ZM6.75 5.25C6.55109 5.25 6.36032 5.32902 6.21967 5.46967C6.07902 5.61032 6 5.80109 6 6C6 6.19891 6.07902 6.38968 6.21967 6.53033C6.36032 6.67098 6.55109 6.75 6.75 6.75H8.25C9.23 6.75 10.063 7.376 10.372 8.25H6.75C6.55109 8.25 6.36032 8.32902 6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033C6.36032 9.67098 6.55109 9.75 6.75 9.75H10.372C10.2167 10.1887 9.92932 10.5685 9.54931 10.8371C9.1693 11.1058 8.71537 11.25 8.25 11.25H6.75C6.60176 11.2501 6.45688 11.2942 6.33367 11.3766C6.21045 11.459 6.11442 11.5761 6.05771 11.7131C6.001 11.85 5.98615 12.0007 6.01503 12.1461C6.04392 12.2915 6.11524 12.4251 6.22 12.53L9.22 15.53C9.28866 15.6037 9.37146 15.6628 9.46346 15.7038C9.55546 15.7448 9.65477 15.7668 9.75548 15.7686C9.85618 15.7704 9.95621 15.7518 10.0496 15.7141C10.143 15.6764 10.2278 15.6203 10.299 15.549C10.3703 15.4778 10.4264 15.393 10.4641 15.2996C10.5018 15.2062 10.5204 15.1062 10.5186 15.0055C10.5168 14.9048 10.4948 14.8055 10.4538 14.7135C10.4128 14.6215 10.3537 14.5387 10.28 14.47L8.55 12.738C9.36032 12.6728 10.1276 12.3462 10.7362 11.8073C11.3449 11.2684 11.7621 10.5464 11.925 9.75H12.75C12.9489 9.75 13.1397 9.67098 13.2803 9.53033C13.421 9.38968 13.5 9.19891 13.5 9C13.5 8.80109 13.421 8.61032 13.2803 8.46967C13.1397 8.32902 12.9489 8.25 12.75 8.25H11.925C11.8143 7.70603 11.5837 7.19359 11.25 6.75H12.75C12.9489 6.75 13.1397 6.67098 13.2803 6.53033C13.421 6.38968 13.5 6.19891 13.5 6C13.5 5.80109 13.421 5.61032 13.2803 5.46967C13.1397 5.32902 12.9489 5.25 12.75 5.25H6.75Z" fill="black" />
                     </svg>
 
                     <p className="price">500</p>
@@ -587,7 +578,7 @@ Many cultural events and games will also be conducted to entertain the participa
               <TeamCard img={team3} name="Dr. Sekar Viswanathan" sub="VICE-PRESIDENT"/>
               <TeamCard img={team4} name="Mr. G V Selvam" sub="VICE-PRESIDENT"/>
             </div>
-            <div className="Button-container"><Button text="VIEW MORE" link="/team"/></div>
+            <div className="Button-container"><Button text="View More" link="/team"/></div>
 
             <div className="sec-title">
               <ul className="Words">
@@ -622,8 +613,8 @@ Many cultural events and games will also be conducted to entertain the participa
             </div>
             <div className="footer" >
               <div className="support">
-                <a className="insta" href="https://www.instagram.com/vibrancevit/" ><img src={insta} alt=""/></a>
-                <a className="yout" href="https://www.youtube.com/@vibrancevit" ><img src={yout} alt=""/></a>
+                <a className="insta" href="https://www.instagram.com/vibrancevit/" target="_blank"><img src={insta} alt=""/></a>
+                <a className="yout" href="https://www.youtube.com/@vibrancevit" target="_blank" ><img src={yout} alt=""/></a>
               </div>
               <p className="copyright"><span style={{ fontSize: '24px', position: 'absolute', left: '-19px', bottom: '-5px' }}>&copy;</span> Copyright VIBRANCE 2023</p>
             </div>

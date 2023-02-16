@@ -23,7 +23,14 @@
   font-family: "source";
   src: local("source"), url("./fonts/source.woff") format("woff");
 }
+@import '~@ashthornton/asscroll/css';
 
+.asscrollbar>div{
+  visibility: visible !important;
+}
+.asscrollbar__handle{
+  visibility: visible;
+}
 * {
   margin: 0;
   padding: 0;
@@ -43,21 +50,9 @@ svg {
 }
 
 body {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
-/* h1 {
-  font-size: 3rem;
-  font-weight: 300;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1rem;
-} */
 
 :root {
   --color-primary: #18181a;
@@ -236,7 +231,7 @@ ul {
   top: 50%;
   left: 60%; */
   font-weight: lighter;
-  font-size: 66px;
+  font-size: 4.125rem;
   color: var(--color-text);
 }
 
@@ -365,7 +360,7 @@ ul {
 }
 
 .section-heading {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.8;
   margin-top: 64px;
@@ -375,7 +370,7 @@ ul {
 .section-text {
   line-height: 2;
   margin-top: 18px;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* Fancy Decoration Part of Section */
@@ -386,7 +381,7 @@ ul {
 
 .section-title-text {
   display: block;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 500;
   transform-origin: left;
 
@@ -427,7 +422,7 @@ ul {
   bottom: 15px;
   right: 0;
   color: var(--color-pink);
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 /* Hero section -------------------------------- */
@@ -460,19 +455,19 @@ ul {
 }
 
 .hero-main-title {
-  font-size: 74px;
+  font-size: 4.625rem;
   color: var(--color-text);
   font-family: "NM", sans-serif;
   font-weight: bold;
 }
 
 .hero-main-description {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--color-text);
 }
 
 .hero-second-subheading {
-  font-size: 42px;
+  font-size: 2.625rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-text);
@@ -614,7 +609,7 @@ ul {
   height: 70%;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 400;
   text-align: center;
 }
@@ -710,7 +705,7 @@ ul {
   margin: 0 auto;
   padding-bottom: 80px;
   font-family: "source", Helvetica, Arial, sans-serif;
-  font-size: 68px;
+  font-size: 4.25rem;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
@@ -774,10 +769,13 @@ ul {
   transform: translate3d(0, -50px, 0);
 }
 .tagline {
-  margin: 20%;
-  font-size: larger;
+  
   font-family: "Fred";
+  font-size: 2rem;
   font-style: italic;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 /* team cards */
@@ -828,7 +826,7 @@ ul {
   color: #000000;
   letter-spacing: 2px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
   margin: 20px 0 15px;
   line-height: 1.1em;
@@ -842,7 +840,7 @@ ul {
   transform: translateY(0);
 }
 .team-container .team-card .team-content .contentBx h3 span {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 300;
   text-transform: initial;
 }
@@ -856,7 +854,7 @@ ul {
   z-index: 1;
   overflow: hidden;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 8px 25px;
   color: #282828;
   border: 0.1em solid #171717;
@@ -908,10 +906,10 @@ ul {
 }
 .contact-header {
   font-family: "FredLight";
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
-.contact-header,
+
 .contact-sub {
   padding-bottom: 20px;
 }
@@ -957,7 +955,7 @@ ul {
 .copyright {
   display: block;
   font-family: "FredLight";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .support a {
   margin: 0 10px;
@@ -1026,7 +1024,7 @@ grid-row-gap: 0px;
 .desc {
   margin: 2%;
   font-family: "FredLight", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   filter: drop-shadow(0px 0px 0px rgb(0 0 0 / 1));
 }
 
@@ -1054,7 +1052,7 @@ grid-row-gap: 0px;
   padding-bottom: 12px;
   text-align: center;
   overflow: hidden;
-  font-size: 9px;
+  font-size: 0.563rem;
   border-radius: 12px;
   border: 1px solid;
 }
@@ -1070,11 +1068,12 @@ grid-row-gap: 0px;
 }
 .but {
   text-align: center;
-  color: #ffffff;
+  border: 0px;
+    background-color: inherit;
 }
 
 .loc {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 100;
   font-family: "source", Helvetica, Arial, sans-serif;
   margin-left: 10px;
@@ -1090,7 +1089,7 @@ grid-row-gap: 0px;
 
 .heading {
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: 4rem;
+  font-size: 0.25rem;
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
@@ -1154,14 +1153,14 @@ grid-row-gap: 0px;
 }
 
 .date {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 100;
   font-family: "source", Helvetica, Arial, sans-serif;
   margin-left: 10px;
   align-self: center;
 }
 .price {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 100;
   font-family: "source", Helvetica, Arial, sans-serif;
   margin-left: 10px;
@@ -1173,7 +1172,7 @@ grid-row-gap: 0px;
     width: 100%;
   }
   .Words {
-    font-size: 43px !important;
+    font-size: 2.688rem !important;
   }
 
   .progress-bar-wrapper-left {
@@ -1181,7 +1180,7 @@ grid-row-gap: 0px;
     left: auto;
   }
   .intro-text {
-    font-size: 25px;
+    font-size: 1.563rem;
     margin-left: 5px;
   }
 
@@ -1191,19 +1190,19 @@ grid-row-gap: 0px;
   .hero-second {
     bottom: 30px;
     top: unset;
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .hero-wrapper {
     width: calc(100% - 60px);
   }
   .hero-main-title {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .hero-main-description {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .hero-second-subheading {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
   }
 
@@ -1227,19 +1226,15 @@ grid-row-gap: 0px;
 
   .menu-div {
     position: absolute;
-    font-size: 16px;
+    font-size: 1rem;
     top: 28px;
     left: 18px;
+    
   }
 
-  .pre-links {
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .pre-links1 {
-    padding-left: 0px !important;
-  }
+
+
+
   .vitbooks {
     width: 600px;
     height: 300px;

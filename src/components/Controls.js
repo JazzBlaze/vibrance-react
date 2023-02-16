@@ -1,9 +1,8 @@
 import * as THREE from "three";
 import Experience from "./Experience";
-import GSAP, { Linear } from "gsap";
+import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ASScroll from "@ashthornton/asscroll";
-import { delay } from "q";
 
 
 export default class Controls {
@@ -40,6 +39,7 @@ export default class Controls {
         const asscroll = new ASScroll({
             ease: 0.1,
             disableRaf: true,
+
         });
 
      GSAP.ticker.add(asscroll.update);
