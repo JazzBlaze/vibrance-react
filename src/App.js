@@ -34,6 +34,9 @@ import artist6 from "./images/artist6.webp"
 import TeamCard from "./components/TeamCard";
 import Button from "./components/Button";
 import ArtistCard from "./components/ArtistCard";
+
+import './counter';
+
 export default function App() {
  
   return (
@@ -115,27 +118,27 @@ export default function App() {
               
                 <p id="grad2" className="hero-second-subheading first-sub gradient-headings">Dive In</p>
                 <p id="grad3" className="hero-second-subheading second-sub gradient-headings">Deep</p>
-{/* 
+
                 <div className="countdown">
                   <ul>
                     <li>
-                      <p id="days" className="hero-main-description">09</p>
+                      <p id="days" className="hero-main-description">00&nbsp;</p>
                       <p className="hero-main-description">Days</p>
                     </li>
                     <li>
-                      <p id="hours" className="hero-main-description">10</p>
+                      <p id="hours" className="hero-main-description">00&nbsp;</p>
                       <p className="hero-main-description">Hours</p>
                     </li>
                     <li>
-                      <p id="minutes" className="hero-main-description">60</p>
+                      <p id="minutes" className="hero-main-description">00&nbsp;</p>
                       <p className="hero-main-description">Minutes</p>
                     </li>
                     <li>
-                      <p id="seconds" className="hero-main-description">50</p>
+                      <p id="seconds" className="hero-main-description">00&nbsp;</p>
                       <p className="hero-main-description">Seconds</p>
                     </li>
                   </ul>
-                </div> */}
+                </div>
               </div>
             </div>
           </section>
@@ -546,7 +549,7 @@ Many cultural events and games will also be conducted to entertain the participa
               <ArtistCard img={artist6} name="DJ Paranox" />
             </div>
 
-            <div className="events-btn"><Button text="Book Tickets" link="/pro-shows"/></div>
+            <div className="events-btn"><Button text="Buy pass" link="/pro-shows"/></div>
 
 
 
@@ -623,10 +626,10 @@ Many cultural events and games will also be conducted to entertain the participa
             </div>
             <div className="footer" >
               <div className="support">
-                <a className="insta" href="https://www.instagram.com/vibrancevit/" target="_blank"><img src={insta} alt=""/></a>
+                <a className="insta" href="https://www.instagram.com/vibrancevit" target="_blank"><img src={insta} alt=""/></a>
                 <a className="yout" href="https://www.youtube.com/@vibrancevit" target="_blank" ><img src={yout} alt=""/></a>
               </div>
-              <p className="copyright"><span style={{ fontSize: '24px', position: 'absolute', left: '-19px', bottom: '-5px' }}>&copy;</span> Copyright VIBRANCE 2023</p>
+              <p className="copyright"><span style={{ fontSize: '24px', marginTop: '6px' }}>&copy;</span>&nbsp;Copyright Vibrance 2023</p>
             </div>
 
 

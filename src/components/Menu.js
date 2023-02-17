@@ -25,7 +25,7 @@ function Menu() {
                             <li className="nav"><a href="/pro-shows"  target="_blank" className="nav-link">Pro-Shows <span className="small-number">03</span></a></li>
                             <li className="nav"><a href="/merchandise" target="_blank" className="nav-link">Merch <span className="small-number">04</span></a></li>
                             <li className="nav"><a href="/gallery"  target="_blank" className="nav-link">Gallery <span className="small-number">05</span></a></li>
-                            <li className="nav"><a href="/" target="_blank" className="nav-link">Sponsors <span className="small-number">06</span></a></li>
+                            <li className="nav"><a href="/sponsors" target="_blank" className="nav-link">Sponsors <span className="small-number">06</span></a></li>
                             <li className="nav"><a href="/team"  target="_blank" className="nav-link">Team <span className="small-number">07</span></a></li>
                             
                         </ul>
@@ -43,7 +43,7 @@ function Menu() {
                             <p className="menu-title">Keep Up With Us</p>
                             <div className="social-medias">
                 
-                                <a href="https://www.instagram.com/vibrancevit/"  target="_blank" className="social-media">Instagram</a>
+                                <a href="https://www.instagram.com/vibrancevit"  target="_blank" className="social-media">Instagram</a>
                                 <a href="https://www.youtube.com/@vibrancevit"  target="_blank" className="social-media">Youtube</a>
                             </div>
                         </div>

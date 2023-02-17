@@ -13,6 +13,7 @@ export default function ArtistCard({img,name}){
                     <img
                         src={img}
                         alt={name}
+                        style={{ width: '100%' }}
                     />
                     </div>
                     <div className="team-content" style={{

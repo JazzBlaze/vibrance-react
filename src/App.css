@@ -302,6 +302,7 @@ ul {
 
 .fourth-section {
   background-color: #c7c7c7;
+  padding-bottom: 20px;
 }
 
 .left {
@@ -458,7 +459,7 @@ ul {
   font-size: 4.625rem;
   color: var(--color-text);
   font-family: "NM", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .hero-main-description {
@@ -468,7 +469,7 @@ ul {
 
 .hero-second-subheading {
   font-size: 2.625rem;
-  font-weight: 600;
+  font-weight: normal;
   text-transform: uppercase;
   color: var(--color-text);
   font-family: "NM";
@@ -520,7 +521,6 @@ ul {
 
 /*countdown*/
 .countdown {
-  margin-left: 0.5rem;
   margin-top: 1rem;
 }
 
@@ -836,9 +836,6 @@ ul {
   margin: 20px;
   transform: translateY(-20px);
 }
-.team-card img {
-  width: 100%;
-}
 .team-container .team-card:hover .team-content .contentBx h3 {
   opacity: 1;
   transform: translateY(0);
@@ -946,23 +943,26 @@ ul {
 } */
 
 .footer {
-  position: absolute;
   bottom: 10px;
-  left: 35%;
+  width: 100%;
 }
 
 .support {
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 10px;
   justify-content: center;
-  padding-bottom: 10px;
 }
 .copyright {
-  display: block;
+  display: flex;
   font-family: "FredLight";
   font-size: 1.125rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .support a {
-  margin: 0 10px;
+  margin: 0 8px;
   color: #fff;
   font-size: 1.8rem;
   backface-visibility: hidden;
@@ -977,8 +977,12 @@ ul {
 }
 
 .yout {
-  width: 28px;
   height: 20px;
+}
+
+.yout img {
+  height: 35px;
+  margin-top: -1px;
 }
 
 /* Start of events */
