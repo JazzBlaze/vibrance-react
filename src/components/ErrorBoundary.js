@@ -1,7 +1,5 @@
 import { Component } from "react";
-
-import Menu from "./Menu";
-
+import Fallback from "./Fallback";
 class ErrorBoundary extends Component {
     constructor(props) {
       super(props);
@@ -16,7 +14,7 @@ class ErrorBoundary extends Component {
   
     render() {
       if (this.state.hasError) {
-        return <Menu/>;
+        return <Fallback/>;
       }
   
       return this.props.children; 

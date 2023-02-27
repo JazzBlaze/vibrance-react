@@ -132,6 +132,11 @@ ul {
   opacity: 1;
   z-index: 99999999999999999;
 }
+.preloader h2{
+  position: absolute;
+  bottom: 80px;
+  text-align: center;
+}
 
 .preloader-wrapper {
   display: flex;
