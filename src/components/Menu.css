@@ -21,7 +21,7 @@ ul {
 .menu-home {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    padding: 35px;
 }
 
 .menu-div {
