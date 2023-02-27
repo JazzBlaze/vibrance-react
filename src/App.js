@@ -37,6 +37,8 @@ import ArtistCard from "./components/ArtistCard";
 
 import './counter';
 
+
+import ErrorBoundary from './components/ErrorBoundary';
 export default function App() {
  
   return (
@@ -45,51 +47,41 @@ export default function App() {
     <>
 
     
-      <div className="experience">
-      
+      <ErrorBoundary>
+        <div className="experience">
+          <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
         
-        <Canvas id="can" className="experience-canvas" dpr={[1, 2]} camera={{ position: [0, 7, 30], fov: 40 }} >
-       
-
-          <ambientLight  color="#484D64" intensity={1.5} />
-          {/* <directionalLight castShadow="true" position={[26.381, -6.93, 19.768]} intensity={3} /> */}
-          <pointLight  color="#B6F6FF" castShadow="true" position={[0,22,0]} intensity={1}/>
-          <pointLight color="#C796CC" castShadow="true" position={[24,20,24]} intensity={1.5}/>
-          <pointLight color="#FFFCC0" castShadow="true" position={[-4.9,11.05,-1]} intensity={1}/>
-          <pointLight color="#F1D1FF" castShadow="true" position={[-12,-13.6,-15]} intensity={0.8}/>
-          <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
-          <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
-          {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
-          <Model className="modeltest" url={model}  />
-
-          <OrbitControls 
-
-          />
-        </Canvas>
-      </div>
-      
-      
-
-      <div id="pre" className="preloader">
-        <div className="preloader-wrapper">
-          <div className="loading">
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-
+            <ambientLight  color="#484D64" intensity={1.5} />
+            {/* <directionalLight castShadow="true" position={[26.381, -6.93, 19.768]} intensity={3} /> */}
+            <pointLight  color="#B6F6FF" castShadow="true" position={[0,22,0]} intensity={1}/>
+            <pointLight color="#C796CC" castShadow="true" position={[24,20,24]} intensity={1.5}/>
+            <pointLight color="#FFFCC0" castShadow="true" position={[-4.9,11.05,-1]} intensity={1}/>
+            <pointLight color="#F1D1FF" castShadow="true" position={[-12,-13.6,-15]} intensity={0.8}/>
+            <pointLight color="#F1D1FF" castShadow="true" position={[0,-13.6,-15]} intensity={0.8}/>
+            <pointLight color="#F1D1FF" castShadow="true" position={[16,-13.6,-15]} intensity={0.8}/>
+            {/* <pointLight color="#F1D1FF" castShadow="true" position={[-15,-13,-50]} intensity={0.8}/> */}
+            <Model className="modeltest" url={model}  />
+            <OrbitControls
+            />
+          </Canvas>
+        </div>
+        
+        
+        <div id="pre" className="preloader">
+          <div className="preloader-wrapper">
+            <div className="loading">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
           </div>
         </div>
-      </div>
-      
+        
+        <div className="page" asscroll-container="true" >
+          <Menu/>
+        
+          <div className="page-wrapper" asscroll="true">
 
-      <div className="page" asscroll-container="true" >
-      <Menu/>
-        
-        
-        <div className="page-wrapper" asscroll="true">
-        
-          
-          
           <section className="hero">
             <div className="hero-wrapper">
               <div className="intro-container">
@@ -403,9 +395,6 @@ Many cultural events and games will also be conducted to entertain the participa
             <Stats/>
           </section>
 
-        
-
-
           <div className="third-move section-margin"></div>
 
           <section className="third-section section left">
@@ -488,23 +477,23 @@ Many cultural events and games will also be conducted to entertain the participa
                 <p className="desc2">Silent Disco Slot 1 - 5 on 19th & 20th Feb.</p>
                 <div className="eventbox">
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
                     <p className="loc">MG Auditorium</p>
                   </div>
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
                     <p className="date">Entertainment</p>
                   </div>
 
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clipRule="evenodd"></path></svg>
                     <p className="price">550/-</p>
                   </div>
               </div >
               <a target="_blank" href="/events">
                 <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=375">
                   Register Now&nbsp;&nbsp;
-                  <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                  <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
                 </button>
               </a>
               </div>
@@ -514,23 +503,23 @@ Many cultural events and games will also be conducted to entertain the participa
                 <p className="desc2">Ashish Solanki & Sapan Verma - Standup Comedy</p>
                 <div className="eventbox">
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.25rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
                     <p className="loc">MG Auditorium</p>
                   </div>
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5"></circle><path d="M3 13.5h8v8H3z"></path></svg>
                     <p className="date">Entertainment</p>
                   </div>
 
                   <div className="eventdetails">
-                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    <svg stroke="currentColor" style={{ fontSize: '1.125rem' }} fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clipRule="evenodd"></path></svg>
                     <p className="price">300/-</p>
                   </div>
               </div >
                 <a target="_blank" href="/events">
                   <button className="but" href="https://vitchennaievents.com/vibrance/?eventid=376">
                     Register Now&nbsp;&nbsp;
-                    <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                    <svg style={{ fontSize: '0.75rem' }} stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
                   </button>
                 </a>
               </div>
@@ -635,12 +624,9 @@ Many cultural events and games will also be conducted to entertain the participa
 
           </section>
 
-
-
-
-
+          </div>
         </div>
-      </div>
+      </ErrorBoundary>
 
 
 

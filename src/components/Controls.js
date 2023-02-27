@@ -39,6 +39,9 @@ export default class Controls {
         const asscroll = new ASScroll({
             ease: 0.1,
             disableRaf: true,
+            customScrollbar:false,
+            scrollbarStyles:false,
+            disableNativeScrollbar: false,
 
         });
 
